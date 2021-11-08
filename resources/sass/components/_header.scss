@@ -1,0 +1,104 @@
+// HEADER TOP PART ---------------------------------------------
+.header__top {
+  height: 100%;
+  width: 100%;
+  font-size: 1em;
+
+  &__logo {
+    img {
+      height: 4.5em;
+      padding: 0.2em 0;
+    }
+  }
+
+  &__text {
+    width: 100%;
+    margin: 1em 0 0 20em;
+  }
+}
+
+// .header__top__
+
+// HEADER NAVIGATION -------------------------------------------
+.header__nav {
+  width: 100%;
+  font-size: 1em;
+
+  background-color: $color-secondary-shade;
+
+  &__list {
+    width: 100%;
+  }
+
+  &__item {
+  }
+
+  &__link {
+    display: inline-block;
+    height: 100%;
+    padding: 0.5em 1.2em;
+
+    &:link,
+    &:visited {
+    }
+
+    &:hover,
+    &:active {
+      background-color: $color-primary;
+    }
+  }
+}
+
+.nav__have-subnav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &::after {
+    content: "\02228";
+    font-size: 1em;
+
+    margin-left: 0.3em;
+
+    transition: color 0.1s;
+  }
+}
+
+// HEADER SUB NAVIGATION ---------------------------------------
+.header__subnav {
+  display: none;
+  position: absolute;
+  left: 0;
+
+  height: 550px;
+  width: 100%;
+  overflow: hidden;
+
+  background-color: $color-primary-tint;
+  box-shadow: 0 0.2rem 0.6rem -0.4rem rgba($color-black, 0.2);
+
+  &__container {
+    width: 100%;
+    max-width: 114em;
+  }
+
+  &__nav {
+  }
+
+  &__header {
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  &__list {
+  }
+
+  &__item {
+  }
+
+  &__link {
+  }
+
+  &__img {
+  }
+}

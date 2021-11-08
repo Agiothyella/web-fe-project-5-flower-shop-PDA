@@ -1,0 +1,49 @@
+.seasonal__season {
+  position: relative;
+  height: 50em;
+}
+
+.season {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  width: 70%;
+  height: 100%;
+  height: 50em;
+}
+
+.season--spring {
+  background-image: url("../media/img/season-spring.jpg");
+}
+
+.season--spring-bw {
+  background-image: url("../media/img/season-spring-bw.jpg");
+}
+
+.season--winter {
+  background-image: url("../media/img/season-winter.jpg");
+}
+
+.season--winter-bw {
+  background-image: url("../media/img/season-winter-bw.jpg");
+}
+
+.season--autumn {
+  background-image: url("../media/img/season-autumn.jpg");
+}
+
+.season--autumn-bw {
+  background-image: url("../media/img/season-autumn-bw.jpg");
+}
+
+.season--summer {
+  background-image: url("../media/img/season-summer.jpg");
+}
+
+.season--summer-bw {
+  background-image: url("../media/img/season-summer-bw.jpg");
+}

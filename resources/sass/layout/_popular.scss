@@ -1,0 +1,22 @@
+// HEADER ----------------------------------------------
+.popular__header {
+  margin-bottom: 4.8em;
+}
+
+// CONTAINER -------------------------------------------
+.popular__container {
+  column-gap: 6.4em;
+}
+
+// CONTENT ---------------------------------------------
+.popular__arrangement {
+  grid-column: span 2;
+
+  column-gap: 2.4em;
+}
+
+.popular__flower {
+  justify-items: center;
+
+  grid-column: span 1;
+}

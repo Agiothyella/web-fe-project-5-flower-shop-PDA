@@ -1,0 +1,78 @@
+// CATALOGUE CONTAINER -----------------------------------
+.catalogue__list {
+  //
+
+  &--today {
+    column-gap: 3.2rem;
+    margin-right: 4.8rem;
+  }
+
+  &--sale {
+    column-gap: 4.8rem;
+    margin: 0 1.8rem;
+  }
+
+  &--popular {
+    column-gap: 4.8rem;
+  }
+
+  &--popular-card {
+    gap: 2.4rem;
+  }
+}
+
+.catalogue__list {
+}
+
+// CATALOGUE CONTENT -------------------------------------
+.catalogue {
+  //
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__name {
+    text-transform: capitalize;
+  }
+
+  &__price {
+  }
+
+  &__discount {
+    span {
+      text-decoration: line-through;
+    }
+  }
+}
+
+// CARD CATALOGUE CONTENT -----------------------------------
+.catalogue {
+  //
+
+  &__item--card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+  }
+
+  &__name--card {
+  }
+
+  &__price--card {
+  }
+
+  &__text--card {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}

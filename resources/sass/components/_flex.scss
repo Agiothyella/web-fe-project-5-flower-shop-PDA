@@ -1,0 +1,60 @@
+// FLEX ---------------------------------------------------
+.flex {
+  display: flex;
+
+  &--normal-h {
+  }
+
+  &--reverse-h {
+    flex-direction: row-reverse;
+  }
+
+  &--normal-v {
+    flex-direction: column;
+  }
+
+  &--reverse-v {
+    flex-direction: column-reverse;
+  }
+}
+
+// FLEX POSITIONING ----------------------------------------
+.flex {
+  &--stretch-stretch {
+    justify-content: space-between;
+  }
+
+  &--stretch-center {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &--stretch-start {
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &--stretch-end {
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &--center-stretch {
+    justify-content: center;
+  }
+
+  &--center-center {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--center-start {
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  &--center-end {
+    justify-content: center;
+    align-items: flex-end;
+  }
+}

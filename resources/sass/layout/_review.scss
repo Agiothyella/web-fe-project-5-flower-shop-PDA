@@ -1,0 +1,64 @@
+// CONTAINER ----------------------------------------------------
+.review__container {
+  column-gap: 4.8em;
+}
+
+// SHOP LEFT ----------------------------------------------------
+.review__shop {
+  grid-column: span 1;
+
+  align-items: center;
+}
+
+.review__shop {
+  &__card {
+  }
+
+  &__point {
+  }
+
+  &__star {
+    svg {
+      width: 2.25em;
+      height: 2.25em;
+    }
+  }
+
+  &__description {
+    text-align: center;
+  }
+}
+
+// PRODUCT RIGHT -----------------------------------------------
+.review__product {
+  grid-column: span 3;
+}
+
+.review__product {
+  //
+
+  &__review {
+  }
+
+  &__quote {
+  }
+
+  &__img {
+    width: 7em;
+    height: 7em;
+
+    object-fit: cover;
+  }
+
+  &__reviewer {
+  }
+
+  &__star {
+  }
+
+  &__name {
+  }
+
+  &__date {
+  }
+}

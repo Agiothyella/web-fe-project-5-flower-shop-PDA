@@ -1,0 +1,109 @@
+// MAIN LAYOUT CONTAINER ------------------------------------
+.container {
+}
+
+// HEADER & TOP NAV -----------------------------------------
+.header {
+  z-index: 1000;
+  position: fixed;
+
+  height: 9em;
+  width: 100%;
+  background-color: $color-primary-tint;
+  box-shadow: $bax-shadow-medium-bottom;
+}
+
+// SECTIONS ---------------------------------------------------
+.section {
+  padding: 8em 1.6em;
+
+  &--today {
+    grid-column: 1 / -1;
+
+    padding: 0;
+    background-color: $color-secondary;
+  }
+
+  &--popular {
+    grid-column: 1 / -1;
+
+    margin: 2em 0 0;
+    padding-bottom: 4.8em;
+
+    background-color: $color-primary-tint;
+    box-shadow: $box-shadow-small-top;
+  }
+
+  &--sale {
+    grid-column: 1 / -1;
+
+    padding: 4.8em 4.8em 9.6em;
+
+    background-color: $color-primary-tint;
+    box-shadow: $bax-shadow-small-bottom;
+  }
+
+  &--seasonal {
+    grid-column: 2 / span 1;
+  }
+
+  &--review {
+    grid-column: 2 / span 1;
+
+    padding: 4.8em;
+
+    background-color: $color-primary-tint;
+    box-shadow: $bax-shadow-small-bottom;
+  }
+
+  &--contact {
+    grid-column: 2 / span 1;
+
+    padding: 4.8em;
+    margin: 2em 0 0;
+    column-gap: 3.2em;
+
+    background-color: $color-primary-tint;
+    box-shadow: $bax-shadow-small-bottom;
+  }
+
+  &--introduction {
+    grid-column: 2 / span 1;
+  }
+}
+
+// SECTION CONTAINER ----------------------------------------
+.section__container {
+  width: 100%;
+  max-width: 120em;
+  padding: 0 1.6em;
+
+  &--header {
+  }
+
+  &--nav {
+    width: auto;
+  }
+
+  &--today {
+    align-content: start;
+    align-items: center;
+    justify-content: start;
+    grid-template-rows: max-content 1fr;
+
+    column-gap: 4.8em;
+  }
+
+  &--popular {
+    padding-bottom: 3.6em;
+    border-bottom: 2px solid $color-secondary;
+  }
+
+  &--sale {
+  }
+}
+
+// FOOTER ---------------------------------------------------
+.footer {
+  background-color: $color-secondary-shade;
+}

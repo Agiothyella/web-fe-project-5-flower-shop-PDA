@@ -1,0 +1,26 @@
+.c-search {
+  // OVERALL CONTAINER ----------------------------------
+  &__form {
+  }
+
+  // INPUT FIELD ----------------------------------------
+  &__input {
+    width: 100%;
+    border: 1px solid $color-grey-light;
+  }
+
+  // BUTTON ---------------------------------------------
+  &__button {
+    border: none;
+    background-color: $color-grey-light;
+  }
+
+  // BUTTON ICON ----------------------------------------
+  &__icon {
+    height: 2.5rem;
+    width: 2.5rem;
+
+    padding: 0.3rem;
+    fill: $color-grey-medium;
+  }
+}
