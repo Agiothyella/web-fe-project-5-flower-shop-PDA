@@ -7,6 +7,11 @@ const headerEl = document.querySelector(".header");
 const headerNavEl = document.querySelector(".header__nav");
 const headerSubnavEl = document.querySelectorAll(".header__subnav");
 
+const headerSubnavContainerEl = document.querySelectorAll(
+  ".header__subnav__container"
+);
+const headerSubnavMainEl = document.querySelectorAll(".header__subnav__main");
+
 // ----- TODAY SECTION -----
 const todayEl = document.querySelector(".section--today");
 
@@ -44,12 +49,6 @@ const renderZPattern = function (nodeList, class1 = "_", class2 = "_") {
   });
 };
 
-const addClassToPrevSibling = function (nodeList, classToAdd) {
-  nodeList.forEach((node) =>
-    node.previousElementSibling.classList.add(classToAdd)
-  );
-};
-
 const setRelativePositionToHeader = function () {
   const headerHeight = headerEl.getBoundingClientRect().height;
 
@@ -59,6 +58,17 @@ const setRelativePositionToHeader = function () {
     el.style.top = `${headerHeight}px`;
   });
 };
+
+const addClassToPrevSibling = function (nodeList, classToAdd) {
+  nodeList.forEach((node) =>
+    node.previousElementSibling.classList.add(classToAdd)
+  );
+};
+
+const addClassToNodeList = function (nodeList, classToAdd) {
+  nodeList.forEach((node) => node.classList.add(classToAdd));
+};
+
 // ---------------------------------------------------
 
 // -
@@ -70,10 +80,21 @@ const setRelativePositionToHeader = function () {
 //-------------------------------------------------
 // --------------------------------------------------- INIT PAGE ----
 // ----- FUNCTIONS -----
-const initPage = function () {
-  setRelativePositionToHeader();
-  addClassToPrevSibling(headerSubnavEl, "nav__have-subnav");
+const initNodeListClases = function () {
+  addClassToNodeList(headerSubnavContainerEl, "flex");
+  addClassToNodeList(headerSubnavContainerEl, "flex--normal-h");
+  addClassToNodeList(headerSubnavContainerEl, "flex--stretch-start");
 
+  addClassToNodeList(headerSubnavEl, "flex");
+  addClassToNodeList(headerSubnavEl, "flex--normal-v");
+  addClassToNodeList(headerSubnavEl, "flex--stretch-center");
+
+  addClassToNodeList(headerSubnavMainEl, "flex");
+  addClassToNodeList(headerSubnavMainEl, "flex--normal-h");
+  addClassToNodeList(headerSubnavMainEl, "flex--stretch-start");
+};
+
+const initZPattern = function () {
   renderZPattern(
     saleCatalogueEl,
     "sale__catalogue--left",
@@ -93,6 +114,13 @@ const initPage = function () {
     "sale__subtitle--right"
   );
   renderZPattern(saleMoreEl, "sale__more--left", "sale__more--right");
+};
+
+const initPage = function () {
+  setRelativePositionToHeader();
+  addClassToPrevSibling(headerSubnavEl, "nav__have-subnav");
+  initZPattern();
+  initNodeListClases();
 };
 
 // ----- RUN FUNCTIONS -----

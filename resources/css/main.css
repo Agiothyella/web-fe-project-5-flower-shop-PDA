@@ -267,14 +267,29 @@ a:visited {
   font-size: 1em;
 }
 
+.header__top__text {
+  margin: 1em 0;
+}
+
+.header__top__logo {
+  margin-right: 6.4em;
+}
+
 .header__top__logo img {
   height: 4.5em;
   padding: 0.2em 0;
 }
 
-.header__top__text {
-  width: 100%;
-  margin: 1em 0 0 20em;
+.header__top__summary {
+  margin: 1em 0;
+}
+
+.header__top__user {
+  margin-left: 6.4em;
+}
+
+.header__top__user a:first-child {
+  margin-right: 1.2em;
 }
 
 .header__nav {
@@ -310,25 +325,40 @@ a:visited {
   transition: color 0.1s;
 }
 
+.header__subnav__container {
+  max-width: 114em;
+}
+
+.header__subnav__main {
+  flex-wrap: wrap;
+  padding: 0.4em 1.2em;
+  margin: 1.8em 0;
+}
+
 .header__subnav {
-  display: none;
   position: absolute;
   left: 0;
-  height: 550px;
   width: 100%;
   overflow: hidden;
   background-color: #f5fbd9;
   box-shadow: 0 0.2rem 0.6rem -0.4rem rgba(0, 0, 0, 0.2);
 }
 
-.header__subnav__container {
-  width: 100%;
-  max-width: 114em;
+.header__subnav__nav {
+  margin-right: 6.4em;
 }
 
 .header__subnav__header {
   text-transform: uppercase;
   font-weight: 500;
+}
+
+.header__subnav__img {
+  margin-left: 6.4em;
+}
+
+.header__subnav__img img {
+  height: 25em;
 }
 
 .c-search__input {
