@@ -109,7 +109,7 @@
   overflow: hidden;
 
   background-color: $color-primary-tint;
-  box-shadow: 0 0.2rem 0.6rem -0.4rem rgba($color-black, 0.2);
+  box-shadow: $bax-shadow-medium-bottom;
 
   &:hover {
     opacity: 1;

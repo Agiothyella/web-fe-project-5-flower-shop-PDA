@@ -343,7 +343,7 @@ a:visited {
   width: 100%;
   overflow: hidden;
   background-color: #f5fbd9;
-  box-shadow: 0 0.2rem 0.6rem -0.4rem rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 15px -3px, rgba(33, 37, 41, 0.05) 0px 4px 6px -2px;
 }
 
 .header__subnav:hover {
@@ -682,51 +682,55 @@ a:visited {
 }
 
 .seasonal__season {
-  position: relative;
+  flex-shrink: 1;
   height: 50em;
+  width: 100%;
 }
 
 .season {
-  position: absolute;
-  top: 0;
-  left: 0;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 70%;
+  width: 100%;
   height: 100%;
   height: 50em;
-}
-
-.season--spring {
-  background-image: url("../media/img/season-spring.jpg");
-}
-
-.season--spring-bw {
-  background-image: url("../media/img/season-spring-bw.jpg");
-}
-
-.season--winter {
-  background-image: url("../media/img/season-winter.jpg");
-}
-
-.season--winter-bw {
-  background-image: url("../media/img/season-winter-bw.jpg");
+  flex: 1 1 100%;
+  transition: all 0.5s;
 }
 
 .season--autumn {
   background-image: url("../media/img/season-autumn.jpg");
+  background-position: center center;
 }
 
-.season--autumn-bw {
-  background-image: url("../media/img/season-autumn-bw.jpg");
+.season--autumn:hover {
+  flex-basis: 400%;
+}
+
+.season--winter {
+  background-image: url("../media/img/season-winter.jpg");
+  background-position: center bottom;
+}
+
+.season--winter:hover {
+  flex-basis: 400%;
+}
+
+.season--spring {
+  background-image: url("../media/img/season-spring.jpg");
+  background-position: center center;
+}
+
+.season--spring:hover {
+  flex-basis: 400%;
 }
 
 .season--summer {
   background-image: url("../media/img/season-summer.jpg");
+  background-position: center center;
 }
 
-.season--summer-bw {
-  background-image: url("../media/img/season-summer-bw.jpg");
+.season--summer:hover {
+  flex-basis: 400%;
 }
 
 .today__header {
