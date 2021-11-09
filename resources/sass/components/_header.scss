@@ -67,7 +67,7 @@
 
     &:hover,
     &:active {
-      background-color: $color-primary;
+      background-color: $color-primary-shade;
     }
   }
 }
@@ -108,7 +108,7 @@
   width: 100%;
   overflow: hidden;
 
-  background-color: $color-primary-tint;
+  background-color: $color-primary;
   box-shadow: $bax-shadow-medium-bottom;
 
   &:hover {

@@ -22,6 +22,10 @@ const saleTitleEl = document.querySelectorAll(".sale__title");
 const saleSubtitleEl = document.querySelectorAll(".sale__subtitle");
 const saleMoreEl = document.querySelectorAll(".sale__more");
 
+// ----- SEASON INTERACTIVE -----
+const seasonalEl = document.querySelector(".seasonal__season");
+const seasonEl = document.querySelectorAll(".season");
+
 // ----- REVIEW STAR -----
 const reviewShopEl = document.querySelector(".review__rating__star");
 const reviewProductsEl = document.querySelectorAll(
@@ -38,17 +42,6 @@ const reviewProductsEl = document.querySelectorAll(
 
 //--------------------------------------------------
 // -------------------------------------------------- FUNCTIONS -----
-// ----- SALE SECTION -----
-const renderZPattern = function (nodeList, class1 = "_", class2 = "_") {
-  nodeList.forEach(function (node, i) {
-    if (i % 2 === 0) {
-      node.classList.add(class1);
-    } else {
-      node.classList.add(class2);
-    }
-  });
-};
-
 const setRelativePositionToHeader = function () {
   const headerHeight = headerEl.getBoundingClientRect().height;
 
@@ -56,6 +49,16 @@ const setRelativePositionToHeader = function () {
 
   headerSubnavEl.forEach((el) => {
     el.style.top = `${headerHeight}px`;
+  });
+};
+
+const renderZPattern = function (nodeList, class1 = "_", class2 = "_") {
+  nodeList.forEach(function (node, i) {
+    if (i % 2 === 0) {
+      node.classList.add(class1);
+    } else {
+      node.classList.add(class2);
+    }
   });
 };
 
@@ -69,13 +72,21 @@ const addClassToNodeList = function (nodeList, classToAdd) {
   nodeList.forEach((node) => node.classList.add(classToAdd));
 };
 
+const removeClassFromNodeList = function (nodeList, className) {
+  nodeList.forEach((node) => node.classList.remove(className));
+};
+
 // ---------------------------------------------------
 
 // -
 // -
-// -
-// -
-// -
+// ----------------------------------------------- GLOBAL FUNCTION --
+seasonEl.forEach((node) =>
+  node.addEventListener("click", function (e) {
+    removeClassFromNodeList(seasonEl, "active-season");
+    node.classList.add("active-season");
+  })
+);
 
 //-------------------------------------------------
 // --------------------------------------------------- INIT PAGE ----

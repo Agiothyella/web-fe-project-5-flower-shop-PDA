@@ -9,7 +9,7 @@
 
   height: 9em;
   width: 100%;
-  background-color: $color-primary-tint;
+  background-color: $color-primary;
   box-shadow: $bax-shadow-medium-bottom;
 }
 
@@ -28,9 +28,9 @@
     grid-column: 1 / -1;
 
     margin: 2em 0 0;
-    padding-bottom: 4.8em;
+    padding-bottom: 8em;
 
-    background-color: $color-primary-tint;
+    background-color: $color-primary;
     box-shadow: $box-shadow-small-top;
   }
 
@@ -39,7 +39,7 @@
 
     padding: 4.8em 4.8em 9.6em;
 
-    background-color: $color-primary-tint;
+    background-color: $color-primary;
     box-shadow: $bax-shadow-small-bottom;
   }
 
@@ -52,7 +52,7 @@
 
     padding: 4.8em;
 
-    background-color: $color-primary-tint;
+    background-color: $color-primary;
     box-shadow: $bax-shadow-small-bottom;
   }
 
@@ -63,7 +63,7 @@
     margin: 2em 0 0;
     column-gap: 3.2em;
 
-    background-color: $color-primary-tint;
+    background-color: $color-primary;
     box-shadow: $bax-shadow-small-bottom;
   }
 
