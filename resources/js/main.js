@@ -12,6 +12,8 @@ const headerSubnavContainerEl = document.querySelectorAll(
 );
 const headerSubnavMainEl = document.querySelectorAll(".header__subnav__main");
 
+const headerNavItemEl = document.querySelectorAll(".header__nav__item");
+
 // ----- TODAY SECTION -----
 const todayEl = document.querySelector(".section--today");
 
@@ -25,6 +27,9 @@ const saleMoreEl = document.querySelectorAll(".sale__more");
 // ----- SEASON INTERACTIVE -----
 const seasonalEl = document.querySelector(".seasonal__season");
 const seasonEl = document.querySelectorAll(".season");
+const seasonFlowers = document.querySelectorAll(".season__flowers");
+
+const activeSeason = document.querySelector(".active-season");
 
 // ----- REVIEW STAR -----
 const reviewShopEl = document.querySelector(".review__rating__star");
@@ -42,16 +47,6 @@ const reviewProductsEl = document.querySelectorAll(
 
 //--------------------------------------------------
 // -------------------------------------------------- FUNCTIONS -----
-const setRelativePositionToHeader = function () {
-  const headerHeight = headerEl.getBoundingClientRect().height;
-
-  todayEl.style.marginTop = `${headerHeight}px`;
-
-  headerSubnavEl.forEach((el) => {
-    el.style.top = `${headerHeight}px`;
-  });
-};
-
 const renderZPattern = function (nodeList, class1 = "_", class2 = "_") {
   nodeList.forEach(function (node, i) {
     if (i % 2 === 0) {
@@ -80,12 +75,27 @@ const removeClassFromNodeList = function (nodeList, className) {
 
 // -
 // -
-// ----------------------------------------------- GLOBAL FUNCTION --
+// -------------------------------------- SPECIFIC FUNCTIONALITY --
+// ----- VARIABLES ------
+const headerHeight = headerEl.getBoundingClientRect().height;
+const activeSeasonWidth = activeSeason.getBoundingClientRect().width;
+
+// ----- FUNCTIONALITY ------
+todayEl.style.marginTop = `${headerHeight}px`;
+
+headerSubnavEl.forEach((node) => {
+  node.style.top = `${headerHeight}px`;
+});
+
 seasonEl.forEach((node) =>
   node.addEventListener("click", function (e) {
     removeClassFromNodeList(seasonEl, "active-season");
     node.classList.add("active-season");
   })
+);
+
+seasonFlowers.forEach(
+  (node) => (node.style.width = `${(70 / 100) * activeSeasonWidth}px`)
 );
 
 //-------------------------------------------------
@@ -128,7 +138,6 @@ const initZPattern = function () {
 };
 
 const initPage = function () {
-  setRelativePositionToHeader();
   addClassToPrevSibling(headerSubnavEl, "nav__have-subnav");
   initZPattern();
   initNodeListClases();

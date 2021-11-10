@@ -9,6 +9,7 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+  font-family: "Heebo", sans-serif;
 }
 
 body {
@@ -32,16 +33,21 @@ a:visited {
   color: #303030;
 }
 
-.t-header-huge {
+.t-header-big {
   font-size: 9.6rem;
   font-weight: 800;
+  font-family: "Inter", sans-serif;
   text-transform: uppercase;
+  letter-spacing: -0.07em;
 }
 
-.t-header-big {
+.t-header-big-bold {
   font-size: 8rem;
-  font-weight: 700;
+  font-weight: 900;
+  font-family: "Inter", sans-serif;
   text-transform: uppercase;
+  letter-spacing: -0.06em;
+  line-height: 0.8;
 }
 
 .t-header-medium {
@@ -77,7 +83,7 @@ a:visited {
 
 .catalogue__list--sale {
   column-gap: 4.8rem;
-  margin: 0 1.8rem;
+  margin: 0 3.6rem;
 }
 
 .catalogue__list--popular {
@@ -601,19 +607,19 @@ a:visited {
 .sale__category--1 {
   background-color: #f3eaf5;
   border-bottom: 2px solid #862e9c;
-  color: #43174e;
+  color: #6a257b;
 }
 
 .sale__category--2 {
   background-color: #f8e6e6;
   border-bottom: 2px solid #b50000;
-  color: #5b0000;
+  color: #990000;
 }
 
 .sale__category--3 {
   background-color: #f5f5f9;
   border-bottom: 2px solid #999cc5;
-  color: #4d4e63;
+  color: #5a5fa1;
 }
 
 .sale__container {
@@ -680,7 +686,7 @@ a:visited {
 }
 
 .sale__more {
-  grid-row: 3 / span 1;
+  grid-row: 2 / span 1;
   justify-self: center;
   align-self: start;
   text-align: center;
@@ -812,8 +818,8 @@ a:visited {
   display: none;
   align-self: end;
   justify-self: center;
-  width: 70%;
   column-gap: 2em;
+  row-gap: 1em;
 }
 
 .season__flowers__link {
