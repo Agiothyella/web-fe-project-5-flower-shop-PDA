@@ -9,7 +9,7 @@
 
   height: 9em;
   width: 100%;
-  background-color: $color-primary;
+  background-color: $color-primary-tint;
   box-shadow: $bax-shadow-medium-bottom;
 }
 
@@ -37,14 +37,19 @@
   &--sale {
     grid-column: 1 / -1;
 
-    padding: 4.8em 4.8em 9.6em;
+    padding-top: 4.8em;
 
     background-color: $color-primary;
-    box-shadow: $bax-shadow-small-bottom;
   }
 
   &--seasonal {
-    grid-column: 2 / span 1;
+    grid-column: 1 / -1;
+
+    padding-top: 4.8em;
+    margin-bottom: 9.6em;
+
+    background-color: $color-primary;
+    box-shadow: $bax-shadow-small-bottom;
   }
 
   &--review {

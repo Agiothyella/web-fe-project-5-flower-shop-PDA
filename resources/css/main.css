@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background-color: #e5f59d;
+  background-color: #edf8bc;
   color: #303030;
 }
 
@@ -64,6 +64,10 @@ a:visited {
 
 .u-flip-img-h {
   transform: scaleX(-1);
+}
+
+.btn {
+  display: inline-block;
 }
 
 .catalogue__list--today {
@@ -315,7 +319,7 @@ a:visited {
 }
 
 .header__nav__link:hover, .header__nav__link:active {
-  background-color: #e5f59d;
+  background-color: #edf8bc;
 }
 
 .nav__have-subnav {
@@ -348,7 +352,7 @@ a:visited {
   left: 0;
   width: 100%;
   overflow: hidden;
-  background-color: #f5fbd9;
+  background-color: #f2facf;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 15px -3px, rgba(33, 37, 41, 0.05) 0px 4px 6px -2px;
 }
 
@@ -420,7 +424,7 @@ a:visited {
   position: fixed;
   height: 9em;
   width: 100%;
-  background-color: #f5fbd9;
+  background-color: #fafded;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 15px -3px, rgba(33, 37, 41, 0.05) 0px 4px 6px -2px;
 }
 
@@ -438,25 +442,28 @@ a:visited {
   grid-column: 1 / -1;
   margin: 2em 0 0;
   padding-bottom: 8em;
-  background-color: #f5fbd9;
+  background-color: #f2facf;
   box-shadow: rgba(33, 37, 41, 0.05) 0px -10px 15px -3px, rgba(33, 37, 41, 0.05) 0px -4px 6px -2px;
 }
 
 .section--sale {
   grid-column: 1 / -1;
-  padding: 4.8em 4.8em 9.6em;
-  background-color: #f5fbd9;
-  box-shadow: rgba(33, 37, 41, 0.02) 0px 10px 15px -3px, rgba(33, 37, 41, 0.05) 0px 4px 6px -2px;
+  padding-top: 4.8em;
+  background-color: #f2facf;
 }
 
 .section--seasonal {
-  grid-column: 2 / span 1;
+  grid-column: 1 / -1;
+  padding-top: 4.8em;
+  margin-bottom: 9.6em;
+  background-color: #f2facf;
+  box-shadow: rgba(33, 37, 41, 0.02) 0px 10px 15px -3px, rgba(33, 37, 41, 0.05) 0px 4px 6px -2px;
 }
 
 .section--review {
   grid-column: 2 / span 1;
   padding: 4.8em;
-  background-color: #f5fbd9;
+  background-color: #f2facf;
   box-shadow: rgba(33, 37, 41, 0.02) 0px 10px 15px -3px, rgba(33, 37, 41, 0.05) 0px 4px 6px -2px;
 }
 
@@ -465,7 +472,7 @@ a:visited {
   padding: 4.8em;
   margin: 2em 0 0;
   column-gap: 3.2em;
-  background-color: #f5fbd9;
+  background-color: #f2facf;
   box-shadow: rgba(33, 37, 41, 0.02) 0px 10px 15px -3px, rgba(33, 37, 41, 0.05) 0px 4px 6px -2px;
 }
 
@@ -692,8 +699,8 @@ a:visited {
   padding: 0.2em;
   height: 50em;
   width: 100%;
-  background-color: #f5fbd9;
-  transform: translate3d(0, 0, 0);
+  background-color: #f2facf;
+  transform: translate3d(0, 0, 0) rotate3d(0);
 }
 
 .season {
@@ -701,9 +708,12 @@ a:visited {
   background-repeat: no-repeat;
   position: relative;
   width: 100%;
+  padding: 1em 2em;
+  overflow: hidden;
+  cursor: pointer;
   flex: 1 1 100%;
   transition: all 0.5s;
-  transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0) rotate3d(0);
 }
 
 .season--autumn {
@@ -711,9 +721,25 @@ a:visited {
   background-position: center center;
 }
 
+.season--autumn .season__flowers__img {
+  border: 3px solid #e0a57d;
+}
+
+.season--autumn .season__flowers__name {
+  color: #995224;
+}
+
 .season--winter {
   background-image: url("../media/img/season-winter.jpg");
   background-position: center bottom;
+}
+
+.season--winter .season__flowers__img {
+  border: 3px solid #d0d5e8;
+}
+
+.season--winter .season__flowers__name {
+  color: #48578e;
 }
 
 .season--spring {
@@ -721,14 +747,30 @@ a:visited {
   background-position: center center;
 }
 
+.season--spring .season__flowers__img {
+  border: 3px solid #daabe6;
+}
+
+.season--spring .season__flowers__name {
+  color: #6a257b;
+}
+
 .season--summer {
   background-image: url("../media/img/season-summer.jpg");
   background-position: center center;
 }
 
-.season {
-  overflow: hidden;
-  cursor: pointer;
+.season--summer .season__flowers__img {
+  border: 3px solid #ffd98c;
+}
+
+.season--summer .season__flowers__name {
+  color: #8c5e00;
+}
+
+.season__header {
+  align-self: start;
+  margin-bottom: auto;
 }
 
 .season__title {
@@ -759,6 +801,41 @@ a:visited {
   color: #8c5e00;
 }
 
+.season__subtitle {
+  display: none;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+
+.season__flowers {
+  display: none;
+  align-self: end;
+  justify-self: center;
+  width: 70%;
+  column-gap: 2em;
+}
+
+.season__flowers__link {
+  position: relative;
+}
+
+.season__flowers__img {
+  width: 100%;
+}
+
+.season__flowers__name {
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
+}
+
+.season__more {
+  display: none;
+  align-self: end;
+  justify-self: end;
+}
+
 .season.active-season {
   flex-basis: 500%;
   cursor: auto;
@@ -774,6 +851,18 @@ a:visited {
   font-size: 4.6rem;
   transform: rotate(0) translate(0, 0);
   text-shadow: -1px -1px 2px #ededed, 1px -1px 2px #ededed, 1px -1px 2px #ededed, 1px 1px 2px #ededed;
+}
+
+.active-season .season__subtitle {
+  display: block;
+}
+
+.active-season .season__flowers {
+  display: grid;
+}
+
+.active-season .season__more {
+  display: inline-block;
 }
 
 .today__header {

@@ -7,7 +7,7 @@
   width: 100%;
 
   background-color: $color-primary;
-  transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0) rotate3d(0);
 }
 
 // CONTENT ----------------------------------------------
@@ -17,11 +17,15 @@
 
   position: relative;
   width: 100%;
+  padding: 1em 2em;
+
+  overflow: hidden;
+  cursor: pointer;
 
   flex: 1 1 100%;
 
   transition: all 0.5s;
-  transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0) rotate3d(0);
 }
 
 .season {
@@ -30,28 +34,70 @@
   &--autumn {
     background-image: url("../media/img/season-autumn.jpg");
     background-position: center center;
+
+    .season__flowers {
+      &__img {
+        border: 3px solid $color-font-autumn-tint;
+      }
+
+      &__name {
+        color: $color-font-autumn;
+      }
+    }
   }
 
   &--winter {
     background-image: url("../media/img/season-winter.jpg");
     background-position: center bottom;
+
+    .season__flowers {
+      &__img {
+        border: 3px solid $color-font-winter-tint;
+      }
+
+      &__name {
+        color: $color-font-winter;
+      }
+    }
   }
 
   &--spring {
     background-image: url("../media/img/season-spring.jpg");
     background-position: center center;
+
+    .season__flowers {
+      &__img {
+        border: 3px solid $color-font-spring-tint;
+      }
+
+      &__name {
+        color: $color-font-spring;
+      }
+    }
   }
 
   &--summer {
     background-image: url("../media/img/season-summer.jpg");
     background-position: center center;
+
+    .season__flowers {
+      &__img {
+        border: 3px solid $color-font-summer-tint;
+      }
+
+      &__name {
+        color: $color-font-summer;
+      }
+    }
   }
 }
 
-.season {
-  overflow: hidden;
-  cursor: pointer;
+.season__header {
+  align-self: start;
+  margin-bottom: auto;
+}
 
+.season {
   &__title {
     position: absolute;
     bottom: 0;
@@ -83,26 +129,83 @@
       color: $color-font-summer;
     }
   }
+
+  &__subtitle {
+    display: none;
+
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+  }
 }
 
+.season__flowers {
+  display: none;
+
+  align-self: end;
+  justify-self: center;
+
+  width: 70%;
+
+  column-gap: 2em;
+}
+
+.season__flowers {
+  &__flower {
+  }
+
+  &__link {
+    position: relative;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__name {
+    position: absolute;
+    bottom: 3px;
+    left: 3px;
+  }
+}
+
+.season__more {
+  display: none;
+  align-self: end;
+  justify-self: end;
+}
 // FUNCTIONALITY --------------------------------------------------
 .season.active-season {
   flex-basis: 500%;
   cursor: auto;
 }
 
-.active-season .season__title {
-  -webkit-touch-callout: default;
-  user-select: text;
+.active-season {
+  .season__title {
+    -webkit-touch-callout: default;
+    user-select: text;
 
-  position: relative;
-  bottom: auto;
-  right: auto;
-  width: auto;
+    position: relative;
+    bottom: auto;
+    right: auto;
+    width: auto;
 
-  font-size: 4.6rem;
+    font-size: 4.6rem;
 
-  transform: rotate(0) translate(0, 0);
-  text-shadow: -1px -1px 2px $color-font-light, 1px -1px 2px $color-font-light,
-    1px -1px 2px $color-font-light, 1px 1px 2px $color-font-light;
+    transform: rotate(0) translate(0, 0);
+    text-shadow: -1px -1px 2px $color-font-light, 1px -1px 2px $color-font-light,
+      1px -1px 2px $color-font-light, 1px 1px 2px $color-font-light;
+  }
+
+  .season__subtitle {
+    display: block;
+  }
+
+  .season__flowers {
+    display: grid;
+  }
+
+  .season__more {
+    display: inline-block;
+  }
 }
