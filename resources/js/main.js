@@ -129,18 +129,18 @@ headerSubnavEl.forEach((node) => {
   node.previousElementSibling.classList.add("nav__have-subnav");
 
   node.addEventListener("mouseenter", function (e) {
-    node.previousElementSibling.classList.add("subnav-open");
+    e.target.previousElementSibling.classList.add("subnav-open");
   });
 
   node.addEventListener("mouseleave", function (e) {
-    node.previousElementSibling.classList.remove("subnav-open");
+    e.target.previousElementSibling.classList.remove("subnav-open");
   });
 });
 
 seasonEl.forEach((node) =>
   node.addEventListener("click", function (e) {
     removeClassFromNodeList(seasonEl, "active-season");
-    node.classList.add("active-season");
+    e.target.classList.add("active-season");
   })
 );
 
@@ -154,15 +154,32 @@ headerNavLinkEl.forEach(function (link) {
       e.preventDefault();
 
       removeClassFromNodeList(headerNavLinkEl, "active-subnav");
-      link.classList.add("active-subnav");
+      e.target.classList.add("active-subnav");
     });
 
     link.addEventListener("mouseenter", function (e) {
-      link.classList.add("subnav-open");
+      e.target.classList.add("subnav-open");
     });
 
     link.addEventListener("mouseleave", function (e) {
-      link.classList.remove("subnav-open");
+      e.target.classList.remove("subnav-open");
+    });
+
+    link.addEventListener("focus", function (e) {
+      removeClassFromNodeList(headerNavLinkEl, "subnav-open");
+      e.target.classList.add("subnav-open");
     });
   }
 });
+
+// HACK:
+const navHaveSubnav = document.querySelectorAll(".nav__have-subnav");
+const lastHaveSubnav =
+  navHaveSubnav[navHaveSubnav.length - 1].nextElementSibling;
+const lastSubnav = lastHaveSubnav.querySelectorAll(".header__subnav__link");
+
+lastSubnav[lastSubnav.length - 1].addEventListener("blur", (e) =>
+  e.target
+    .closest(".header__subnav")
+    .previousElementSibling.classList.remove("subnav-open")
+);

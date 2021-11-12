@@ -1,18 +1,39 @@
 .c-search {
   // OVERALL CONTAINER ----------------------------------
   &__form {
+    width: 100%;
   }
 
   // INPUT FIELD ----------------------------------------
   &__input {
     width: 100%;
-    border: 1px solid $color-grey-light;
+
+    height: 2.79rem;
+    padding: 0.2rem 3.5rem 0.2rem 1rem;
+
+    color: inherit;
+    font-family: inherit;
+    font-size: $font-size-tiny;
+
+    border: 1px solid $color-font-grey-light;
+
+    &::-webkit-input-placeholder,
+    &:-ms-input-placeholder {
+      color: $color-font-grey-light;
+    }
+
+    &::-moz-placeholder {
+      color: $color-font-grey-light;
+      opacity: 1;
+    }
   }
 
   // BUTTON ---------------------------------------------
   &__button {
     border: none;
     background-color: $color-grey-light;
+
+    transform: translateX(-2.5rem);
   }
 
   // BUTTON ICON ----------------------------------------

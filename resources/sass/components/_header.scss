@@ -6,6 +6,8 @@
 }
 
 .header__top__brand {
+  align-items: center;
+  margin-right: 9.6rem;
 }
 
 .header__top__text {
@@ -19,23 +21,43 @@
     margin-right: 6.4rem;
 
     img {
-      height: 4.5rem;
-      padding: 0.2rem 0;
+      height: 5rem;
+      padding: 0.4rem 0;
     }
   }
 
   &__summary {
-    margin: 1rem 0;
+    display: inline-block;
+
+    max-width: 25rem;
+
+    text-align: center;
+    font-size: 1.2em;
+    color: $color-font-grey-dark;
   }
 
   &__search {
+    min-width: 35rem;
   }
 
   &__user {
     margin-left: 6.4rem;
 
+    font-size: $font-size-tiny;
+    text-transform: uppercase;
+
     a:first-child {
-      margin-right: 1.2rem;
+      margin-right: 2.4rem;
+    }
+
+    a:link,
+    a:visited {
+    }
+
+    a:hover,
+    a:active {
+      color: $color-font-active;
+      text-decoration: underline;
     }
   }
 }
@@ -92,15 +114,15 @@
     transition: color 0.1s;
   }
 
-  &:hover ~ .header__subnav {
-    opacity: 1;
-    visibility: visible;
-  }
+  // &:hover ~ .header__subnav {
+  //   opacity: 1;
+  //   visibility: visible;
+  // }
 
-  &:hover ~ .header__subnav .header__subnav__container {
-    opacity: 1;
-    visibility: visible;
-  }
+  // &:hover ~ .header__subnav .header__subnav__container {
+  //   opacity: 1;
+  //   visibility: visible;
+  // }
 }
 
 // HEADER SUB NAVIGATION ---------------------------------------
@@ -117,15 +139,15 @@
   background-color: $color-primary;
   box-shadow: $bax-shadow-medium-bottom;
 
-  &:hover {
-    opacity: 1;
-    visibility: visible;
-  }
+  // &:hover {
+  //   opacity: 1;
+  //   visibility: visible;
+  // }
 
-  &:hover .header__subnav__container {
-    opacity: 1;
-    visibility: visible;
-  }
+  // &:hover .header__subnav__container {
+  //   opacity: 1;
+  //   visibility: visible;
+  // }
 }
 
 .header__subnav__container {
@@ -236,5 +258,15 @@
   &:visited {
     color: $color-font-dark !important;
     background-color: $color-primary-shade !important;
+  }
+
+  ~ .header__subnav {
+    opacity: 1;
+    visibility: visible;
+
+    .header__subnav__container {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }
