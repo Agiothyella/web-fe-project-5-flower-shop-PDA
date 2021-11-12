@@ -7,7 +7,7 @@
   z-index: 1000;
   position: fixed;
 
-  height: 9em;
+  height: 9rem;
   width: 100%;
   background-color: $color-primary-tint;
   box-shadow: $bax-shadow-medium-bottom;
@@ -15,7 +15,7 @@
 
 // SECTIONS ---------------------------------------------------
 .section {
-  padding: 8em 1.6em;
+  padding: 8rem 1.6rem;
 
   &--today {
     grid-column: 1 / -1;
@@ -27,8 +27,8 @@
   &--popular {
     grid-column: 1 / -1;
 
-    margin: 2em 0 0;
-    padding-bottom: 8em;
+    margin: 2rem 0 0;
+    padding-bottom: 8rem;
 
     background-color: $color-primary;
     box-shadow: $box-shadow-small-top;
@@ -37,7 +37,7 @@
   &--sale {
     grid-column: 1 / -1;
 
-    padding-top: 4.8em;
+    padding-top: 4.8rem;
 
     background-color: $color-primary;
   }
@@ -45,8 +45,8 @@
   &--seasonal {
     grid-column: 1 / -1;
 
-    padding-top: 4.8em;
-    margin-bottom: 9.6em;
+    padding-top: 4.8rem;
+    margin-bottom: 9.6rem;
 
     background-color: $color-primary;
     box-shadow: $bax-shadow-small-bottom;
@@ -55,7 +55,7 @@
   &--review {
     grid-column: 2 / span 1;
 
-    padding: 4.8em;
+    padding: 4.8rem;
 
     background-color: $color-primary;
     box-shadow: $bax-shadow-small-bottom;
@@ -64,9 +64,9 @@
   &--contact {
     grid-column: 2 / span 1;
 
-    padding: 4.8em;
-    margin: 2em 0 0;
-    column-gap: 3.2em;
+    padding: 4.8rem;
+    margin: 2rem 0 0;
+    column-gap: 3.2rem;
 
     background-color: $color-primary;
     box-shadow: $bax-shadow-small-bottom;
@@ -80,8 +80,8 @@
 // SECTION CONTAINER ----------------------------------------
 .section__container {
   width: 100%;
-  max-width: 120em;
-  padding: 0 1.6em;
+  max-width: 120rem;
+  padding: 0 1.6rem;
 
   &--header {
   }
@@ -92,15 +92,15 @@
 
   &--today {
     align-content: start;
-    align-items: center;
+    align-itrems: center;
     justify-content: start;
-    grid-template-rows: max-content 1fr;
+    grid-tremplate-rows: max-content 1fr;
 
-    column-gap: 4.8em;
+    column-gap: 4.8rem;
   }
 
   &--popular {
-    padding-bottom: 3.6em;
+    padding-bottom: 3.6rem;
     border-bottom: 2px solid $color-secondary;
   }
 

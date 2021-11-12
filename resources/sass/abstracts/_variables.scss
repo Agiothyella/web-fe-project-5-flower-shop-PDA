@@ -16,9 +16,12 @@ $color-grey-dark: #212529;
 $color-grey-medium: #495057;
 $color-grey-light: #dee2e6;
 
-$color-font-dark: #303030;
-$color-font-grey: #c2c2c2;
+$color-font-dark: #3f3f3f;
+$color-font-grey-dark: #5d5d5d;
+$color-font-grey: #9a9a9a;
 $color-font-light: #ededed;
+
+$color-font-active: #54769c;
 
 // SPECIAL SALE SECTION COLORS ----------
 $color-sale-1: #862e9c;
@@ -52,7 +55,8 @@ $font-title: "Inter", sans-serif;
 $font-primary: "Heebo", sans-serif;
 // $font-secondary: ;
 
-$font-size-tiny: 1.6em;
+$font-size-tiny: 1.4em;
+$font-size-smaller: 1.6em;
 $font-size-small: 1.8em;
 $font-size-medium: 2.4em;
 $font-size-large: 3.6em;

@@ -1,6 +1,6 @@
 // CONTAINER ----------------------------------------------------
 .review__container {
-  column-gap: 4.8em;
+  column-gap: 4.8rem;
 }
 
 // SHOP LEFT ----------------------------------------------------
@@ -19,8 +19,8 @@
 
   &__star {
     svg {
-      width: 2.25em;
-      height: 2.25em;
+      width: 2.25rem;
+      height: 2.25rem;
     }
   }
 
@@ -44,8 +44,8 @@
   }
 
   &__img {
-    width: 7em;
-    height: 7em;
+    width: 7rem;
+    height: 7rem;
 
     object-fit: cover;
   }

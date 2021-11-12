@@ -1,7 +1,7 @@
 // SALE CATEGORY CONTAINER (1 ROW) ---------------------------------
 .sale__category {
-  column-gap: 8em;
-  padding: 1.6em 0 0.8em;
+  column-gap: 8rem;
+  padding: 1.6rem 0 0.8rem;
 
   &--1 {
     // background-color: rgba($color-sale-1, 0.05);
@@ -26,11 +26,11 @@
 }
 
 .sale__container {
-  row-gap: 3.6em;
+  row-gap: 3.6rem;
 }
 
 .sale__section__header {
-  margin: 0 0 4.8em;
+  margin: 0 0 4.8rem;
 }
 
 // MAIN SALE ITEMS GRID -----------------------------------------
@@ -38,7 +38,7 @@
   grid-row: 1 / span 2;
   align-self: center;
 
-  padding: 0 3.2em;
+  padding: 0 3.2rem;
 
   &--left {
     grid-column: 1 / span 5;

@@ -14,7 +14,7 @@ html {
 
 body {
   background-color: #edf8bc;
-  color: #303030;
+  color: #3f3f3f;
 }
 
 img {
@@ -30,7 +30,7 @@ ul {
 a:link,
 a:visited {
   text-decoration: none;
-  color: #303030;
+  color: #3f3f3f;
 }
 
 .t-header-big {
@@ -180,13 +180,13 @@ a:visited {
 }
 
 .footer__payments__logo {
-  width: 3em;
-  height: 3em;
+  width: 3rem;
+  height: 3rem;
 }
 
 .footer__social__logo {
-  width: 3.5em;
-  height: 3.5em;
+  width: 3.5rem;
+  height: 3.5rem;
 }
 
 .grid {
@@ -284,28 +284,28 @@ a:visited {
 }
 
 .header__top__text {
-  margin: 1em 0;
+  margin: 1rem 0;
 }
 
 .header__top__logo {
-  margin-right: 6.4em;
+  margin-right: 6.4rem;
 }
 
 .header__top__logo img {
-  height: 4.5em;
-  padding: 0.2em 0;
+  height: 4.5rem;
+  padding: 0.2rem 0;
 }
 
 .header__top__summary {
-  margin: 1em 0;
+  margin: 1rem 0;
 }
 
 .header__top__user {
-  margin-left: 6.4em;
+  margin-left: 6.4rem;
 }
 
 .header__top__user a:first-child {
-  margin-right: 1.2em;
+  margin-right: 1.2rem;
 }
 
 .header__nav {
@@ -319,25 +319,28 @@ a:visited {
 }
 
 .header__nav__link {
-  display: inline-block;
   height: 100%;
-  padding: 0.5em 1.2em;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__nav__link:link, .header__nav__link:visited {
+  color: #ededed;
 }
 
 .header__nav__link:hover, .header__nav__link:active {
+  color: #3f3f3f;
   background-color: #edf8bc;
 }
 
-.nav__have-subnav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .nav__have-subnav::after {
+  display: inline-block;
   content: "\02228";
-  font-size: 1em;
-  margin-left: 0.3em;
+  font-size: 0.8em;
+  margin-left: 0.5rem;
   transition: color 0.1s;
 }
 
@@ -377,35 +380,86 @@ a:visited {
   visibility: hidden;
   transform: translate3d(0, 0, 0);
   transition: opacity 0.6s ease-out;
-  min-width: 48em;
-  max-width: 114em;
+  min-width: 48rem;
+  max-width: 114rem;
+}
+
+.header__subnav__container > p {
+  display: none;
 }
 
 .header__subnav__main {
   flex-wrap: wrap;
-  padding: 0.4em 1.2em;
-  margin: 1.8em 0;
+  padding: 0.4rem 1.2rem;
+  margin: 1.8rem 0 3.6rem;
 }
 
 .header__subnav__nav {
-  margin-right: 6.4em;
+  margin-right: 8rem;
+  padding-left: 1.5rem;
+  border-left: 1px solid #7291b3;
 }
 
 .header__subnav__nav:last-child {
   margin-right: 0;
 }
 
-.header__subnav__header {
+.header__subnav__title {
   text-transform: uppercase;
+  font-size: 1.6em;
   font-weight: 500;
+  margin-bottom: 1.8rem;
+}
+
+.header__subnav__list {
+  margin-bottom: 0.3rem;
+}
+
+.header__subnav__item {
+  display: inline-block;
+}
+
+.header__subnav__item:not(:last-child) {
+  margin-bottom: 1.2rem;
+}
+
+.header__subnav__link {
+  font-size: 1.4em;
+}
+
+.header__subnav__link:link, .header__subnav__link:visited {
+  color: #5d5d5d;
+}
+
+.header__subnav__link:hover, .header__subnav__link:active {
+  text-decoration: underline;
+}
+
+.header__subnav__more {
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.header__subnav__more:link, .header__subnav__more:visited {
+  color: #9a9a9a;
+}
+
+.header__subnav__more:hover, .header__subnav__more:active {
+  color: #5d5d5d;
+  text-decoration: none;
 }
 
 .header__subnav__img {
-  margin-left: 12.8em;
+  margin-left: 9.6rem;
 }
 
 .header__subnav__img img {
-  height: 25em;
+  height: 25rem;
+}
+
+.subnav-open:link, .subnav-open:visited {
+  color: #3f3f3f !important;
+  background-color: #edf8bc !important;
 }
 
 .c-search__input {
@@ -428,14 +482,14 @@ a:visited {
 .header {
   z-index: 1000;
   position: fixed;
-  height: 9em;
+  height: 9rem;
   width: 100%;
   background-color: #fafded;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 15px -3px, rgba(33, 37, 41, 0.05) 0px 4px 6px -2px;
 }
 
 .section {
-  padding: 8em 1.6em;
+  padding: 8rem 1.6rem;
 }
 
 .section--today {
@@ -446,38 +500,38 @@ a:visited {
 
 .section--popular {
   grid-column: 1 / -1;
-  margin: 2em 0 0;
-  padding-bottom: 8em;
+  margin: 2rem 0 0;
+  padding-bottom: 8rem;
   background-color: #f2facf;
   box-shadow: rgba(33, 37, 41, 0.05) 0px -10px 15px -3px, rgba(33, 37, 41, 0.05) 0px -4px 6px -2px;
 }
 
 .section--sale {
   grid-column: 1 / -1;
-  padding-top: 4.8em;
+  padding-top: 4.8rem;
   background-color: #f2facf;
 }
 
 .section--seasonal {
   grid-column: 1 / -1;
-  padding-top: 4.8em;
-  margin-bottom: 9.6em;
+  padding-top: 4.8rem;
+  margin-bottom: 9.6rem;
   background-color: #f2facf;
   box-shadow: rgba(33, 37, 41, 0.02) 0px 10px 15px -3px, rgba(33, 37, 41, 0.05) 0px 4px 6px -2px;
 }
 
 .section--review {
   grid-column: 2 / span 1;
-  padding: 4.8em;
+  padding: 4.8rem;
   background-color: #f2facf;
   box-shadow: rgba(33, 37, 41, 0.02) 0px 10px 15px -3px, rgba(33, 37, 41, 0.05) 0px 4px 6px -2px;
 }
 
 .section--contact {
   grid-column: 2 / span 1;
-  padding: 4.8em;
-  margin: 2em 0 0;
-  column-gap: 3.2em;
+  padding: 4.8rem;
+  margin: 2rem 0 0;
+  column-gap: 3.2rem;
   background-color: #f2facf;
   box-shadow: rgba(33, 37, 41, 0.02) 0px 10px 15px -3px, rgba(33, 37, 41, 0.05) 0px 4px 6px -2px;
 }
@@ -488,8 +542,8 @@ a:visited {
 
 .section__container {
   width: 100%;
-  max-width: 120em;
-  padding: 0 1.6em;
+  max-width: 120rem;
+  padding: 0 1.6rem;
 }
 
 .section__container--nav {
@@ -498,14 +552,14 @@ a:visited {
 
 .section__container--today {
   align-content: start;
-  align-items: center;
+  align-itrems: center;
   justify-content: start;
-  grid-template-rows: max-content 1fr;
-  column-gap: 4.8em;
+  grid-tremplate-rows: max-content 1fr;
+  column-gap: 4.8rem;
 }
 
 .section__container--popular {
-  padding-bottom: 3.6em;
+  padding-bottom: 3.6rem;
   border-bottom: 2px solid #a6bacf;
 }
 
@@ -516,17 +570,17 @@ a:visited {
 .contact__map {
   grid-column: span 5;
   width: 100%;
-  height: 45em;
+  height: 45rem;
 }
 
 .contact__detail {
-  row-gap: 4.8em;
+  row-gap: 4.8rem;
   grid-column: span 2;
 }
 
 .contact__list {
   align-self: start;
-  row-gap: 1.2em;
+  row-gap: 1.2rem;
 }
 
 .contact__link {
@@ -536,34 +590,34 @@ a:visited {
 }
 
 .contact__icon {
-  height: 2.4em;
-  width: 2.4em;
-  margin-right: 2.4em;
+  height: 2.4rem;
+  width: 2.4rem;
+  margin-right: 2.4rem;
 }
 
 .contact__social {
   justify-self: center;
   align-content: center;
-  column-gap: 1.8em;
-  margin-top: 0.8em;
+  column-gap: 1.8rem;
+  margin-top: 0.8rem;
 }
 
 .contact__social svg {
-  width: 4em;
-  height: 4em;
+  width: 4rem;
+  height: 4rem;
 }
 
 .popular__header {
-  margin-bottom: 4.8em;
+  margin-bottom: 4.8rem;
 }
 
 .popular__container {
-  column-gap: 6.4em;
+  column-gap: 6.4rem;
 }
 
 .popular__arrangement {
   grid-column: span 2;
-  column-gap: 2.4em;
+  column-gap: 2.4rem;
 }
 
 .popular__flower {
@@ -572,7 +626,7 @@ a:visited {
 }
 
 .review__container {
-  column-gap: 4.8em;
+  column-gap: 4.8rem;
 }
 
 .review__shop {
@@ -581,8 +635,8 @@ a:visited {
 }
 
 .review__shop__star svg {
-  width: 2.25em;
-  height: 2.25em;
+  width: 2.25rem;
+  height: 2.25rem;
 }
 
 .review__shop__description {
@@ -594,14 +648,14 @@ a:visited {
 }
 
 .review__product__img {
-  width: 7em;
-  height: 7em;
+  width: 7rem;
+  height: 7rem;
   object-fit: cover;
 }
 
 .sale__category {
-  column-gap: 8em;
-  padding: 1.6em 0 0.8em;
+  column-gap: 8rem;
+  padding: 1.6rem 0 0.8rem;
 }
 
 .sale__category--1 {
@@ -623,17 +677,17 @@ a:visited {
 }
 
 .sale__container {
-  row-gap: 3.6em;
+  row-gap: 3.6rem;
 }
 
 .sale__section__header {
-  margin: 0 0 4.8em;
+  margin: 0 0 4.8rem;
 }
 
 .sale__catalogue {
   grid-row: 1 / span 2;
   align-self: center;
-  padding: 0 3.2em;
+  padding: 0 3.2rem;
 }
 
 .sale__catalogue--left {
@@ -702,8 +756,8 @@ a:visited {
 
 .seasonal__season {
   flex-shrink: 1;
-  padding: 0.2em;
-  height: 50em;
+  padding: 0.2rem;
+  height: 50rem;
   width: 100%;
   background-color: #f2facf;
 }
@@ -713,7 +767,7 @@ a:visited {
   background-repeat: no-repeat;
   position: relative;
   width: 100%;
-  padding: 1em 2em;
+  padding: 1rem 2rem;
   overflow: hidden;
   cursor: pointer;
   flex: 1 1 100%;
@@ -750,8 +804,8 @@ a:visited {
   display: none;
   align-self: center;
   justify-self: center;
-  column-gap: 1em;
-  row-gap: 1em;
+  column-gap: 1rem;
+  row-gap: 1rem;
   overflow: hidden;
   transform: translate3d(0, 0, 0) rotate3d(0);
 }
@@ -882,7 +936,7 @@ a:visited {
   bottom: auto;
   right: auto;
   width: auto;
-  font-size: 4.6rem;
+  font-size: 4.6em;
   transform: rotate(0) translate(0, 0);
 }
 
@@ -900,7 +954,7 @@ a:visited {
 
 .today__header {
   grid-column: 1 / span 3;
-  margin: 2.4em 0 0;
+  margin: 2.4rem 0 0;
 }
 
 .today__catalogue {

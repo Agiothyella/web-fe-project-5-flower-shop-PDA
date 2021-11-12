@@ -57,12 +57,6 @@ const renderZPattern = function (nodeList, class1 = "_", class2 = "_") {
   });
 };
 
-const addClassToPrevSibling = function (nodeList, classToAdd) {
-  nodeList.forEach((node) =>
-    node.previousElementSibling.classList.add(classToAdd)
-  );
-};
-
 const addClassToNodeList = function (nodeList, classToAdd) {
   nodeList.forEach((node) => node.classList.add(classToAdd));
 };
@@ -113,7 +107,6 @@ const initZPattern = function () {
 };
 
 const initPage = function () {
-  addClassToPrevSibling(headerSubnavEl, "nav__have-subnav");
   initZPattern();
   initNodeListClases();
 };
@@ -133,6 +126,15 @@ todayEl.style.marginTop = `${headerHeight}px`;
 
 headerSubnavEl.forEach((node) => {
   node.style.top = `${headerHeight}px`;
+  node.previousElementSibling.classList.add("nav__have-subnav");
+
+  node.addEventListener("mouseenter", function (e) {
+    node.previousElementSibling.classList.add("subnav-open");
+  });
+
+  node.addEventListener("mouseleave", function (e) {
+    node.previousElementSibling.classList.remove("subnav-open");
+  });
 });
 
 seasonEl.forEach((node) =>
@@ -153,6 +155,14 @@ headerNavLinkEl.forEach(function (link) {
 
       removeClassFromNodeList(headerNavLinkEl, "active-subnav");
       link.classList.add("active-subnav");
+    });
+
+    link.addEventListener("mouseenter", function (e) {
+      link.classList.add("subnav-open");
+    });
+
+    link.addEventListener("mouseleave", function (e) {
+      link.classList.remove("subnav-open");
     });
   }
 });
