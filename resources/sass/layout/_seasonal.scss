@@ -10,7 +10,7 @@
   transform: translate3d(0, 0, 0) rotate3d(0);
 }
 
-// CONTENT ----------------------------------------------
+// COMMON CONTENT ---------------------------------------
 .season {
   background-size: cover;
   background-repeat: no-repeat;
@@ -24,72 +24,9 @@
 
   flex: 1 1 100%;
 
+  filter: grayscale(0.9);
   transition: all 0.5s;
   transform: translate3d(0, 0, 0) rotate3d(0);
-}
-
-.season {
-  //
-
-  &--autumn {
-    background-image: url("../media/img/season-autumn.jpg");
-    background-position: center center;
-
-    .season__flowers {
-      &__img {
-        border: 3px solid $color-font-autumn-tint;
-      }
-
-      &__name {
-        color: $color-font-autumn;
-      }
-    }
-  }
-
-  &--winter {
-    background-image: url("../media/img/season-winter.jpg");
-    background-position: center bottom;
-
-    .season__flowers {
-      &__img {
-        border: 3px solid $color-font-winter-tint;
-      }
-
-      &__name {
-        color: $color-font-winter;
-      }
-    }
-  }
-
-  &--spring {
-    background-image: url("../media/img/season-spring.jpg");
-    background-position: center center;
-
-    .season__flowers {
-      &__img {
-        border: 3px solid $color-font-spring-tint;
-      }
-
-      &__name {
-        color: $color-font-spring;
-      }
-    }
-  }
-
-  &--summer {
-    background-image: url("../media/img/season-summer.jpg");
-    background-position: center center;
-
-    .season__flowers {
-      &__img {
-        border: 3px solid $color-font-summer-tint;
-      }
-
-      &__name {
-        color: $color-font-summer;
-      }
-    }
-  }
 }
 
 .season__header {
@@ -108,26 +45,7 @@
     user-select: none;
 
     transform-origin: right;
-    transform: rotate(-90deg) translate(89%, -29%);
-
-    text-shadow: -1px -1px 2px $color-font-light, 1px -1px 2px $color-font-light,
-      1px -1px 2px $color-font-light, 1px 1px 2px $color-font-light;
-
-    &--autumn {
-      color: $color-font-autumn;
-    }
-
-    &--winter {
-      color: $color-font-winter;
-    }
-
-    &--spring {
-      color: $color-font-spring;
-    }
-
-    &--summer {
-      color: $color-font-summer;
-    }
+    transform: rotate(-90deg) translate(88%, -30%);
   }
 
   &__subtitle {
@@ -135,20 +53,22 @@
 
     white-space: nowrap;
     overflow: hidden;
-    width: 100%;
+
+    font-size: $font-size-small;
+    font-weight: 600;
   }
 }
 
 .season__flowers {
   display: none;
 
-  align-self: end;
+  align-self: center;
   justify-self: center;
 
-  // width: 70%;
-
-  column-gap: 2em;
+  column-gap: 1em;
   row-gap: 1em;
+
+  overflow: hidden;
 }
 
 .season__flowers {
@@ -157,16 +77,32 @@
 
   &__link {
     position: relative;
+    width: 100%;
+    padding-top: 100%;
+
+    &:link,
+    &:visited {
+      color: inherit;
+    }
   }
 
   &__img {
     width: 100%;
+    height: 100%;
   }
 
   &__name {
     position: absolute;
     bottom: 3px;
     left: 3px;
+
+    font-size: $font-size-tiny;
+    font-weight: 600;
+    line-height: 1;
+    text-shadow: -2px 0 0 $color-white, 2px 0 0 $color-white,
+      0 -2px 0 $color-white, 0 -2px 0 $color-white;
+
+    transform: translate(2px, -4px);
   }
 }
 
@@ -175,7 +111,118 @@
   align-self: end;
   justify-self: end;
 }
+
+// SEASON SPECIFIC -----------------------------------------
+.season {
+  //
+
+  &--autumn {
+    color: $color-font-autumn;
+    background-image: url("../media/img/season-autumn.jpg");
+    background-position: center center;
+
+    .season__title {
+      text-shadow: -2px 0 2px $color-font-autumn-tint,
+        2px 0 2px $color-font-autumn-tint, 0 2px 2px $color-font-autumn-tint,
+        0 -2px 2px $color-font-autumn-tint;
+    }
+
+    .season__subtitle {
+      text-shadow: -1px 1px 2px $color-font-autumn-tint,
+        1px -1px 2px $color-font-autumn-tint,
+        1px 1px 2px $color-font-autumn-tint,
+        -1px -1px 2px $color-font-autumn-tint;
+    }
+
+    .season__flowers {
+      &__img {
+        border: 3px solid $color-font-autumn-tint;
+      }
+    }
+  }
+
+  &--winter {
+    color: $color-font-winter;
+    background-image: url("../media/img/season-winter.jpg");
+    background-position: center bottom;
+
+    .season__title {
+      text-shadow: -2px 0 2px $color-font-winter-tint,
+        2px 0 2px $color-font-winter-tint, 0 2px 2px $color-font-winter-tint,
+        0 -2px 2px $color-font-winter-tint;
+    }
+
+    .season__subtitle {
+      text-shadow: -1px 1px 2px $color-font-winter-tint,
+        1px -1px 2px $color-font-winter-tint,
+        1px 1px 2px $color-font-winter-tint,
+        -1px -1px 2px $color-font-winter-tint;
+    }
+
+    .season__flowers {
+      &__img {
+        border: 3px solid $color-font-winter-tint;
+      }
+    }
+  }
+
+  &--spring {
+    color: $color-font-spring;
+    background-image: url("../media/img/season-spring.jpg");
+    background-position: center center;
+
+    .season__title {
+      text-shadow: -2px 0 2px $color-font-spring-tint,
+        2px 0 2px $color-font-spring-tint, 0 2px 2px $color-font-spring-tint,
+        0 -2px 2px $color-font-spring-tint;
+    }
+
+    .season__subtitle {
+      text-shadow: -1px 1px 2px $color-font-spring-tint,
+        1px -1px 2px $color-font-spring-tint,
+        1px 1px 2px $color-font-spring-tint,
+        -1px -1px 2px $color-font-spring-tint;
+    }
+
+    .season__flowers {
+      &__img {
+        border: 3px solid $color-font-spring-tint;
+      }
+    }
+  }
+
+  &--summer {
+    color: $color-font-summer;
+    background-image: url("../media/img/season-summer.jpg");
+    background-position: center center;
+
+    .season__title {
+      text-shadow: -2px 0 2px $color-font-summer-tint,
+        2px 0 2px $color-font-summer-tint, 0 2px 2px $color-font-summer-tint,
+        0 -2px 2px $color-font-summer-tint;
+    }
+
+    .season__subtitle {
+      text-shadow: -1px 1px 2px $color-font-summer-tint,
+        1px -1px 2px $color-font-summer-tint,
+        1px 1px 2px $color-font-summer-tint,
+        -1px -1px 2px $color-font-summer-tint;
+    }
+
+    .season__flowers {
+      &__img {
+        border: 3px solid $color-font-summer-tint;
+      }
+    }
+  }
+}
+
 // FUNCTIONALITY --------------------------------------------------
+.season.now-season {
+  filter: grayscale(0);
+  border: 3px solid currentColor;
+}
+
 .season.active-season {
   flex-basis: 500%;
   cursor: auto;
@@ -194,8 +241,6 @@
     font-size: 4.6rem;
 
     transform: rotate(0) translate(0, 0);
-    text-shadow: -1px -1px 2px $color-font-light, 1px -1px 2px $color-font-light,
-      1px -1px 2px $color-font-light, 1px 1px 2px $color-font-light;
   }
 
   .season__subtitle {

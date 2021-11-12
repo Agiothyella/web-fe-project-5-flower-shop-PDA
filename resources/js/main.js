@@ -6,12 +6,10 @@
 const headerEl = document.querySelector(".header");
 const headerNavEl = document.querySelector(".header__nav");
 const headerSubnavEl = document.querySelectorAll(".header__subnav");
-
 const headerSubnavContainerEl = document.querySelectorAll(
   ".header__subnav__container"
 );
 const headerSubnavMainEl = document.querySelectorAll(".header__subnav__main");
-
 const headerNavItemEl = document.querySelectorAll(".header__nav__item");
 
 // ----- TODAY SECTION -----
@@ -27,7 +25,8 @@ const saleMoreEl = document.querySelectorAll(".sale__more");
 // ----- SEASON INTERACTIVE -----
 const seasonalEl = document.querySelector(".seasonal__season");
 const seasonEl = document.querySelectorAll(".season");
-const seasonFlowers = document.querySelectorAll(".season__flowers");
+const seasonSubtitleEl = document.querySelectorAll(".season__subtitle");
+const seasonFlowersEl = document.querySelectorAll(".season__flowers");
 
 const activeSeason = document.querySelector(".active-season");
 
@@ -94,8 +93,8 @@ seasonEl.forEach((node) =>
   })
 );
 
-seasonFlowers.forEach(
-  (node) => (node.style.width = `${(70 / 100) * activeSeasonWidth}px`)
+seasonFlowersEl.forEach(
+  (node) => (node.style.width = `${(60 / 100) * activeSeasonWidth}px`)
 );
 
 //-------------------------------------------------

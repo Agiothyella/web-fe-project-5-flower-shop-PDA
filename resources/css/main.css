@@ -718,60 +718,9 @@ a:visited {
   overflow: hidden;
   cursor: pointer;
   flex: 1 1 100%;
+  filter: grayscale(0.9);
   transition: all 0.5s;
   transform: translate3d(0, 0, 0) rotate3d(0);
-}
-
-.season--autumn {
-  background-image: url("../media/img/season-autumn.jpg");
-  background-position: center center;
-}
-
-.season--autumn .season__flowers__img {
-  border: 3px solid #e0a57d;
-}
-
-.season--autumn .season__flowers__name {
-  color: #995224;
-}
-
-.season--winter {
-  background-image: url("../media/img/season-winter.jpg");
-  background-position: center bottom;
-}
-
-.season--winter .season__flowers__img {
-  border: 3px solid #d0d5e8;
-}
-
-.season--winter .season__flowers__name {
-  color: #48578e;
-}
-
-.season--spring {
-  background-image: url("../media/img/season-spring.jpg");
-  background-position: center center;
-}
-
-.season--spring .season__flowers__img {
-  border: 3px solid #daabe6;
-}
-
-.season--spring .season__flowers__name {
-  color: #6a257b;
-}
-
-.season--summer {
-  background-image: url("../media/img/season-summer.jpg");
-  background-position: center center;
-}
-
-.season--summer .season__flowers__img {
-  border: 3px solid #ffd98c;
-}
-
-.season--summer .season__flowers__name {
-  color: #8c5e00;
 }
 
 .season__header {
@@ -787,59 +736,133 @@ a:visited {
   -webkit-touch-callout: none;
   user-select: none;
   transform-origin: right;
-  transform: rotate(-90deg) translate(89%, -29%);
-  text-shadow: -1px -1px 2px #ededed, 1px -1px 2px #ededed, 1px -1px 2px #ededed, 1px 1px 2px #ededed;
-}
-
-.season__title--autumn {
-  color: #995224;
-}
-
-.season__title--winter {
-  color: #48578e;
-}
-
-.season__title--spring {
-  color: #6a257b;
-}
-
-.season__title--summer {
-  color: #8c5e00;
+  transform: rotate(-90deg) translate(88%, -30%);
 }
 
 .season__subtitle {
   display: none;
   white-space: nowrap;
   overflow: hidden;
-  width: 100%;
+  font-size: 1.8em;
+  font-weight: 600;
 }
 
 .season__flowers {
   display: none;
-  align-self: end;
+  align-self: center;
   justify-self: center;
-  column-gap: 2em;
+  column-gap: 1em;
   row-gap: 1em;
+  overflow: hidden;
 }
 
 .season__flowers__link {
   position: relative;
+  width: 100%;
+  padding-top: 100%;
+}
+
+.season__flowers__link:link, .season__flowers__link:visited {
+  color: inherit;
 }
 
 .season__flowers__img {
   width: 100%;
+  height: 100%;
 }
 
 .season__flowers__name {
   position: absolute;
   bottom: 3px;
   left: 3px;
+  font-size: 1.6em;
+  font-weight: 600;
+  line-height: 1;
+  text-shadow: -2px 0 0 #fff, 2px 0 0 #fff, 0 -2px 0 #fff, 0 -2px 0 #fff;
+  transform: translate(2px, -4px);
 }
 
 .season__more {
   display: none;
   align-self: end;
   justify-self: end;
+}
+
+.season--autumn {
+  color: #995224;
+  background-image: url("../media/img/season-autumn.jpg");
+  background-position: center center;
+}
+
+.season--autumn .season__title {
+  text-shadow: -2px 0 2px #f2d8c7, 2px 0 2px #f2d8c7, 0 2px 2px #f2d8c7, 0 -2px 2px #f2d8c7;
+}
+
+.season--autumn .season__subtitle {
+  text-shadow: -1px 1px 2px #f2d8c7, 1px -1px 2px #f2d8c7, 1px 1px 2px #f2d8c7, -1px -1px 2px #f2d8c7;
+}
+
+.season--autumn .season__flowers__img {
+  border: 3px solid #f2d8c7;
+}
+
+.season--winter {
+  color: #48578e;
+  background-image: url("../media/img/season-winter.jpg");
+  background-position: center bottom;
+}
+
+.season--winter .season__title {
+  text-shadow: -2px 0 2px #e3e6f1, 2px 0 2px #e3e6f1, 0 2px 2px #e3e6f1, 0 -2px 2px #e3e6f1;
+}
+
+.season--winter .season__subtitle {
+  text-shadow: -1px 1px 2px #e3e6f1, 1px -1px 2px #e3e6f1, 1px 1px 2px #e3e6f1, -1px -1px 2px #e3e6f1;
+}
+
+.season--winter .season__flowers__img {
+  border: 3px solid #e3e6f1;
+}
+
+.season--spring {
+  color: #862e9c;
+  background-image: url("../media/img/season-spring.jpg");
+  background-position: center center;
+}
+
+.season--spring .season__title {
+  text-shadow: -2px 0 2px #eed8f3, 2px 0 2px #eed8f3, 0 2px 2px #eed8f3, 0 -2px 2px #eed8f3;
+}
+
+.season--spring .season__subtitle {
+  text-shadow: -1px 1px 2px #eed8f3, 1px -1px 2px #eed8f3, 1px 1px 2px #eed8f3, -1px -1px 2px #eed8f3;
+}
+
+.season--spring .season__flowers__img {
+  border: 3px solid #eed8f3;
+}
+
+.season--summer {
+  color: #8c5e00;
+  background-image: url("../media/img/season-summer.jpg");
+  background-position: center center;
+}
+
+.season--summer .season__title {
+  text-shadow: -2px 0 2px #ffe4af, 2px 0 2px #ffe4af, 0 2px 2px #ffe4af, 0 -2px 2px #ffe4af;
+}
+
+.season--summer .season__subtitle {
+  text-shadow: -1px 1px 2px #ffe4af, 1px -1px 2px #ffe4af, 1px 1px 2px #ffe4af, -1px -1px 2px #ffe4af;
+}
+
+.season--summer .season__flowers__img {
+  border: 3px solid #ffe4af;
+}
+
+.season.now-season {
+  filter: grayscale(0);
+  border: 3px solid currentColor;
 }
 
 .season.active-season {
@@ -856,7 +879,6 @@ a:visited {
   width: auto;
   font-size: 4.6rem;
   transform: rotate(0) translate(0, 0);
-  text-shadow: -1px -1px 2px #ededed, 1px -1px 2px #ededed, 1px -1px 2px #ededed, 1px 1px 2px #ededed;
 }
 
 .active-season .season__subtitle {
