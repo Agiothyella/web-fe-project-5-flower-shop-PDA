@@ -11,6 +11,7 @@ const headerSubnavContainerEl = document.querySelectorAll(
 );
 const headerSubnavMainEl = document.querySelectorAll(".header__subnav__main");
 const headerNavItemEl = document.querySelectorAll(".header__nav__item");
+const headerNavLinkEl = document.querySelectorAll(".header__nav__link");
 
 // ----- TODAY SECTION -----
 const todayEl = document.querySelector(".section--today");
@@ -72,31 +73,6 @@ const removeClassFromNodeList = function (nodeList, className) {
 
 // ---------------------------------------------------
 
-// -
-// -
-// -------------------------------------- SPECIFIC FUNCTIONALITY --
-// ----- VARIABLES ------
-const headerHeight = headerEl.getBoundingClientRect().height;
-const activeSeasonWidth = activeSeason.getBoundingClientRect().width;
-
-// ----- FUNCTIONALITY ------
-todayEl.style.marginTop = `${headerHeight}px`;
-
-headerSubnavEl.forEach((node) => {
-  node.style.top = `${headerHeight}px`;
-});
-
-seasonEl.forEach((node) =>
-  node.addEventListener("click", function (e) {
-    removeClassFromNodeList(seasonEl, "active-season");
-    node.classList.add("active-season");
-  })
-);
-
-seasonFlowersEl.forEach(
-  (node) => (node.style.width = `${(60 / 100) * activeSeasonWidth}px`)
-);
-
 //-------------------------------------------------
 // --------------------------------------------------- INIT PAGE ----
 // ----- FUNCTIONS -----
@@ -144,3 +120,39 @@ const initPage = function () {
 
 // ----- RUN FUNCTIONS -----
 initPage();
+
+// -
+// -
+// -------------------------------------- SPECIFIC FUNCTIONALITY --
+// ----- VARIABLES ------
+const headerHeight = headerEl.getBoundingClientRect().height;
+const activeSeasonWidth = activeSeason.getBoundingClientRect().width;
+
+// ----- FUNCTIONALITY ------
+todayEl.style.marginTop = `${headerHeight}px`;
+
+headerSubnavEl.forEach((node) => {
+  node.style.top = `${headerHeight}px`;
+});
+
+seasonEl.forEach((node) =>
+  node.addEventListener("click", function (e) {
+    removeClassFromNodeList(seasonEl, "active-season");
+    node.classList.add("active-season");
+  })
+);
+
+seasonFlowersEl.forEach(
+  (node) => (node.style.width = `${(55 / 100) * activeSeasonWidth}px`)
+);
+
+headerNavLinkEl.forEach(function (link) {
+  if (link.classList.contains("nav__have-subnav")) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      removeClassFromNodeList(headerNavLinkEl, "active-subnav");
+      link.classList.add("active-subnav");
+    });
+  }
+});

@@ -7,7 +7,6 @@
   width: 100%;
 
   background-color: $color-primary;
-  transform: translate3d(0, 0, 0) rotate3d(0);
 }
 
 // COMMON CONTENT ---------------------------------------
@@ -69,6 +68,7 @@
   row-gap: 1em;
 
   overflow: hidden;
+  transform: translate3d(0, 0, 0) rotate3d(0);
 }
 
 .season__flowers {
@@ -89,6 +89,8 @@
   &__img {
     width: 100%;
     height: 100%;
+
+    transition: border 0.1s;
   }
 
   &__name {
@@ -221,10 +223,18 @@
 .season.now-season {
   filter: grayscale(0);
   border: 3px solid currentColor;
+
+  .season__flowers__link:hover {
+    //
+
+    .season__flowers__name {
+      text-decoration: underline;
+    }
+  }
 }
 
 .season.active-season {
-  flex-basis: 500%;
+  flex-basis: 550%;
   cursor: auto;
 }
 
