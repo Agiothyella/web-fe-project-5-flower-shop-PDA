@@ -13,6 +13,9 @@ const headerSubnavMainEl = document.querySelectorAll(".header__subnav__main");
 const headerNavItemEl = document.querySelectorAll(".header__nav__item");
 const headerNavLinkEl = document.querySelectorAll(".header__nav__link");
 
+const searchBar = document.querySelector(".c-search__input");
+const searchBtn = document.querySelector(".c-search__button");
+
 // ----- TODAY SECTION -----
 const todayEl = document.querySelector(".section--today");
 
@@ -121,7 +124,11 @@ initPage();
 const headerHeight = headerEl.getBoundingClientRect().height;
 const activeSeasonWidth = activeSeason.getBoundingClientRect().width;
 
+const btnHeight = searchBtn.getBoundingClientRect().height;
+console.log(btnHeight);
+
 // ----- FUNCTIONALITY ------
+// --- TOP HEADER ---
 todayEl.style.marginTop = `${headerHeight}px`;
 
 headerSubnavEl.forEach((node) => {
@@ -136,17 +143,6 @@ headerSubnavEl.forEach((node) => {
     e.target.previousElementSibling.classList.remove("subnav-open");
   });
 });
-
-seasonEl.forEach((node) =>
-  node.addEventListener("click", function (e) {
-    removeClassFromNodeList(seasonEl, "active-season");
-    node.classList.add("active-season");
-  })
-);
-
-seasonFlowersEl.forEach(
-  (node) => (node.style.width = `${(55 / 100) * activeSeasonWidth}px`)
-);
 
 headerNavLinkEl.forEach(function (link) {
   if (link.classList.contains("nav__have-subnav")) {
@@ -182,4 +178,18 @@ lastSubnav[lastSubnav.length - 1].addEventListener("blur", (e) =>
   e.target
     .closest(".header__subnav")
     .previousElementSibling.classList.remove("subnav-open")
+);
+
+searchBar.style.height = `${btnHeight + 2}px`;
+
+// --- SEASONAL ---
+seasonEl.forEach((node) =>
+  node.addEventListener("click", function (e) {
+    removeClassFromNodeList(seasonEl, "active-season");
+    node.classList.add("active-season");
+  })
+);
+
+seasonFlowersEl.forEach(
+  (node) => (node.style.width = `${(55 / 100) * activeSeasonWidth}px`)
 );

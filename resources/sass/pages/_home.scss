@@ -2,17 +2,6 @@
 .container {
 }
 
-// HEADER & TOP NAV -----------------------------------------
-.header {
-  z-index: 1000;
-  position: fixed;
-
-  height: 9rem;
-  width: 100%;
-  background-color: $color-primary-tint;
-  box-shadow: $bax-shadow-medium-bottom;
-}
-
 // SECTIONS ---------------------------------------------------
 .section {
   padding: 8rem 1.6rem;
@@ -84,7 +73,7 @@
   padding: 0 1.6rem;
 
   &--header {
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
   }
 
@@ -95,7 +84,7 @@
   &--today {
     align-content: start;
     align-items: center;
-    justify-content: start;
+    // justify-content: start;
     grid-template-rows: max-content 1fr;
 
     column-gap: 4.8rem;
@@ -104,6 +93,21 @@
   &--popular {
     padding-bottom: 3.6rem;
     border-bottom: 2px solid $color-secondary;
+  }
+
+  &--sale {
+  }
+}
+
+// HEADER ---------------------------------------------------
+.section__header {
+  margin-bottom: 4.8rem;
+
+  &--today {
+    margin: 4.8rem 0 3.2rem;
+  }
+
+  &--popular {
   }
 
   &--sale {

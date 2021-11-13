@@ -1,3 +1,13 @@
+// BASE --------------------------------------------------------
+.header {
+  z-index: 1000;
+  position: fixed;
+
+  width: 100%;
+  background-color: $color-secondary-lightest;
+  box-shadow: $bax-shadow-medium-bottom;
+}
+
 // HEADER TOP PART ---------------------------------------------
 .header__top {
   height: 100%;
@@ -11,17 +21,17 @@
 }
 
 .header__top__text {
-  margin: 1rem 0;
+  padding: 1.8rem 0;
 }
 
 .header__top {
   //
 
   &__logo {
-    margin-right: 8rem;
+    margin-right: 6.4rem;
 
     img {
-      height: 5rem;
+      height: 7rem;
       padding: 0.4rem 0;
     }
   }
@@ -33,36 +43,42 @@
 
     text-align: center;
     font-size: 1.2em;
-    color: $color-font-grey-dark;
+    color: $color-font-grey;
   }
 
   &__search {
-    width: 35rem;
-  }
-
-  &__user {
-    margin-left: 6.4rem;
-
-    font-size: $font-size-tiny;
-    text-transform: uppercase;
-
-    a:first-child {
-      margin-right: 2.4rem;
-    }
-
-    a:link,
-    a:visited {
-    }
-
-    a:hover,
-    a:active {
-      color: $color-font-active-primary;
-      text-decoration: underline;
-    }
+    width: 30rem;
   }
 }
 
-// .header__top__
+.header__top__user {
+  margin-left: 6.4rem;
+
+  font-size: $font-size-tiny;
+  text-transform: uppercase;
+
+  a:link,
+  a:visited {
+  }
+
+  a:hover,
+  a:active {
+    color: $color-font-active-primary;
+    text-decoration: underline;
+  }
+
+  div {
+    margin: 0 1.6rem;
+  }
+}
+
+.header__user {
+  &__cart {
+  }
+
+  &__username {
+  }
+}
 
 // HEADER NAVIGATION -------------------------------------------
 .header__nav {
