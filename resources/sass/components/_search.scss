@@ -8,7 +8,7 @@
   &__input {
     width: 100%;
 
-    height: 2.79rem;
+    height: 2.85rem;
     padding: 0.2rem 3.5rem 0.2rem 1rem;
 
     color: inherit;
@@ -17,13 +17,18 @@
 
     border: 1px solid $color-font-grey-light;
 
+    &:focus {
+      outline: none;
+      border: 1px solid $color-font-grey;
+    }
+
     &::-webkit-input-placeholder,
     &:-ms-input-placeholder {
-      color: $color-font-grey-light;
+      color: $color-font-grey;
     }
 
     &::-moz-placeholder {
-      color: $color-font-grey-light;
+      color: $color-font-grey;
       opacity: 1;
     }
   }
@@ -33,7 +38,8 @@
     border: none;
     background-color: $color-grey-light;
 
-    transform: translateX(-2.5rem);
+    transform: translateX(-2.55rem);
+    cursor: pointer;
   }
 
   // BUTTON ICON ----------------------------------------

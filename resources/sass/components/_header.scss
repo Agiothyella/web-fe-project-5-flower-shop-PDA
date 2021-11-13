@@ -18,7 +18,7 @@
   //
 
   &__logo {
-    margin-right: 6.4rem;
+    margin-right: 8rem;
 
     img {
       height: 5rem;
@@ -37,7 +37,7 @@
   }
 
   &__search {
-    min-width: 35rem;
+    width: 35rem;
   }
 
   &__user {
@@ -56,7 +56,7 @@
 
     a:hover,
     a:active {
-      color: $color-font-active;
+      color: $color-font-active-primary;
       text-decoration: underline;
     }
   }

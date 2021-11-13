@@ -140,7 +140,7 @@ headerSubnavEl.forEach((node) => {
 seasonEl.forEach((node) =>
   node.addEventListener("click", function (e) {
     removeClassFromNodeList(seasonEl, "active-season");
-    e.target.classList.add("active-season");
+    node.classList.add("active-season");
   })
 );
 

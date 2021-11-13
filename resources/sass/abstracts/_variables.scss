@@ -22,7 +22,8 @@ $color-font-grey: #9a9a9a;
 $color-font-grey-light: #cbcbcb;
 $color-font-light: #ededed;
 
-$color-font-active: #54769c;
+$color-font-active-primary: #54769c;
+$color-font-complement: #ff5633;
 
 // SPECIAL SALE SECTION COLORS ----------
 $color-sale-1: #862e9c;
@@ -56,6 +57,7 @@ $font-title: "Inter", sans-serif;
 $font-primary: "Heebo", sans-serif;
 // $font-secondary: ;
 
+$font-size-tiniest: 1.3em;
 $font-size-tiny: 1.4em;
 $font-size-smaller: 1.6em;
 $font-size-small: 1.8em;

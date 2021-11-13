@@ -58,6 +58,7 @@ a:visited {
   font-size: 3.2rem;
   font-weight: 600;
   text-transform: uppercase;
+  font-family: "Inter", sans-serif;
 }
 
 .t-header-small {
@@ -83,6 +84,7 @@ a:visited {
 .catalogue__list--today {
   column-gap: 3.2rem;
   margin-right: 4.8rem;
+  margin-bottom: 2.4rem;
 }
 
 .catalogue__list--sale {
@@ -101,19 +103,54 @@ a:visited {
 .catalogue__item {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: start;
+  padding: 0.1rem;
+}
+
+.catalogue__item:hover .catalogue__name, .catalogue__item:active .catalogue__name {
+  text-decoration: underline;
+  color: #5d5d5d;
+}
+
+.catalogue__item:hover .catalogue__price, .catalogue__item:active .catalogue__price {
+  color: #5d5d5d;
 }
 
 .catalogue__img {
   width: 100%;
 }
 
+.catalogue__desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.2rem;
+}
+
 .catalogue__name {
-  text-transform: capitalize;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.catalogue__price {
+  font-size: 1.8em;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 0.6rem;
+}
+
+.catalogue__discount {
+  text-transform: lowercase;
+  font-size: 1.4em;
+  color: #5d5d5d;
+  margin-top: -0.5rem;
 }
 
 .catalogue__discount span {
   text-decoration: line-through;
+  color: #ff5633;
 }
 
 .catalogue__item--card {
@@ -121,12 +158,26 @@ a:visited {
   flex-direction: column;
   align-items: center;
   position: relative;
+  padding: 0.1rem;
+}
+
+.catalogue__item--card:hover .catalogue__name--card, .catalogue__item--card:active .catalogue__name--card {
+  text-decoration: underline;
+  color: #5d5d5d;
+}
+
+.catalogue__item--card:hover .catalogue__price--card, .catalogue__item--card:active .catalogue__price--card {
+  color: #5d5d5d;
+}
+
+.catalogue__price--card {
+  text-align: right;
 }
 
 .catalogue__text--card {
   position: absolute;
-  right: 0;
-  bottom: 0;
+  right: 0.5rem;
+  bottom: 0.2rem;
 }
 
 .flex {
@@ -297,7 +348,7 @@ a:visited {
 }
 
 .header__top__logo {
-  margin-right: 6.4rem;
+  margin-right: 8rem;
 }
 
 .header__top__logo img {
@@ -314,7 +365,7 @@ a:visited {
 }
 
 .header__top__search {
-  min-width: 35rem;
+  width: 35rem;
 }
 
 .header__top__user {
@@ -483,7 +534,7 @@ a:visited {
 
 .c-search__input {
   width: 100%;
-  height: 2.79rem;
+  height: 2.85rem;
   padding: 0.2rem 3.5rem 0.2rem 1rem;
   color: inherit;
   font-family: inherit;
@@ -491,19 +542,25 @@ a:visited {
   border: 1px solid #cbcbcb;
 }
 
+.c-search__input:focus {
+  outline: none;
+  border: 1px solid #9a9a9a;
+}
+
 .c-search__input::-webkit-input-placeholder, .c-search__input:-ms-input-placeholder {
-  color: #cbcbcb;
+  color: #9a9a9a;
 }
 
 .c-search__input::-moz-placeholder {
-  color: #cbcbcb;
+  color: #9a9a9a;
   opacity: 1;
 }
 
 .c-search__button {
   border: none;
   background-color: #dee2e6;
-  transform: translateX(-2.5rem);
+  transform: translateX(-2.55rem);
+  cursor: pointer;
 }
 
 .c-search__icon {
@@ -591,9 +648,9 @@ a:visited {
 
 .section__container--today {
   align-content: start;
-  align-itrems: center;
+  align-items: center;
   justify-content: start;
-  grid-tremplate-rows: max-content 1fr;
+  grid-template-rows: max-content 1fr;
   column-gap: 4.8rem;
 }
 
@@ -993,7 +1050,7 @@ a:visited {
 
 .today__header {
   grid-column: 1 / span 3;
-  margin: 2.4rem 0 0;
+  margin: 2.4rem 0 4.8rem;
 }
 
 .today__catalogue {
