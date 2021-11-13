@@ -102,36 +102,44 @@ a:visited {
 }
 
 .catalogue__list--sale {
-  column-gap: 4.8rem;
+  column-gap: 3.6rem;
   margin: 0 3.6rem;
 }
 
 .catalogue__list--popular {
-  column-gap: 4.8rem;
+  column-gap: 2.4rem;
+  padding-right: 4.8rem;
+  border-right: 2px solid #f4f7f9;
 }
 
 .catalogue__list--popular-card {
-  gap: 2.4rem;
+  gap: 1.2rem;
+  padding-left: 2.4rem;
 }
 
 .catalogue__item {
   display: flex;
   flex-direction: column;
   justify-content: start;
+  border-radius: 1px;
   padding: 0.1rem;
+}
+
+.catalogue__item:link, .catalogue__item:visited {
+  color: #3f3f3f;
+}
+
+.catalogue__item:hover, .catalogue__item:active {
+  color: inherit;
 }
 
 .catalogue__item:hover .catalogue__name, .catalogue__item:active .catalogue__name {
   text-decoration: underline;
-  color: #5d5d5d;
-}
-
-.catalogue__item:hover .catalogue__price, .catalogue__item:active .catalogue__price {
-  color: #5d5d5d;
 }
 
 .catalogue__img {
   width: 100%;
+  border-radius: 2px;
 }
 
 .catalogue__desc {
@@ -173,6 +181,7 @@ a:visited {
   flex-direction: column;
   align-items: center;
   position: relative;
+  border-radius: 1px;
   padding: 0.1rem;
   font-size: 1.6em;
 }
@@ -620,7 +629,6 @@ a:visited {
 
 .section--sale {
   grid-column: 1 / -1;
-  padding-top: 4.8rem;
   background-color: #f2facf;
 }
 
@@ -635,6 +643,7 @@ a:visited {
 .section--review {
   grid-column: 2 / span 1;
   padding: 4.8rem;
+  border-radius: 1px;
   background-color: #f2facf;
   box-shadow: rgba(33, 37, 41, 0.02) 0px 10px 15px -3px, rgba(33, 37, 41, 0.05) 0px 4px 6px -2px;
 }
@@ -644,6 +653,7 @@ a:visited {
   padding: 4.8rem;
   margin: 2rem 0 0;
   column-gap: 3.2rem;
+  border-radius: 1px;
   background-color: #f2facf;
   box-shadow: rgba(33, 37, 41, 0.02) 0px 10px 15px -3px, rgba(33, 37, 41, 0.05) 0px 4px 6px -2px;
 }
@@ -674,17 +684,16 @@ a:visited {
   column-gap: 4.8rem;
 }
 
-.section__container--popular {
-  padding-bottom: 3.6rem;
-  border-bottom: 2px solid #a6bacf;
-}
-
 .section__header {
-  margin-bottom: 4.8rem;
+  margin-bottom: 3.2rem;
 }
 
 .section__header--today {
-  margin: 4.8rem 0 3.2rem;
+  margin-top: 4.8rem;
+}
+
+.section__header--sale {
+  border-bottom: 2px solid #a6bacf;
 }
 
 .footer {
@@ -731,21 +740,29 @@ a:visited {
   height: 4rem;
 }
 
+.popular__wrapper {
+  padding: 2.4rem 4.8rem;
+  border-bottom: 2px solid #a6bacf;
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
+  background-color: #f5fbdb;
+}
+
 .popular__container {
-  column-gap: 6.4rem;
+  column-gap: 2.4rem;
 }
 
 .popular__arrangement {
   grid-column: span 2;
-  row-gap: 1.2rem;
 }
 
 .popular__flower {
-  justify-items: center;
   grid-column: span 1;
-  row-gap: 1.2rem;
-  padding-left: 3.6rem;
-  border-left: 2px solid #fafded;
+}
+
+.popular__more {
+  grid-column: 1 / -1;
+  text-align: center;
 }
 
 .review__container {
@@ -777,8 +794,11 @@ a:visited {
 }
 
 .sale__category {
+  position: relative;
   column-gap: 8rem;
   padding: 1.6rem 0 0.8rem;
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
 }
 
 .sale__category--1 {
@@ -800,7 +820,7 @@ a:visited {
 }
 
 .sale__container {
-  row-gap: 3.6rem;
+  row-gap: 6.4rem;
 }
 
 .sale__catalogue {
@@ -847,30 +867,28 @@ a:visited {
   grid-row: 4 / span 1;
   justify-self: start;
   align-self: end;
-  text-align: left;
+  width: 100%;
+  padding: 0 1.2rem;
+  margin-top: 3.6rem;
+  font-size: 1.3em;
+  line-height: 1.3;
 }
 
 .sale__subtitle--left {
   grid-column: 1 / span 4;
+  text-align: left;
 }
 
 .sale__subtitle--right {
   grid-column: -5 / span 4;
+  text-align: right;
 }
 
 .sale__more {
-  grid-row: 2 / span 1;
-  justify-self: center;
-  align-self: start;
-  text-align: center;
-}
-
-.sale__more--left {
-  grid-column: 1 / span 5;
-}
-
-.sale__more--right {
-  grid-column: -6 / span 5;
+  display: inline-block;
+  position: absolute;
+  top: 1.6rem;
+  padding: 0.6rem 1.2rem;
 }
 
 .seasonal__season {
@@ -933,6 +951,7 @@ a:visited {
   position: relative;
   width: 100%;
   padding-top: 100%;
+  border-radius: 1px;
 }
 
 .season__flowers__link:link, .season__flowers__link:visited {
@@ -942,6 +961,7 @@ a:visited {
 .season__flowers__img {
   width: 100%;
   height: 100%;
+  border-radius: 1px;
   transition: border 0.1s;
 }
 

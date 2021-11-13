@@ -125,7 +125,8 @@ const headerHeight = headerEl.getBoundingClientRect().height;
 const activeSeasonWidth = activeSeason.getBoundingClientRect().width;
 
 const btnHeight = searchBtn.getBoundingClientRect().height;
-console.log(btnHeight);
+
+const saleImgWidth = saleImgEl[0].getBoundingClientRect().width;
 
 // ----- FUNCTIONALITY ------
 // --- TOP HEADER ---
@@ -193,3 +194,12 @@ seasonEl.forEach((node) =>
 seasonFlowersEl.forEach(
   (node) => (node.style.width = `${(55 / 100) * activeSeasonWidth}px`)
 );
+
+// --- SALE ---
+saleMoreEl.forEach(function (node) {
+  if (node.classList.contains("sale__more--left")) {
+    node.style.right = `${saleImgWidth + 12}px`;
+  } else if (node.classList.contains("sale__more--right")) {
+    node.style.left = `${saleImgWidth + 12}px`;
+  }
+});

@@ -1,24 +1,24 @@
 // SALE CATEGORY CONTAINER (1 ROW) ---------------------------------
 .sale__category {
+  position: relative;
   column-gap: 8rem;
   padding: 1.6rem 0 0.8rem;
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
 
   &--1 {
-    // background-color: rgba($color-sale-1, 0.05);
     background-color: $color-sale-1-tint;
     border-bottom: 2px solid $color-sale-1;
     color: $color-font-sale-1;
   }
 
   &--2 {
-    // background-color: rgba($color-sale-2, 0.05);
     background-color: $color-sale-2-tint;
     border-bottom: 2px solid $color-sale-2;
     color: $color-font-sale-2;
   }
 
   &--3 {
-    // background-color: rgba($color-sale-3, 0.05);
     background-color: $color-sale-3-tint;
     border-bottom: 2px solid $color-sale-3;
     color: $color-font-sale-3;
@@ -26,7 +26,7 @@
 }
 
 .sale__container {
-  row-gap: 3.6rem;
+  row-gap: 6.4rem;
 }
 
 // MAIN SALE ITEMS GRID -----------------------------------------
@@ -83,29 +83,34 @@
   justify-self: start;
   align-self: end;
 
-  text-align: left;
+  width: 100%;
+  padding: 0 1.2rem;
+  margin-top: 3.6rem;
+
+  font-size: $font-size-tiniest;
+  line-height: 1.3;
 
   &--left {
     grid-column: 1 / span 4;
+    text-align: left;
   }
 
   &--right {
     grid-column: -5 / span 4;
+    text-align: right;
   }
 }
 
 .sale__more {
-  grid-row: 2 / span 1;
-  justify-self: center;
-  align-self: start;
+  display: inline-block;
+  position: absolute;
+  top: 1.6rem;
 
-  text-align: center;
+  padding: 0.6rem 1.2rem;
 
   &--left {
-    grid-column: 1 / span 5;
   }
 
   &--right {
-    grid-column: -6 / span 5;
   }
 }

@@ -26,8 +26,6 @@
   &--sale {
     grid-column: 1 / -1;
 
-    padding-top: 4.8rem;
-
     background-color: $color-primary;
   }
 
@@ -46,6 +44,7 @@
 
     padding: 4.8rem;
 
+    border-radius: 1px;
     background-color: $color-primary;
     box-shadow: $bax-shadow-small-bottom;
   }
@@ -56,6 +55,8 @@
     padding: 4.8rem;
     margin: 2rem 0 0;
     column-gap: 3.2rem;
+
+    border-radius: 1px;
 
     background-color: $color-primary;
     box-shadow: $bax-shadow-small-bottom;
@@ -84,15 +85,12 @@
   &--today {
     align-content: start;
     align-items: center;
-    // justify-content: start;
     grid-template-rows: max-content 1fr;
 
     column-gap: 4.8rem;
   }
 
   &--popular {
-    padding-bottom: 3.6rem;
-    border-bottom: 2px solid $color-secondary;
   }
 
   &--sale {
@@ -101,16 +99,17 @@
 
 // HEADER ---------------------------------------------------
 .section__header {
-  margin-bottom: 4.8rem;
+  margin-bottom: 3.2rem;
 
   &--today {
-    margin: 4.8rem 0 3.2rem;
+    margin-top: 4.8rem;
   }
 
   &--popular {
   }
 
   &--sale {
+    border-bottom: 2px solid $color-secondary;
   }
 }
 
