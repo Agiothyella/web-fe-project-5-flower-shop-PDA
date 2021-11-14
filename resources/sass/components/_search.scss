@@ -13,6 +13,7 @@
     color: inherit;
     font-family: inherit;
     font-size: $font-size-tiny;
+    // line-height: ;
 
     border: 1px solid $color-font-grey-light;
 
@@ -23,11 +24,11 @@
 
     &::-webkit-input-placeholder,
     &:-ms-input-placeholder {
-      color: $color-font-grey;
+      color: $color-font-grey-light;
     }
 
     &::-moz-placeholder {
-      color: $color-font-grey;
+      color: $color-font-grey-light;
       opacity: 1;
     }
   }

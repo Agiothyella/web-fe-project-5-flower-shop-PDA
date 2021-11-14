@@ -23,8 +23,17 @@ img {
   object-position: center;
 }
 
+div {
+  background-size: cover;
+  background-position: center;
+}
+
 ul {
   list-style: none;
+}
+
+a p {
+  transition: all 0.05s;
 }
 
 a:link,
@@ -34,5 +43,5 @@ a:visited {
 }
 
 :focus {
-  outline: 2px solid $color-font-active-primary;
+  outline: 2px solid $color-secondary-shade;
 }

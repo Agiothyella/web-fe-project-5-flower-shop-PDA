@@ -18,15 +18,15 @@
   }
 
   &--popular {
-    column-gap: 2.4rem;
-    padding-right: 4.8rem;
+    column-gap: 3.6rem;
+    row-gap: 2.4rem;
 
     border-right: 2px solid $color-secondary-lightest;
   }
 
   &--popular-card {
     gap: 1.2rem;
-    padding-left: 2.4rem;
+    padding: 2.4rem;
   }
 }
 
@@ -113,27 +113,32 @@
     align-items: center;
 
     position: relative;
-    border-radius: 1px;
-    padding: 0.1rem;
     font-size: $font-size-smaller;
 
+    border-radius: 1px;
+    border: 2px solid $color-secondary;
+
+    &:focus,
     &:hover,
     &:active {
       //
 
       .catalogue__name--card {
         text-decoration: underline;
-        color: $color-font-grey-dark;
+        color: $color-secondary-shade;
       }
 
       .catalogue__price--card {
-        color: $color-font-grey-dark;
+        color: $color-secondary-shade;
       }
     }
   }
 
   &__name--card {
     text-transform: capitalize;
+    text-shadow: -1px 0 0 $color-white, 1px 0 0 $color-white,
+      0 -1px 0 $color-white, 0 1px 0 $color-white, -1px -1px 0 $color-white,
+      -1px 1px 0 $color-white, 1px -1px 0 $color-white, 1px 1px 0 $color-white;
   }
 
   &__price--card {

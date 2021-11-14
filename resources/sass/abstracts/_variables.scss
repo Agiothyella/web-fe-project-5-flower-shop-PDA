@@ -23,17 +23,20 @@ $color-font-grey: #838383;
 $color-font-grey-light: #cbcbcb;
 $color-font-light: #ededed;
 
-$color-font-active-primary: #54769c;
-$color-font-complement: #ff5633;
+$color-font-complement: #ff7833;
+$color-font-complement-light: #ffece2;
 
 // SPECIAL SALE SECTION COLORS ----------
 $color-sale-1: #862e9c;
+$color-sale-1-grad: #b557cd;
 $color-sale-2: #b50000;
-$color-sale-3: #999cc5;
+$color-sale-2-grad: #ff2a2a;
+$color-sale-3: #7a7eb4;
+$color-sale-3-grad: #999cc5;
 
-$color-font-sale-1: #6a257b;
-$color-font-sale-2: #990000;
-$color-font-sale-3: #5a5fa1;
+$color-font-sale-1: #862e9c;
+$color-font-sale-2: #b50000;
+$color-font-sale-3: #6a6eab;
 
 // SEASONAL COLORS ---------------------
 $color-autumn: #c36a2d;
@@ -54,7 +57,7 @@ $color-font-summer-tint: #ffe4af;
 $font-title: "Inter", sans-serif;
 $font-primary: "Heebo", sans-serif;
 
-$font-size-tiniest: 1.3em;
+$font-size-tiniest: 1.2em;
 $font-size-tiny: 1.4em;
 $font-size-smaller: 1.6em;
 $font-size-small: 1.8em;

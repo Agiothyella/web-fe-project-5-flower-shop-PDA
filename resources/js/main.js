@@ -192,14 +192,14 @@ seasonEl.forEach((node) =>
 );
 
 seasonFlowersEl.forEach(
-  (node) => (node.style.width = `${(55 / 100) * activeSeasonWidth}px`)
+  (node) => (node.style.width = `${(60 / 100) * activeSeasonWidth}px`)
 );
 
 // --- SALE ---
 saleMoreEl.forEach(function (node) {
   if (node.classList.contains("sale__more--left")) {
-    node.style.right = `${saleImgWidth + 12}px`;
+    node.style.right = `${saleImgWidth - 48}px`;
   } else if (node.classList.contains("sale__more--right")) {
-    node.style.left = `${saleImgWidth + 12}px`;
+    node.style.left = `${saleImgWidth - 48}px`;
   }
 });

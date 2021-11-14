@@ -13,14 +13,36 @@
     border-bottom: 2px solid $color-sale-1;
 
     .sale__title {
-      background-image: linear-gradient(to right, orangered, skyblue);
-      -webkit-background-clip: text;
-      background-clip: text;
+      background-image: none;
+      color: $color-font-sale-1;
 
-      @supports (not (background-clip: text)) or
-        (not (-webkit-background-clip: text)) {
-        background-image: none;
-        color: $color-font-sale-1;
+      @supports (background-clip: text) or (-webkit-background-clip: text) {
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+
+        background-image: linear-gradient(
+          to right,
+          $color-sale-1,
+          $color-sale-1-grad
+        );
+      }
+    }
+
+    .btn {
+      &:link,
+      &:visited {
+        color: $color-sale-1-grad;
+        background-color: $color-secondary-lightest;
+        border: 2px solid $color-sale-1-grad;
+      }
+
+      &:focus,
+      &:hover,
+      &:active {
+        color: $color-secondary-lightest;
+        background-color: $color-sale-1-grad;
+        border: 2px solid $color-secondary-lightest;
       }
     }
   }
@@ -29,14 +51,36 @@
     border-bottom: 2px solid $color-sale-2;
 
     .sale__title {
-      background-image: linear-gradient(to right, orangered, skyblue);
-      -webkit-background-clip: text;
-      background-clip: text;
+      background-image: none;
+      color: $color-font-sale-2;
 
-      @supports (not (background-clip: text)) or
-        (not (-webkit-background-clip: text)) {
-        background-image: none;
-        color: $color-font-sale-2;
+      @supports (background-clip: text) or (-webkit-background-clip: text) {
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+
+        background-image: linear-gradient(
+          to right,
+          $color-sale-2,
+          $color-sale-2-grad
+        );
+      }
+    }
+
+    .btn {
+      &:link,
+      &:visited {
+        color: $color-sale-2-grad;
+        background-color: $color-secondary-lightest;
+        border: 2px solid $color-sale-2-grad;
+      }
+
+      &:focus,
+      &:hover,
+      &:active {
+        color: $color-secondary-lightest;
+        background-color: $color-sale-2-grad;
+        border: 2px solid $color-secondary-lightest;
       }
     }
   }
@@ -45,14 +89,36 @@
     border-bottom: 2px solid $color-sale-3;
 
     .sale__title {
-      background-image: linear-gradient(to right, orangered, skyblue);
-      -webkit-background-clip: text;
-      background-clip: text;
+      background-image: none;
+      color: $color-font-sale-3;
 
-      @supports (not (background-clip: text)) or
-        (not (-webkit-background-clip: text)) {
-        background-image: none;
-        color: $color-font-sale-3;
+      @supports (background-clip: text) or (-webkit-background-clip: text) {
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+
+        background-image: linear-gradient(
+          to right,
+          $color-sale-3,
+          $color-sale-3-grad
+        );
+      }
+    }
+
+    .btn {
+      &:link,
+      &:visited {
+        color: $color-sale-3-grad;
+        background-color: $color-secondary-lightest;
+        border: 2px solid $color-sale-3-grad;
+      }
+
+      &:focus,
+      &:hover,
+      &:active {
+        color: $color-secondary-lightest;
+        background-color: $color-sale-3-grad;
+        border: 2px solid $color-secondary-lightest;
       }
     }
   }
@@ -100,7 +166,7 @@
 
 .sale__title {
   display: inline-block;
-  color: transparent;
+  padding-right: 0.04em;
   grid-row: 2 / span 3;
 
   &--left {
@@ -141,8 +207,6 @@
   display: inline-block;
   position: absolute;
   top: 4.8rem;
-
-  padding: 0.6rem 1.2rem;
 
   &--left {
   }

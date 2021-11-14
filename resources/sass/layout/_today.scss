@@ -26,13 +26,38 @@
 
     object-fit: cover;
   }
+}
 
-  a {
+.today__img {
+  //
+
+  .btn {
     position: absolute;
 
-    bottom: 10%;
+    bottom: 7.5%;
     left: 50%;
     transform: translate(-50%, 0);
+
+    &:link,
+    &:visited {
+      color: $color-font-complement-light;
+      background-color: $color-font-complement;
+      // border: 1px solid $color-font-complement-light;
+
+      box-shadow: rgba($color-font-complement-light, 0.32) 0px 0px 1px 2px,
+        rgba($color-font-complement-light, 0.64) 0px 0px 2px 2px;
+    }
+
+    &:focus,
+    &:hover,
+    &:active {
+      // color: $color-font-complement;
+      // background-color: $color-font-complement-light;
+      // border: 1px solid $color-font-complement;
+
+      box-shadow: rgba($color-font-complement-light, 0.48) 0px 0px 1px 2px,
+        rgba($color-font-complement-light, 0.64) 0px 0px 6px 4px;
+    }
   }
 
   &__shadow {
