@@ -23,7 +23,6 @@ const todayEl = document.querySelector(".section--today");
 const saleImgEl = document.querySelectorAll(".sale__img");
 const saleCatalogueEl = document.querySelectorAll(".sale__catalogue");
 const saleTitleEl = document.querySelectorAll(".sale__title");
-const saleSubtitleEl = document.querySelectorAll(".sale__subtitle");
 const saleMoreEl = document.querySelectorAll(".sale__more");
 
 // ----- SEASON INTERACTIVE -----
@@ -39,6 +38,7 @@ const reviewShopEl = document.querySelector(".review__rating__star");
 const reviewProductsEl = document.querySelectorAll(
   ".review__testimonials__star"
 );
+const reviewProductEl = document.querySelectorAll(".review__product__review");
 
 // ---------------------------------------------------
 
@@ -85,6 +85,10 @@ const initNodeListClases = function () {
   addClassToNodeList(headerSubnavMainEl, "flex");
   addClassToNodeList(headerSubnavMainEl, "flex--normal-h");
   addClassToNodeList(headerSubnavMainEl, "flex--stretch-start");
+
+  addClassToNodeList(reviewProductEl, "flex");
+  addClassToNodeList(reviewProductEl, "flex--normal-v");
+  addClassToNodeList(reviewProductEl, "flex--stretch-stretch");
 };
 
 const initZPattern = function () {
@@ -101,11 +105,6 @@ const initZPattern = function () {
     "grid__self__pattern--start-2"
   );
   renderZPattern(saleTitleEl, "sale__title--right", "sale__title--left");
-  renderZPattern(
-    saleSubtitleEl,
-    "sale__subtitle--left",
-    "sale__subtitle--right"
-  );
   renderZPattern(saleMoreEl, "sale__more--left", "sale__more--right");
 };
 

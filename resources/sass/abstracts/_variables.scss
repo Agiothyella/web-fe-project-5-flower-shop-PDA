@@ -27,12 +27,12 @@ $color-font-complement: #ff7833;
 $color-font-complement-light: #ffece2;
 
 // SPECIAL SALE SECTION COLORS ----------
-$color-sale-1: #862e9c;
-$color-sale-1-grad: #b557cd;
-$color-sale-2: #b50000;
-$color-sale-2-grad: #ff2a2a;
-$color-sale-3: #7a7eb4;
-$color-sale-3-grad: #999cc5;
+$color-sale-1: #b557cd;
+$color-sale-1-grad: #862e9c;
+$color-sale-2: #ff2a2a;
+$color-sale-2-grad: #b50000;
+$color-sale-3: #999cc5;
+$color-sale-3-grad: #7a7eb4;
 
 $color-font-sale-1: #862e9c;
 $color-font-sale-2: #b50000;
@@ -63,6 +63,7 @@ $font-size-smaller: 1.6em;
 $font-size-small: 1.8em;
 $font-size-medium: 2.4em;
 $font-size-large: 3.6em;
+$font-size-huge: 4.8em;
 
 // BREAKPOINTS -----------------------------------------------
 
@@ -75,15 +76,15 @@ $font-size-large: 3.6em;
 
 // BOX SHADOW -----------------------------------------------
 // -------------------- BOX SHADOW SMALL --------
-$bax-shadow-small-bottom: rgba($color-grey-dark, 0.02) 0px 10px 15px -3px,
-  rgba($color-grey-dark, 0.05) 0px 4px 6px -2px;
-$box-shadow-small-top: rgba($color-grey-dark, 0.05) 0px -10px 15px -3px,
-  rgba($color-grey-dark, 0.05) 0px -4px 6px -2px;
+$bax-shadow-small-bottom: rgba($color-black, 0.05) 0px 10px 15px -3px,
+  rgba($color-black, 0.05) 0px 4px 6px -2px;
+$box-shadow-small-top: rgba($color-black, 0.08) 0px -10px 15px -3px,
+  rgba($color-black, 0.05) 0px -4px 6px -2px;
 
 // -------------------- BOX SHADOW MEDIUM --------
 $bax-shadow-medium-bottom: rgba($color-black, 0.15) 0px 10px 15px -3px,
-  rgba($color-grey-dark, 0.05) 0px 4px 6px -2px;
+  rgba($color-black, 0.05) 0px 4px 6px -2px;
 
 // -------------------- BOX SHADOW AROUND --------
-$box-shadow-small-around: rgba($color-black, 0.05) 0px 1px 2px 0px,
-  rgba($color-black, 0.03) 0px 2px 6px 2px;
+$box-shadow-small-around: rgba($color-black, 0.08) 0px 1px 2px 0px,
+  rgba($color-black, 0.05) 0px 2px 6px 2px;

@@ -1,4 +1,4 @@
-.t-header-big {
+.t-header-huge {
   font-size: 9.6em;
   font-weight: 800;
   font-family: $font-title;
@@ -7,7 +7,7 @@
   letter-spacing: -0.07em;
 }
 
-.t-header-big-bold {
+.t-header-huge-bold {
   font-size: 8em;
   font-weight: 900;
   font-family: $font-title;
@@ -15,6 +15,15 @@
   text-transform: uppercase;
   letter-spacing: -0.06em;
   line-height: 0.8;
+}
+
+.t-header-large {
+  font-size: 4.8em;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  font-family: $font-title;
+  letter-spacing: -0.04em;
 }
 
 .t-header-medium {

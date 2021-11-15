@@ -1,64 +1,145 @@
 // CONTAINER ----------------------------------------------------
 .review__container {
-  column-gap: 4.8rem;
+  column-gap: 2.4rem;
+
+  margin-top: 3.2rem;
 }
 
 // SHOP LEFT ----------------------------------------------------
 .review__shop {
   grid-column: span 1;
+  padding: 0 3.2rem;
 
-  align-items: center;
+  text-align: center;
 }
 
 .review__shop {
   &__card {
+    background-color: $color-secondary-lightest;
+
+    padding: 2.4rem;
+    margin-bottom: 2.4rem;
+
+    border-radius: 2px;
+    box-shadow: $bax-shadow-small-bottom;
   }
 
   &__point {
+    font-size: $font-size-huge;
+    font-weight: 500;
   }
 
   &__star {
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid $color-secondary;
+
     svg {
       width: 2.25rem;
       height: 2.25rem;
+
+      fill: $color-font-complement;
     }
   }
 
   &__description {
+    margin-top: 1.8rem;
+
+    font-size: $font-size-tiny;
+
+    color: $color-font-grey;
     text-align: center;
   }
+}
+
+.review__shop__more {
 }
 
 // PRODUCT RIGHT -----------------------------------------------
 .review__product {
   grid-column: span 3;
+  padding-left: 2.4rem;
+  border-left: 1px solid $color-secondary-tint;
+
+  h2 {
+    margin-bottom: 1.8rem;
+  }
+
+  &__container {
+    column-gap: 2.8rem;
+  }
+}
+
+.review__product__review {
+  padding-right: 1.2rem;
+
+  position: relative;
+
+  &::before {
+    content: "";
+    background-image: url(../media/icon/i-quot.png);
+    background-repeat: no-repeat;
+    background-size: 5rem 5rem;
+    background-position: top right;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+    opacity: 0.3;
+
+    transform: translate(0, -0.5rem);
+  }
 }
 
 .review__product {
-  //
+  figcaption {
+    grid-template-columns: max-content 1fr;
 
-  &__review {
+    margin-top: 1.8rem;
+    font-size: $font-size-tiniest;
   }
 
   &__quote {
+    font-size: $font-size-tiny;
+    color: $color-font-grey-dark;
   }
 
   &__img {
+    grid-row: span 3;
+
     width: 7rem;
     height: 7rem;
 
     object-fit: cover;
+    margin-right: 1.2rem;
   }
 
   &__reviewer {
-  }
-
-  &__star {
+    font-size: $font-size-smaller;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__name {
+    font-weight: 500;
+
+    &:link,
+    &:visited {
+      color: $color-secondary-shade;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: underline;
+    }
   }
 
   &__date {
+    color: $color-font-grey;
   }
 }
