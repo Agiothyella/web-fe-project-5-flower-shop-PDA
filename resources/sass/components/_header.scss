@@ -8,6 +8,15 @@
   box-shadow: $bax-shadow-medium-bottom;
 }
 
+.header__container {
+  width: 100%;
+  max-width: 120rem;
+  padding: 0 1.6rem;
+
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
 // HEADER TOP PART ---------------------------------------------
 .header__top {
   height: 100%;

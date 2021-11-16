@@ -77,14 +77,3 @@
 }
 
 // GRID Z-PATTERN ----------------------------------------
-.grid__self__pattern {
-  //
-
-  &--start-2 {
-    grid-column: 1 / span 2;
-  }
-
-  &--end-2 {
-    grid-column: -3 / span 2;
-  }
-}

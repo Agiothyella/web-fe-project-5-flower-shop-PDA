@@ -1,13 +1,13 @@
 // COLORS ------------------------------------------------------
 // MAIN COLORS ---------------------------
-$color-primary-shade: #edf8bc;
-$color-primary: #f2facf;
-$color-primary-tint: #f5fbdb;
+$color-primary-shade: #ebf7b3;
+$color-primary: #f5fbdb;
+$color-primary-tint: #fafdec;
 
 $color-secondary-shade: #7291b3;
 $color-secondary: #a6bacf;
 $color-secondary-tint: #ccd7e3;
-$color-secondary-lightest: #f4f7f9;
+$color-secondary-lightest: #f8fafb;
 
 // GRAYSCALE COLORS ----------------------
 $color-black: #000;
@@ -88,3 +88,7 @@ $bax-shadow-medium-bottom: rgba($color-black, 0.15) 0px 10px 15px -3px,
 // -------------------- BOX SHADOW AROUND --------
 $box-shadow-small-around: rgba($color-black, 0.08) 0px 1px 2px 0px,
   rgba($color-black, 0.05) 0px 2px 6px 2px;
+
+// -------------------- BOX SHADOW SOLID ---------
+$box-shadow-solid-bottom: rgba($color-black, 0.15) 0px 1px 2px 0px,
+  rgba($color-black, 0.08) 0px 2px 6px 2px;

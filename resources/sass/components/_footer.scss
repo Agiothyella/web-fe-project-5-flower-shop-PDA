@@ -1,18 +1,55 @@
+// BASE ---------------------------------------------------
+.footer {
+  background-color: $color-secondary-shade;
+
+  color: $color-white;
+}
+
+.footer__container {
+  width: 100%;
+  max-width: 120rem;
+  padding: 2.4rem 1.6rem;
+}
+
 // SITEMAP NAV -------------------------------------------
+.footer__nav {
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 4;
+}
+
 .footer__sitemap {
 }
 
 .footer__sitemap {
   &__header {
+    font-size: $font-size-small;
+    font-weight: 500;
+
+    margin-bottom: 1.2rem;
   }
 
   &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 0.6rem;
   }
 
   &__item {
   }
 
   &__link {
+    font-size: $font-size-tiny;
+
+    &:link,
+    &:visited {
+      color: $color-white;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -20,6 +57,8 @@
 
 // PAYMENTS ----------------------------------------------
 .footer__payments {
+  grid-column: span 2;
+  justify-self: end;
 }
 
 .footer__payments {
@@ -27,16 +66,61 @@
   }
 
   &__logo {
-    width: 3rem;
-    height: 3rem;
+    width: 4rem;
+    height: 4rem;
+
+    padding: 0.6rem 0.6rem;
+    background-color: $color-primary-tint;
+    border-radius: 2px;
+  }
+
+  p {
+    text-align: center;
+    margin-bottom: 0.8rem;
+
+    font-size: $font-size-smaller;
+    text-transform: capitalize;
   }
 
   li {
+    &:not(:last-child) {
+      margin-right: 0.8rem;
+    }
+  }
+}
+
+.payments {
+  &--paypal {
+    fill: #00457c;
+  }
+
+  &--apple {
+    // fill: ;
+  }
+
+  &--google {
+    fill: #5f6368;
+  }
+
+  &--discover {
+    fill: #ff6000;
+  }
+
+  &--mastercard {
+    fill: #eb001b;
+  }
+
+  &--visa {
+    fill: #142787;
   }
 }
 
 // SOCIAL ------------------------------------------------
 .footer__social {
+  grid-column: span 2;
+  justify-self: end;
+
+  margin: 2.4rem 0;
 }
 
 .footer__social {
@@ -49,15 +133,39 @@
   }
 
   li {
+    &:not(:last-child) {
+      margin-right: 1.8rem;
+    }
   }
 
   a {
+    &:link,
+    &:visited {
+      fill: $color-grey-dark;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      fill: $color-white;
+    }
   }
 }
 
 // BOTTOM ------------------------------------------------
 .footer__store {
+  grid-column: span 2;
+  justify-self: end;
+
+  text-align: right;
+  font-size: $font-size-tiny;
 }
 
 .footer__copyright {
+  grid-column: span 2;
+  justify-self: end;
+
+  margin-top: 1.8rem;
+
+  font-size: $font-size-tiniest;
 }

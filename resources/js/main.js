@@ -73,6 +73,18 @@ const removeClassFromNodeList = function (nodeList, className) {
 //-------------------------------------------------
 // --------------------------------------------------- INIT PAGE ----
 // ----- FUNCTIONS -----
+const zPatternSale = function () {
+  renderZPattern(
+    saleCatalogueEl,
+    "sale__catalogue--left",
+    "sale__catalogue--right"
+  );
+  renderZPattern(saleImgEl, "sale__img--right", "sale__img--left");
+  renderZPattern(saleImgEl, "_", "u-flip-img-h");
+  renderZPattern(saleTitleEl, "sale__title--right", "sale__title--left");
+  renderZPattern(saleMoreEl, "sale__more--left", "sale__more--right");
+};
+
 const initNodeListClases = function () {
   addClassToNodeList(headerSubnavContainerEl, "flex");
   addClassToNodeList(headerSubnavContainerEl, "flex--normal-h");
@@ -92,24 +104,12 @@ const initNodeListClases = function () {
 };
 
 const initZPattern = function () {
-  renderZPattern(
-    saleCatalogueEl,
-    "sale__catalogue--left",
-    "sale__catalogue--right"
-  );
-  renderZPattern(saleImgEl, "sale__img--right", "sale__img--left");
-  renderZPattern(saleImgEl, "_", "u-flip-img-h");
-  renderZPattern(
-    saleTitleEl,
-    "grid__self__pattern--end-2",
-    "grid__self__pattern--start-2"
-  );
-  renderZPattern(saleTitleEl, "sale__title--right", "sale__title--left");
-  renderZPattern(saleMoreEl, "sale__more--left", "sale__more--right");
+  zPatternSale();
 };
 
 const initPage = function () {
-  initZPattern();
+  // Z-Pattern style (currently only Sale Section):
+  // initZPattern();
   initNodeListClases();
 };
 

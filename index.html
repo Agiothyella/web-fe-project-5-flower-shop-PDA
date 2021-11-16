@@ -35,12 +35,7 @@
   <body>
     <header class="header flex flex--normal-v flex--stretch-center">
       <div class="header__top flex flex--normal-v flex--stretch-center">
-        <div
-          class="
-            section__container section__container--header
-            flex flex--normal-h flex--stretch-start
-          "
-        >
+        <div class="header__container flex flex--normal-h flex--stretch-start">
           <div class="header__top__brand flex flex--normal-h">
             <a href="#" class="header__top__logo">
               <img
@@ -767,7 +762,19 @@
               />
 
               <div class="sale__catalogue">
-                <div class="catalogue__list catalogue__list--sale grid grid--3">
+                <div class="catalogue__list catalogue__list--sale grid grid--4">
+                  <a href="#" class="catalogue__item catalogue__sale--1">
+                    <img
+                      src="resources/media/img/data-img/placeholder-4.jpg"
+                      alt=""
+                      class="catalogue__img"
+                    />
+                    <div class="catalogue__desc">
+                      <p class="catalogue__name">Sed dicta nulla</p>
+                      <p class="catalogue__price">$105</p>
+                    </div>
+                  </a>
+
                   <a href="#" class="catalogue__item catalogue__sale--1">
                     <img
                       src="resources/media/img/data-img/placeholder-1.jpg"
@@ -818,7 +825,19 @@
               />
 
               <div class="sale__catalogue">
-                <div class="catalogue__list catalogue__list--sale grid grid--3">
+                <div class="catalogue__list catalogue__list--sale grid grid--4">
+                  <a href="#" class="catalogue__item catalogue__sale--2">
+                    <img
+                      src="resources/media/img/data-img/placeholder-4.jpg"
+                      alt=""
+                      class="catalogue__img"
+                    />
+                    <div class="catalogue__desc">
+                      <p class="catalogue__name">Minus quia</p>
+                      <p class="catalogue__price">$75</p>
+                    </div>
+                  </a>
+
                   <a href="#" class="catalogue__item catalogue__sale--2">
                     <img
                       src="resources/media/img/data-img/placeholder-1.jpg"
@@ -871,7 +890,19 @@
               />
 
               <div class="sale__catalogue">
-                <div class="catalogue__list catalogue__list--sale grid grid--3">
+                <div class="catalogue__list catalogue__list--sale grid grid--4">
+                  <a href="#" class="catalogue__item catalogue__sale--3">
+                    <img
+                      src="resources/media/img/data-img/placeholder-4.jpg"
+                      alt=""
+                      class="catalogue__img"
+                    />
+                    <div class="catalogue__desc">
+                      <p class="catalogue__name">veniam sed quo harum</p>
+                      <p class="catalogue__price">$112</p>
+                    </div>
+                  </a>
+
                   <a href="#" class="catalogue__item catalogue__sale--3">
                     <img
                       src="resources/media/img/data-img/placeholder-1.jpg"
@@ -1327,7 +1358,7 @@
         </div>
       </article>
 
-      <section class="section section--contact grid grid--7">
+      <article class="section section--contact grid grid--7">
         <iframe
           class="contact__map"
           style="border: 0"
@@ -1335,44 +1366,32 @@
           allowfullscreen
           src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJmXYzTM5nbK8R-r-y6cUSAkE&key=AIzaSyDcpTNHMPWIXMaFi-7rns0LtY8tqHcZz4Q"
         ></iframe>
-        <div class="contact__detail grid grid--1 grid__self grid__self--top">
-          <h2 class="t-header-small">Agiothyella Flower</h2>
-          <ul class="contact__list grid grid--1 grid__self grid__self--top">
+        <div class="contact__detail grid grid--1">
+          <h2 class="t-header-tiny">Agiothyella Flower</h2>
+          <ul class="contact__list grid grid--1">
             <li class="contact__item">
               <a href="mailto:flower@agiothyella.com" class="contact__link">
-                <svg class="contact__icon">
-                  <use
-                    xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-mail"
-                  ></use>
-                </svg>
                 <p>flower@agiothyella.com</p>
               </a>
+              <p class="contact__means">E-mail</p>
             </li>
             <li class="contact__item">
               <a href="tel:+1122278901" class="contact__link">
-                <svg class="contact__icon">
-                  <use
-                    xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-phone"
-                  ></use>
-                </svg>
                 <p>+11-222-78-901</p></a
               >
+              <p class="contact__means">Phone</p>
             </li>
             <li class="contact__item">
               <a
                 href="https://maps.google.com/maps?ll=-74.695873,164.10568&z=13&t=m&hl=en-US&gl=US&mapclient=embed&q=Zucchelli%20Station%20Antarctica"
                 class="contact__link"
               >
-                <svg class="contact__icon">
-                  <use
-                    xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-location-pin"
-                  ></use>
-                </svg>
-                <p>
+                <address>
                   Mario Zucchelli Station., <br />
                   Terra Nova Bay, Antarctica
-                </p>
+                </address>
               </a>
+              <p class="contact__means">Address</p>
             </li>
           </ul>
 
@@ -1403,11 +1422,13 @@
             </li>
           </ul>
         </div>
-      </section>
+      </article>
 
       <article class="section section--introduction">
-        <h1>Beautiful Flowers Arrangements from Experienced Florist</h1>
-        <p>
+        <h1 class="t-header-small">
+          Beautiful Flowers Arrangements from Experienced Florist
+        </h1>
+        <p class="section__paragraph">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
           obcaecati ipsam nemo minus. Dolorum nostrum ex odio magnam dicta
           veniam tempora, eius, aspernatur quo unde, molestias quasi labore
@@ -1419,16 +1440,20 @@
           ut vitae voluptatem laboriosam minus voluptas, perferendis debitis vel
           porro dolor.
         </p>
-        <h2>Fresh Flowers, Cut Just a Moment Before Delivery</h2>
-        <p>
+        <h2 class="t-header-tiny">
+          Fresh Flowers, Cut Just a Moment Before Delivery
+        </h2>
+        <p class="section__paragraph">
           Ullam, iusto adipisci! Consequatur dicta laborum tenetur doloribus,
           excepturi tempora nisi minima quo assumenda numquam maiores velit
           dolores atque unde placeat doloremque! Quaerat deleniti tenetur amet
           recusandae explicabo eaque, consectetur dignissimos quia neque,
           molestiae, sed tempore.
         </p>
-        <h2>Sapiente tempore sint dignissimos non labore</h2>
-        <p>
+        <h2 class="t-header-tiny">
+          Sapiente tempore sint dignissimos non labore
+        </h2>
+        <p class="section__paragraph">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aliquid
           dolore et, qui exercitationem recusandae similique iusto quasi dolores
           quis voluptatem temporibus cupiditate in quam officia. Officia impedit
@@ -1436,8 +1461,10 @@
           molestias omnis nostrum eveniet est. Assumenda quam necessitatibus
           cum, non saepe consectetur ex? Facilis?
         </p>
-        <h2>Laboriosam sunt ut delectus incidunt repellendus</h2>
-        <p>
+        <h2 class="t-header-tiny">
+          Laboriosam sunt ut delectus incidunt repellendus
+        </h2>
+        <p class="section__paragraph">
           Excepturi enim error aut omnis explicabo obcaecati minima suscipit
           ducimus itaque quas soluta, expedita magnam placeat? Modi fuga ratione
           ad omnis dolore! Nulla explicabo aperiam suscipit, a enim at neque
@@ -1447,167 +1474,172 @@
       </article>
     </main>
 
-    <footer class="footer">
-      <div class="footer__nav grid grid--3">
-        <nav class="footer__sitemap">
-          <p class="footer__sitemap__header">About Us</p>
-          <ul class="footer__sitemap__list">
-            <li class="footer__sitemap__item">
-              <a href="#" class="footer__sitemap__link"
-                >Agiothyella Corporate</a
-              >
+    <footer class="footer flex flex--normal-v flex--stretch-center">
+      <div class="footer__container grid grid--5">
+        <div class="footer__nav grid grid--3">
+          <nav class="footer__sitemap">
+            <p class="footer__sitemap__header">About Us</p>
+            <ul class="footer__sitemap__list">
+              <li class="footer__sitemap__item">
+                <a href="#" class="footer__sitemap__link"
+                  >Agiothyella Corporate</a
+                >
+              </li>
+              <li class="footer__sitemap__item">
+                <a href="#" class="footer__sitemap__link">Corporate Services</a>
+              </li>
+              <li class="footer__sitemap__item">
+                <a href="#" class="footer__sitemap__link">Privacy</a>
+              </li>
+              <li class="footer__sitemap__item">
+                <a href="#" class="footer__sitemap__link"
+                  >Become an Affiliate</a
+                >
+              </li>
+              <li class="footer__sitemap__item">
+                <a href="#" class="footer__sitemap__link">Blog</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="footer__sitemap">
+            <p class="footer__sitemap__header">Policy</p>
+            <ul class="footer__sitemap__list">
+              <li class="footer__sitemap__item">
+                <a href="#" class="footer__sitemap__link">Terms of Service</a>
+              </li>
+              <li class="footer__sitemap__item">
+                <a href="#" class="footer__sitemap__link">Delivery Policy</a>
+              </li>
+              <li class="footer__sitemap__item">
+                <a href="#" class="footer__sitemap__link"
+                  >Substitution Policy</a
+                >
+              </li>
+              <li class="footer__sitemap__item">
+                <a href="#" class="footer__sitemap__link">Privacy Policy</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="footer__sitemap">
+            <p class="footer__sitemap__header">Help</p>
+            <ul class="footer__sitemap__list">
+              <li class="footer__sitemap__item">
+                <a href="#" class="footer__sitemap__link">Customer Service</a>
+              </li>
+              <li class="footer__sitemap__item">
+                <a href="#" class="footer__sitemap__link">Track Delivery</a>
+              </li>
+              <li class="footer__sitemap__item">
+                <a href="#" class="footer__sitemap__link">Sitemap</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer__payments">
+          <p>Payment methods</p>
+          <ul class="footer__payments__list flex flex--normal-h">
+            <li title="We accept Paypal">
+              <svg class="footer__payments__logo payments payments--paypal">
+                <use
+                  xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-paypal"
+                ></use>
+              </svg>
             </li>
-            <li class="footer__sitemap__item">
-              <a href="#" class="footer__sitemap__link">Corporate Services</a>
+            <li title="We accept Apple Pay">
+              <svg class="footer__payments__logo payments payments--apple">
+                <use
+                  xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-applepay"
+                ></use>
+              </svg>
             </li>
-            <li class="footer__sitemap__item">
-              <a href="#" class="footer__sitemap__link">Privacy</a>
+            <li title="We accept Google Pay">
+              <svg class="footer__payments__logo payments payments--google">
+                <use
+                  xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-googlepay"
+                ></use>
+              </svg>
             </li>
-            <li class="footer__sitemap__item">
-              <a href="#" class="footer__sitemap__link">Become an Affiliate</a>
+            <li title="We accept Discover">
+              <svg class="footer__payments__logo payments payments--discover">
+                <use
+                  xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-discover"
+                ></use>
+              </svg>
             </li>
-            <li class="footer__sitemap__item">
-              <a href="#" class="footer__sitemap__link">Blog</a>
+            <li title="We accept Mastercard">
+              <svg class="footer__payments__logo payments payments--mastercard">
+                <use
+                  xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-mastercard"
+                ></use>
+              </svg>
+            </li>
+            <li title="We accept Visa">
+              <svg class="footer__payments__logo payments payments--visa">
+                <use
+                  xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-visa"
+                ></use>
+              </svg>
             </li>
           </ul>
-        </nav>
-        <nav class="footer__sitemap">
-          <p class="footer__sitemap__header">Policy</p>
-          <ul class="footer__sitemap__list">
-            <li class="footer__sitemap__item">
-              <a href="#" class="footer__sitemap__link">Terms of Service</a>
+        </div>
+        <div class="footer__social">
+          <ul class="footer__social__list flex flex--normal-h">
+            <li>
+              <a href="#">
+                <svg class="footer__social__logo">
+                  <use
+                    xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-facebook"
+                  ></use></svg
+              ></a>
             </li>
-            <li class="footer__sitemap__item">
-              <a href="#" class="footer__sitemap__link">Delivery Policy</a>
+            <li>
+              <a href="#">
+                <svg class="footer__social__logo">
+                  <use
+                    xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-instagram"
+                  ></use></svg
+              ></a>
             </li>
-            <li class="footer__sitemap__item">
-              <a href="#" class="footer__sitemap__link">Substitution Policy</a>
+            <li>
+              <a href="#">
+                <svg class="footer__social__logo">
+                  <use
+                    xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-twitter"
+                  ></use></svg
+              ></a>
             </li>
-            <li class="footer__sitemap__item">
-              <a href="#" class="footer__sitemap__link">Privacy Policy</a>
+            <li>
+              <a href="#">
+                <svg class="footer__social__logo">
+                  <use
+                    xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-youtube"
+                  ></use></svg
+              ></a>
+            </li>
+            <li>
+              <a href="#">
+                <svg class="footer__social__logo">
+                  <use
+                    xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-yelp"
+                  ></use></svg
+              ></a>
+            </li>
+            <li>
+              <a href="#">
+                <svg class="footer__social__logo">
+                  <use
+                    xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-linkedin"
+                  ></use></svg
+              ></a>
             </li>
           </ul>
-        </nav>
-        <nav class="footer__sitemap">
-          <p class="footer__sitemap__header">Help</p>
-          <ul class="footer__sitemap__list">
-            <li class="footer__sitemap__item">
-              <a href="#" class="footer__sitemap__link">Customer Service</a>
-            </li>
-            <li class="footer__sitemap__item">
-              <a href="#" class="footer__sitemap__link">Track Delivery</a>
-            </li>
-            <li class="footer__sitemap__item">
-              <a href="#" class="footer__sitemap__link">Sitemap</a>
-            </li>
-          </ul>
-        </nav>
+        </div>
+        <div class="footer__store">
+          <p>Mario Zucchelli Station., Terra Nova Bay, Antarctica</p>
+          <p>+11-222-78-901</p>
+        </div>
+        <p class="footer__copyright">Copyright&copy; 2021 Agiothyella</p>
       </div>
-      <div class="footer__sign-up"></div>
-      <div class="footer__payments">
-        <p>Payment methods</p>
-        <ul class="footer__payments__list flex flex--normal-h">
-          <li title="We accept Paypal">
-            <svg class="footer__payments__logo">
-              <use
-                xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-paypal"
-              ></use>
-            </svg>
-          </li>
-          <li title="We accept Apple Pay">
-            <svg class="footer__payments__logo">
-              <use
-                xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-applepay"
-              ></use>
-            </svg>
-          </li>
-          <li title="We accept Google Pay">
-            <svg class="footer__payments__logo">
-              <use
-                xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-googlepay"
-              ></use>
-            </svg>
-          </li>
-          <li title="We accept Discover">
-            <svg class="footer__payments__logo">
-              <use
-                xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-discover"
-              ></use>
-            </svg>
-          </li>
-          <li title="We accept Mastercard">
-            <svg class="footer__payments__logo">
-              <use
-                xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-mastercard"
-              ></use>
-            </svg>
-          </li>
-          <li title="We accept Visa">
-            <svg class="footer__payments__logo">
-              <use
-                xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-visa"
-              ></use>
-            </svg>
-          </li>
-        </ul>
-      </div>
-      <div class="footer__social">
-        <ul class="footer__social__list flex flex--normal-h">
-          <li>
-            <a href="#">
-              <svg class="footer__social__logo">
-                <use
-                  xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-facebook"
-                ></use></svg
-            ></a>
-          </li>
-          <li>
-            <a href="#">
-              <svg class="footer__social__logo">
-                <use
-                  xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-instagram"
-                ></use></svg
-            ></a>
-          </li>
-          <li>
-            <a href="#">
-              <svg class="footer__social__logo">
-                <use
-                  xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-twitter"
-                ></use></svg
-            ></a>
-          </li>
-          <li>
-            <a href="#">
-              <svg class="footer__social__logo">
-                <use
-                  xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-youtube"
-                ></use></svg
-            ></a>
-          </li>
-          <li>
-            <a href="#">
-              <svg class="footer__social__logo">
-                <use
-                  xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-yelp"
-                ></use></svg
-            ></a>
-          </li>
-          <li>
-            <a href="#">
-              <svg class="footer__social__logo">
-                <use
-                  xlink:href="vendors/icon/icomoon/symbol-defs.svg#icon-linkedin"
-                ></use></svg
-            ></a>
-          </li>
-        </ul>
-      </div>
-      <div class="footer__store">
-        Fiesta Flowers & Gifts 28700 SW 157th Ave. Homestead FL 33033 +1 (305)
-        245-1200
-      </div>
-      <p class="footer__copyright">Copyright&copy; 2021 Agiothyella</p>
     </footer>
   </body>
 </html>
