@@ -119,7 +119,22 @@
 .season__more {
   display: none;
   align-self: end;
-  justify-self: end;
+  justify-self: center;
+
+  margin-top: 2.4rem;
+  grid-column: 1 / -1;
+
+  &:link,
+  &:visited {
+    color: currentColor;
+    border: 2px solid currentColor;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $color-white;
+  }
 }
 
 // SEASON SPECIFIC -----------------------------------------
@@ -237,6 +252,14 @@
     //
 
     .season__flowers__name {
+      text-decoration: underline;
+    }
+  }
+
+  .season__more {
+    &:hover,
+    &:active,
+    &:focus {
       text-decoration: underline;
     }
   }

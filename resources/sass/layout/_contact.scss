@@ -4,6 +4,8 @@
 
   width: 100%;
   height: 45rem;
+
+  outline: 1px solid $color-font-grey-light;
 }
 
 // LIST ----------------------------------------------------
@@ -14,6 +16,7 @@
 
   padding: 2.4rem 3.2rem;
   background-color: $color-white;
+  border: 1px solid $color-font-grey-light;
   box-shadow: $box-shadow-solid-bottom;
 
   h2 {
@@ -53,13 +56,13 @@
     &:active,
     &:focus {
       fill: $color-secondary-shade;
-      color: $color-font-grey;
+      color: $color-secondary-shade;
       text-decoration: underline;
     }
   }
 
   &__means {
-    color: $color-secondary-shade;
+    color: $color-font-dark;
     font-size: $font-size-tiny;
     font-weight: 500;
   }

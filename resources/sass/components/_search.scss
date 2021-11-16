@@ -24,11 +24,11 @@
 
     &::-webkit-input-placeholder,
     &:-ms-input-placeholder {
-      color: $color-font-grey-light;
+      color: $color-font-grey;
     }
 
     &::-moz-placeholder {
-      color: $color-font-grey-light;
+      color: $color-font-grey;
       opacity: 1;
     }
   }
