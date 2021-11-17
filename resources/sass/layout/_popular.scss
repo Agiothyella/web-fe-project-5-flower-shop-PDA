@@ -13,6 +13,10 @@
   column-gap: 2.4rem;
   align-items: end;
   padding: 0 4.8rem;
+
+  @media only screen and (max-width: $bp-large) {
+    column-gap: 0;
+  }
 }
 
 .popular__header {

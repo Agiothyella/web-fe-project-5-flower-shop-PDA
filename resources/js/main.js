@@ -5,13 +5,15 @@
 // ----- HEADER ------
 const headerEl = document.querySelector(".header");
 const headerNavEl = document.querySelector(".header__nav");
+const headerNavItemEl = document.querySelectorAll(".header__nav__item");
+const headerNavLinkEl = document.querySelectorAll(".header__nav__link");
+
 const headerSubnavEl = document.querySelectorAll(".header__subnav");
 const headerSubnavContainerEl = document.querySelectorAll(
   ".header__subnav__container"
 );
 const headerSubnavMainEl = document.querySelectorAll(".header__subnav__main");
-const headerNavItemEl = document.querySelectorAll(".header__nav__item");
-const headerNavLinkEl = document.querySelectorAll(".header__nav__link");
+const subnavLinkEl = document.querySelectorAll(".header__subnav__link");
 
 const searchBar = document.querySelector(".c-search__input");
 const searchBtn = document.querySelector(".c-search__button");
@@ -73,6 +75,7 @@ const removeClassFromNodeList = function (nodeList, className) {
 //-------------------------------------------------
 // --------------------------------------------------- INIT PAGE ----
 // ----- FUNCTIONS -----
+
 const zPatternSale = function () {
   renderZPattern(
     saleCatalogueEl,
@@ -127,6 +130,8 @@ const btnHeight = searchBtn.getBoundingClientRect().height;
 
 const saleImgWidth = saleImgEl[0].getBoundingClientRect().width;
 
+let subnavOpen = 0;
+
 // ----- FUNCTIONALITY ------
 // --- TOP HEADER ---
 todayEl.style.marginTop = `${headerHeight}px`;
@@ -137,44 +142,65 @@ headerSubnavEl.forEach((node) => {
 
   node.addEventListener("mouseenter", function (e) {
     e.target.previousElementSibling.classList.add("subnav-open");
+    subnavOpen = 1;
   });
 
   node.addEventListener("mouseleave", function (e) {
     e.target.previousElementSibling.classList.remove("subnav-open");
+    subnavOpen = 0;
   });
 });
 
+// --- TOP NAV ---
 headerNavLinkEl.forEach(function (link) {
   if (link.classList.contains("nav__have-subnav")) {
     link.addEventListener("click", function (e) {
       e.preventDefault();
-
       removeClassFromNodeList(headerNavLinkEl, "active-subnav");
       e.target.classList.add("active-subnav");
+      subnavOpen = 1;
     });
 
     link.addEventListener("mouseenter", function (e) {
       e.target.classList.add("subnav-open");
+      subnavOpen = 1;
     });
 
     link.addEventListener("mouseleave", function (e) {
       e.target.classList.remove("subnav-open");
+      subnavOpen = 0;
     });
 
     link.addEventListener("focus", function (e) {
       removeClassFromNodeList(headerNavLinkEl, "subnav-open");
       e.target.classList.add("subnav-open");
+      subnavOpen = 1;
     });
   }
 });
 
-// HACK:
-const navHaveSubnav = document.querySelectorAll(".nav__have-subnav");
-const lastHaveSubnav =
-  navHaveSubnav[navHaveSubnav.length - 1].nextElementSibling;
-const lastSubnav = lastHaveSubnav.querySelectorAll(".header__subnav__link");
+// --- SUBNAV ---
+// subnavLinkEl.forEach((el) => {
+//   el.addEventListener("click", function (e) {
+//     removeClassFromNodeList(headerNavLinkEl, "active-subnav");
+//     removeClassFromNodeList(headerNavLinkEl, "subnav-open");
+//   });
+// });
 
-lastSubnav[lastSubnav.length - 1].addEventListener("blur", (e) =>
+// CONTROL SUBNAV - HACK:
+document.addEventListener("click", function (e) {
+  if (
+    e.target.closest(".header__subnav") === null &&
+    !e.target.classList.contains("nav__have-subnav") &&
+    subnavOpen > 0
+  ) {
+    removeClassFromNodeList(headerNavLinkEl, "subnav-open");
+    subnavOpen = 0;
+  }
+});
+
+// HIDE SUBNAV WHEN TABBING TO END - HACK:
+subnavLinkEl[subnavLinkEl.length - 1].addEventListener("blur", (e) =>
   e.target
     .closest(".header__subnav")
     .previousElementSibling.classList.remove("subnav-open")
