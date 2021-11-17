@@ -3,7 +3,7 @@
   grid-column: span 5;
 
   width: 100%;
-  height: 45rem;
+  height: 100%;
 }
 
 // LIST ----------------------------------------------------
@@ -14,7 +14,6 @@
 
   padding: 2.4rem 3.2rem;
   background-color: $color-white;
-  border: 1px solid $color-font-grey-light;
   box-shadow: $box-shadow-solid-bottom;
 
   h2 {
