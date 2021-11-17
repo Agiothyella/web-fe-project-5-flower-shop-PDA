@@ -180,12 +180,12 @@ headerNavLinkEl.forEach(function (link) {
 });
 
 // --- SUBNAV ---
-// subnavLinkEl.forEach((el) => {
-//   el.addEventListener("click", function (e) {
-//     removeClassFromNodeList(headerNavLinkEl, "active-subnav");
-//     removeClassFromNodeList(headerNavLinkEl, "subnav-open");
-//   });
-// });
+subnavLinkEl.forEach((el) => {
+  el.addEventListener("click", function (e) {
+    removeClassFromNodeList(headerNavLinkEl, "active-subnav");
+    removeClassFromNodeList(headerNavLinkEl, "subnav-open");
+  });
+});
 
 // CONTROL SUBNAV - HACK:
 document.addEventListener("click", function (e) {
