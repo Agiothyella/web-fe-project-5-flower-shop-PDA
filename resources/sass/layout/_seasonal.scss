@@ -25,7 +25,7 @@
 
   filter: grayscale(0.9);
   transition: all 0.5s;
-  transform: translate3d(0, 0, 0) rotate3d(0);
+  transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0deg);
 }
 
 .season__header {
@@ -64,14 +64,21 @@
   align-self: center;
   justify-self: center;
 
+  margin-top: 1.2rem;
+
   column-gap: 1rem;
   row-gap: 1rem;
 
-  transform: translate3d(0, 0, 0) rotate3d(0);
+  transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0deg);
+
+  @media only screen and (max-width: $bp-large) {
+    align-self: start;
+  }
 }
 
 .season__flowers {
   &__flower {
+    white-space: nowrap;
   }
 
   &__link {
@@ -100,10 +107,16 @@
   }
 
   &__name {
+    overflow: hidden;
     position: absolute;
     bottom: 3px;
     left: 0;
-    padding: 0 3px;
+
+    width: calc(100% - 9px);
+    margin: 0 3px;
+
+    white-space: nowrap;
+    overflow: hidden;
 
     font-size: $font-size-smaller;
     font-weight: 600;
@@ -268,6 +281,10 @@
 .season.active-season {
   flex-basis: 550%;
   cursor: auto;
+
+  @media only screen and (max-width: $bp-large) {
+    flex-basis: 900%;
+  }
 }
 
 .active-season {

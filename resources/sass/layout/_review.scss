@@ -11,6 +11,10 @@
   padding: 0 3.2rem;
 
   text-align: center;
+
+  @media only screen and (max-width: $bp-large) {
+    padding: 0;
+  }
 }
 
 .review__shop {

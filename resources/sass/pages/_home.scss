@@ -64,6 +64,10 @@
 
     background-color: $color-primary;
     box-shadow: $bax-shadow-medium-bottom;
+
+    @media only screen and (max-width: $bp-large) {
+      margin: 1px 0 0;
+    }
   }
 
   &--introduction {
@@ -93,6 +97,10 @@
 
     @media only screen and (max-width: $bp-larger) {
       padding-right: 0;
+    }
+
+    @media only screen and (max-width: $bp-large) {
+      column-gap: 1.2rem;
     }
   }
 

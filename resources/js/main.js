@@ -116,28 +116,15 @@ const initPage = function () {
   initNodeListClases();
 };
 
-// ----- RUN FUNCTIONS -----
-initPage();
-
 // -
 // -
 // -------------------------------------- SPECIFIC FUNCTIONALITY --
 // ----- VARIABLES ------
-const headerHeight = headerEl.getBoundingClientRect().height;
-const activeSeasonWidth = activeSeason.getBoundingClientRect().width;
-
-const btnHeight = searchBtn.getBoundingClientRect().height;
-
-const saleImgWidth = saleImgEl[0].getBoundingClientRect().width;
-
 let subnavOpen = 0;
 
 // ----- FUNCTIONALITY ------
 // --- TOP HEADER ---
-todayEl.style.marginTop = `${headerHeight}px`;
-
 headerSubnavEl.forEach((node) => {
-  node.style.top = `${headerHeight}px`;
   node.previousElementSibling.classList.add("nav__have-subnav");
 
   node.addEventListener("mouseenter", function (e) {
@@ -206,8 +193,6 @@ subnavLinkEl[subnavLinkEl.length - 1].addEventListener("blur", (e) =>
     .previousElementSibling.classList.remove("subnav-open")
 );
 
-searchBar.style.height = `${btnHeight + 2}px`;
-
 // --- SEASONAL ---
 seasonEl.forEach((node) =>
   node.addEventListener("click", function (e) {
@@ -216,15 +201,36 @@ seasonEl.forEach((node) =>
   })
 );
 
-seasonFlowersEl.forEach(
-  (node) => (node.style.width = `${(60 / 100) * activeSeasonWidth}px`)
-);
+// ------------------------------------------ GLOBAL FUNCTIONS ---
 
-// --- SALE ---
-saleMoreEl.forEach(function (node) {
-  if (node.classList.contains("sale__more--left")) {
-    node.style.right = `${saleImgWidth - 48}px`;
-  } else if (node.classList.contains("sale__more--right")) {
-    node.style.left = `${saleImgWidth - 48}px`;
-  }
+// ----- DYNAMIC ELEMENTS -----
+const calculateSize = function () {
+  // ----- VARIABLES -----
+  const headerHeight = headerEl.getBoundingClientRect().height;
+  const activeSeasonWidth = activeSeason.getBoundingClientRect().width;
+
+  const btnHeight = searchBtn.getBoundingClientRect().height;
+
+  // --- FUNCTIONS ---
+  todayEl.style.marginTop = `${headerHeight}px`;
+  headerSubnavEl.forEach((node) => {
+    node.style.top = `${headerHeight}px`;
+  });
+
+  seasonFlowersEl.forEach(
+    (node) => (node.style.width = `${(60 / 100) * activeSeasonWidth}px`)
+  );
+
+  searchBar.style.height = `${btnHeight + 2}px`;
+};
+
+// ------------------------------------------ RUN ALL FUNCTIONS -----
+calculateSize();
+
+window.addEventListener("resize", function () {
+  setTimeout(function () {
+    calculateSize();
+  }, 50);
 });
+
+initPage();

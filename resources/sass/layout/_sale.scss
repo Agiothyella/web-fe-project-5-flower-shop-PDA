@@ -9,6 +9,10 @@
 
   background-color: $color-primary-tint;
 
+  @media only screen and (max-width: $bp-large) {
+    column-gap: 3.2rem;
+  }
+
   &--1 {
     border-bottom: 1px solid $color-sale-1;
 

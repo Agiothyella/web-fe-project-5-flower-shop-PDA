@@ -17,11 +17,20 @@
     row-gap: 2.4rem;
 
     border-right: 2px solid $color-secondary-lightest;
+
+    @media only screen and (max-width: $bp-large) {
+      column-gap: 2.4rem;
+    }
   }
 
   &--popular-card {
     gap: 1.2rem;
     padding: 2.4rem;
+
+    @media only screen and (max-width: $bp-large) {
+      padding: 2.4rem 1.2rem;
+      gap: 1.2rem;
+    }
   }
 
   &--sale {
@@ -80,6 +89,12 @@
     text-align: center;
     line-height: 1.6;
     letter-spacing: 0.03em;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   &__price {
