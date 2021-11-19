@@ -4,6 +4,11 @@
 
   width: 100%;
   height: 100%;
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: span 7;
+    height: 50rem;
+  }
 }
 
 // LIST ----------------------------------------------------
@@ -15,6 +20,10 @@
   padding: 2.4rem 3.2rem;
   background-color: $color-white;
   box-shadow: $box-shadow-solid-bottom;
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: span 7;
+  }
 
   h2 {
     align-self: start;
@@ -29,6 +38,12 @@
 .contact__list {
   align-self: start;
   row-gap: 2.4rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: repeat(3, 1fr);
+
+    text-align: center;
+  }
 }
 
 .contact {
@@ -36,10 +51,6 @@
   }
 
   &__link {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
     font-size: $font-size-smaller;
     line-height: 1.4;
 

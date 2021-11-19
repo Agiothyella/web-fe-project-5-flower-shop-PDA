@@ -14,7 +14,7 @@
   }
 
   &--1 {
-    border-bottom: 1px solid $color-sale-1;
+    border-bottom: 1px solid $color-sale-1-grad;
 
     .sale__title {
       background-image: none;
@@ -30,29 +30,34 @@
           $color-sale-1,
           $color-sale-1-grad
         );
+
+        @media only screen and (max-width: $bp-medium) {
+          background-image: none;
+          color: $color-font-sale-1;
+        }
       }
     }
 
     .sale__more {
       &:link,
       &:visited {
-        color: $color-sale-1;
+        color: $color-sale-1-grad;
         background-color: $color-secondary-lightest;
-        border: 2px solid $color-sale-1;
+        border: 2px solid $color-sale-1-grad;
       }
 
       &:focus,
       &:hover,
       &:active {
         color: $color-secondary-lightest;
-        background-color: $color-sale-1;
+        background-color: $color-sale-1-grad;
         border: 2px solid $color-secondary-lightest;
       }
     }
   }
 
   &--2 {
-    border-bottom: 1px solid $color-sale-2;
+    border-bottom: 1px solid $color-sale-2-grad;
 
     .sale__title {
       background-image: none;
@@ -68,29 +73,34 @@
           $color-sale-2,
           $color-sale-2-grad
         );
+
+        @media only screen and (max-width: $bp-medium) {
+          background-image: none;
+          color: $color-font-sale-2;
+        }
       }
     }
 
     .sale__more {
       &:link,
       &:visited {
-        color: $color-sale-2;
+        color: $color-sale-2-grad;
         background-color: $color-secondary-lightest;
-        border: 2px solid $color-sale-2;
+        border: 2px solid $color-sale-2-grad;
       }
 
       &:focus,
       &:hover,
       &:active {
         color: $color-secondary-lightest;
-        background-color: $color-sale-2;
+        background-color: $color-sale-2-grad;
         border: 2px solid $color-secondary-lightest;
       }
     }
   }
 
   &--3 {
-    border-bottom: 1px solid $color-sale-3;
+    border-bottom: 1px solid $color-sale-3-grad;
 
     .sale__title {
       background-image: none;
@@ -106,6 +116,11 @@
           $color-sale-3,
           $color-sale-3-grad
         );
+
+        @media only screen and (max-width: $bp-medium) {
+          background-image: none;
+          color: $color-font-sale-3;
+        }
       }
     }
 
@@ -148,6 +163,11 @@
   &--right {
     grid-column: -6 / span 5;
   }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
 }
 
 // IMAGE CONTAINER ---------------------------------------------
@@ -167,13 +187,20 @@
     &--right {
       // grid-column: -3 / span 2;
     }
+
+    @media only screen and (max-width: $bp-medium) {
+      display: none;
+    }
   }
 }
 
 // BOTTOM HEADER ------------------------------------------------
 
 .sale__title {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
   padding-right: 0.04em;
   grid-row: 2 / span 1;
 
@@ -188,6 +215,31 @@
   &--right {
     // justify-self: end;
     // grid-column: -3 / span 2;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    justify-self: center;
+    width: 100%;
+
+    margin-bottom: 2.4rem;
+  }
+
+  &::before,
+  &::after {
+    content: " ";
+    display: none;
+    width: 100%;
+    height: 1px;
+    color: inherit;
+    background-color: currentColor;
+
+    margin: 3.2rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      display: block;
+    }
   }
 }
 
@@ -206,5 +258,10 @@
 
   &--right {
     grid-column: -6 / span 5;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1 / -1;
+    grid-row: auto;
   }
 }

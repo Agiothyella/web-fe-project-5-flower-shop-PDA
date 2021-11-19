@@ -1,0 +1,12 @@
+.accordion-active {
+  @media only screen and (max-width: $bp-medium) {
+    background-color: $color-secondary;
+  }
+
+  &::after {
+    @media only screen and (max-width: $bp-medium) {
+      content: "\02212";
+      color: $color-secondary-lightest;
+    }
+  }
+}

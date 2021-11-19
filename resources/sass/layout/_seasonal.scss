@@ -7,6 +7,11 @@
   width: 100%;
 
   background-color: $color-primary;
+
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: column;
+    height: 80rem;
+  }
 }
 
 // COMMON CONTENT ---------------------------------------
@@ -26,6 +31,10 @@
   filter: grayscale(0.9);
   transition: all 0.5s;
   transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0deg);
+
+  @media only screen and (max-width: $bp-medium) {
+    background-size: 125% auto;
+  }
 }
 
 .season__header {
@@ -45,6 +54,15 @@
 
     transform-origin: right;
     transform: rotate(-90deg) translate(88%, -30%);
+
+    @media only screen and (max-width: $bp-medium) {
+      transform: rotate(0) translate(0);
+
+      right: auto;
+      left: 0;
+
+      line-height: 0.75;
+    }
   }
 
   &__subtitle {
@@ -182,7 +200,7 @@
   &--winter {
     color: $color-font-winter;
     background-image: url("../media/img/season-winter.jpg");
-    background-position: center bottom;
+    background-position: center center;
 
     .season__title {
       text-shadow: -2px 0 2px $color-font-winter-tint,
@@ -284,6 +302,10 @@
 
   @media only screen and (max-width: $bp-large) {
     flex-basis: 900%;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    flex-basis: 550%;
   }
 }
 

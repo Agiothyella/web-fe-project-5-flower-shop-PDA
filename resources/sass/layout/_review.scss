@@ -1,19 +1,49 @@
 // CONTAINER ----------------------------------------------------
 .review__container {
   column-gap: 2.4rem;
-
   margin-top: 3.2rem;
+
+  grid-template-columns: 31fr repeat(3, 23fr);
+
+  @media only screen and (max-width: $bp-large) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(0, min-content);
+    column-gap: 3.6rem;
+  }
+
+  // PRODUCT REVIEW TITLE -------------------------------
+  h2 {
+    margin-bottom: 1.8rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      margin-bottom: 3.2rem;
+    }
+  }
 }
 
 // SHOP LEFT ----------------------------------------------------
 .review__shop {
-  grid-column: span 1;
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 2;
   padding: 0 3.2rem;
+
+  margin-right: 2.4rem;
+  border-right: 1px solid $color-secondary-tint;
 
   text-align: center;
 
   @media only screen and (max-width: $bp-large) {
-    padding: 0;
+    padding: 0 1.8rem 0 0;
+    margin-right: 0.8rem;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    margin: 0;
+    border-right: none;
   }
 }
 
@@ -26,6 +56,10 @@
 
     border-radius: 2px;
     box-shadow: $box-shadow-solid-bottom;
+
+    @media only screen and (max-width: $bp-large) {
+      padding: 1.8rem;
+    }
   }
 
   &__point {
@@ -59,26 +93,36 @@
 }
 
 // PRODUCT RIGHT -----------------------------------------------
-.review__product {
-  grid-column: span 3;
-  padding-left: 2.4rem;
-  border-left: 1px solid $color-secondary-tint;
-
-  h2 {
-    margin-bottom: 1.8rem;
-  }
-
-  &__container {
-    column-gap: 2.8rem;
-  }
-}
 
 .review__product__review {
-  padding-right: 1.2rem;
+  grid-row: 2 / span 1;
 
   position: relative;
   z-index: 1;
 
+  @media only screen and (max-width: $bp-medium) {
+    grid-row: 3 / span 1;
+    justify-content: flex-start;
+    height: 100%;
+  }
+
+  // GRID ITEMS SELECTOR -----------------------------
+  &:not(:last-child) {
+    margin-right: 1.2rem;
+
+    @media only screen and (max-width: $bp-large) {
+      margin-right: 0.8rem;
+    }
+  }
+
+  &:nth-child(3) {
+    @media only screen and (max-width: $bp-medium) {
+      grid-row: 2 / span 1;
+      margin-bottom: 4.8rem;
+    }
+  }
+
+  // PSEUDOCLASS QUOTE --------------------------------
   &::before {
     content: "";
     background-image: url(../media/icon/i-quot.png);
@@ -97,16 +141,16 @@
 
     transform: translate(0, -0.5rem);
   }
-}
 
-.review__product {
   figcaption {
     grid-template-columns: max-content 1fr;
 
     margin-top: 1.8rem;
     font-size: $font-size-tiniest;
   }
+}
 
+.review__product {
   &__quote {
     font-size: $font-size-tiny;
     color: $color-font-grey-dark;

@@ -17,6 +17,12 @@
   @media only screen and (max-width: $bp-large) {
     column-gap: 0;
   }
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 0 1.8rem;
+
+    grid-template-columns: 40fr 30fr 30fr;
+  }
 }
 
 .popular__header {
@@ -36,6 +42,17 @@
 }
 
 // CONTENT ---------------------------------------------
+// NOTE: This is just a PLACEHOLDER. Delete later for real data will be fetched from database
+.catalogue__popular--card {
+  &:nth-child(n + 9) {
+    display: none;
+
+    @media only screen and (max-width: $bp-medium) {
+      display: block;
+    }
+  }
+}
+
 .popular__arrangement {
   grid-column: 2 / span 2;
   grid-row: 1 / span 1;

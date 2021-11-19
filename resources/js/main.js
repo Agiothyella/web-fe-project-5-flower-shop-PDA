@@ -2,6 +2,9 @@
 
 //--------------------------------------------------
 // -------------------------------------------------- VARIABLE -----
+// ----- RESPONSIVE -----
+const resBreakpoints = [1200, 1000, 800, 600];
+
 // ----- HEADER ------
 const headerEl = document.querySelector(".header");
 const headerNavEl = document.querySelector(".header__nav");
@@ -41,6 +44,11 @@ const reviewProductsEl = document.querySelectorAll(
   ".review__testimonials__star"
 );
 const reviewProductEl = document.querySelectorAll(".review__product__review");
+
+// ----- FOOTER -----
+const footerMapHeadEl = document.querySelectorAll(".footer__sitemap__header");
+
+console.log(footerMapHeadEl);
 
 // ---------------------------------------------------
 
@@ -120,6 +128,8 @@ const initPage = function () {
 // -
 // -------------------------------------- SPECIFIC FUNCTIONALITY --
 // ----- VARIABLES ------
+const activeSeasonWidth = activeSeason.getBoundingClientRect().width;
+
 let subnavOpen = 0;
 
 // ----- FUNCTIONALITY ------
@@ -141,6 +151,7 @@ headerSubnavEl.forEach((node) => {
 // --- TOP NAV ---
 headerNavLinkEl.forEach(function (link) {
   if (link.classList.contains("nav__have-subnav")) {
+    // --------------------------------------
     link.addEventListener("click", function (e) {
       e.preventDefault();
       removeClassFromNodeList(headerNavLinkEl, "active-subnav");
@@ -201,27 +212,67 @@ seasonEl.forEach((node) =>
   })
 );
 
+if (window.matchMedia("(max-width: 50em)").matches) {
+  seasonFlowersEl.forEach((node) => (node.style.width = `350px`));
+} else {
+  seasonFlowersEl.forEach(
+    (node) => (node.style.width = `${(60 / 100) * activeSeasonWidth}px`)
+  );
+}
+
+// --- FOOTER ACCORDION ---
+if (window.matchMedia("(max-width: 50em)").matches) {
+  footerMapHeadEl.forEach((node) => {
+    node.classList.add("accordion");
+
+    node.addEventListener("click", function (e) {
+      this.classList.toggle("accordion-active");
+
+      const accItem = node.nextElementSibling;
+      if (accItem.style.maxHeight) {
+        accItem.style.maxHeight = null;
+      } else {
+        accItem.style.maxHeight = accItem.scrollHeight + "px";
+      }
+    });
+  });
+}
+
+// else {
+//   footerMapHeadEl.forEach((node) => {
+//     node.classList.remove("accordion");
+//   });
+// }
+
 // ------------------------------------------ GLOBAL FUNCTIONS ---
 
 // ----- DYNAMIC ELEMENTS -----
 const calculateSize = function () {
   // ----- VARIABLES -----
   const headerHeight = headerEl.getBoundingClientRect().height;
-  const activeSeasonWidth = activeSeason.getBoundingClientRect().width;
-
   const btnHeight = searchBtn.getBoundingClientRect().height;
 
+  const viewportH = document.documentElement.clientHeight;
+
   // --- FUNCTIONS ---
+  // - HEADER -
   todayEl.style.marginTop = `${headerHeight}px`;
   headerSubnavEl.forEach((node) => {
     node.style.top = `${headerHeight}px`;
   });
 
-  seasonFlowersEl.forEach(
-    (node) => (node.style.width = `${(60 / 100) * activeSeasonWidth}px`)
-  );
-
   searchBar.style.height = `${btnHeight + 2}px`;
+
+  // - MOBILE SUBNAV -
+  headerSubnavEl.forEach((node) => {
+    const subNavH = node.getBoundingClientRect().height;
+
+    if (subNavH + headerHeight >= viewportH) {
+      node.style.height = `${viewportH - headerHeight}px`;
+    } else if (subNavH + headerHeight < viewportH) {
+      node.style.height = `auto`;
+    }
+  });
 };
 
 // ------------------------------------------ RUN ALL FUNCTIONS -----
