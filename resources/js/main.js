@@ -153,9 +153,20 @@ headerNavLinkEl.forEach(function (link) {
   if (link.classList.contains("nav__have-subnav")) {
     // --------------------------------------
     link.addEventListener("click", function (e) {
+      if (subnavOpen === 1 && e.target.classList.contains("active-subnav")) {
+        e.preventDefault();
+        removeClassFromNodeList(headerNavLinkEl, "active-subnav");
+        removeClassFromNodeList(headerNavLinkEl, "subnav-open");
+        subnavOpen = 0;
+
+        return subnavOpen;
+      }
+
       e.preventDefault();
       removeClassFromNodeList(headerNavLinkEl, "active-subnav");
+      removeClassFromNodeList(headerNavLinkEl, "subnav-open");
       e.target.classList.add("active-subnav");
+      e.target.classList.add("subnav-open");
       subnavOpen = 1;
     });
 
@@ -173,6 +184,10 @@ headerNavLinkEl.forEach(function (link) {
       removeClassFromNodeList(headerNavLinkEl, "subnav-open");
       e.target.classList.add("subnav-open");
       subnavOpen = 1;
+    });
+
+    link.addEventListener("mousedown", function (e) {
+      e.preventDefault();
     });
   }
 });
@@ -266,7 +281,6 @@ const calculateSize = function () {
   // - MOBILE SUBNAV -
   headerSubnavEl.forEach((node) => {
     const subNavH = node.getBoundingClientRect().height;
-
     if (subNavH + headerHeight >= viewportH) {
       node.style.height = `${viewportH - headerHeight}px`;
     } else if (subNavH + headerHeight < viewportH) {
@@ -276,7 +290,6 @@ const calculateSize = function () {
 };
 
 // ------------------------------------------ RUN ALL FUNCTIONS -----
-calculateSize();
 
 window.addEventListener("resize", function () {
   setTimeout(function () {
