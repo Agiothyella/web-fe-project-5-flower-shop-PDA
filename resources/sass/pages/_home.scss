@@ -10,6 +10,10 @@
     padding: 8rem 0;
   }
 
+  @media only screen and (max-width: $bp-small) {
+    padding: 4.8rem 0;
+  }
+
   &--today {
     grid-column: 1 / -1;
 
@@ -120,11 +124,21 @@
 
   &--sale {
   }
+
+  &--seasonal {
+    @media only screen and (max-width: $bp-small) {
+      padding: 0;
+    }
+  }
 }
 
 // HEADER ---------------------------------------------------
 .section__header {
   margin-bottom: 3.2rem;
+
+  @media only screen and (max-width: $bp-small) {
+    text-align: center;
+  }
 
   &--today {
     margin-top: 4.8rem;
@@ -133,6 +147,10 @@
 
   &--popular {
     margin-left: 1.8rem;
+
+    @media only screen and (max-width: $bp-small) {
+      margin-left: 0;
+    }
   }
 
   &--sale {

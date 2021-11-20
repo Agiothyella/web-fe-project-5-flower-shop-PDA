@@ -145,6 +145,7 @@
 
 .sale__container {
   row-gap: 3.2rem;
+  width: 100%;
 }
 
 // MAIN SALE ITEMS GRID -----------------------------------------
@@ -224,6 +225,10 @@
     width: 100%;
 
     margin-bottom: 2.4rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    width: 100%;
   }
 
   &::before,

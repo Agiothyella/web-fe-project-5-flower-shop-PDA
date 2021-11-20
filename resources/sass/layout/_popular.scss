@@ -42,7 +42,7 @@
 }
 
 // CONTENT ---------------------------------------------
-// NOTE: This is just a PLACEHOLDER. Delete later for real data will be fetched from database
+// NOTE: This is just a PLACEHOLDER to simulate dynamic data. Delete later because real data will be fetched from database
 .catalogue__popular--card {
   &:nth-child(n + 9) {
     display: none;
@@ -50,8 +50,25 @@
     @media only screen and (max-width: $bp-medium) {
       display: block;
     }
+
+    @media only screen and (max-width: $bp-smaller) {
+      display: none;
+    }
   }
+
+  &:nth-child(n + 10) {
+    @media only screen and (max-width: $bp-small) {
+      display: none;
+    }
+  }
+
+  // &:nth-child(n + 7) {
+  //   @media only screen and (max-width: $bp-small) {
+  //     display: none;
+  //   }
+  // }
 }
+//---
 
 .popular__arrangement {
   grid-column: 2 / span 2;
@@ -59,6 +76,12 @@
 
   padding-left: 4.8rem;
   padding-bottom: 2.4rem;
+
+  @media only screen and (max-width: $bp-small) {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 1;
+    padding-left: 0;
+  }
 }
 
 .popular__flower {
@@ -67,6 +90,11 @@
 
   background-color: $color-secondary-tint;
   background-image: url("../media/img/pop-img.jpg");
+
+  @media only screen and (max-width: $bp-small) {
+    grid-column: 1 / span 3;
+    grid-row: 2 / span 1;
+  }
 }
 
 .popular__more {

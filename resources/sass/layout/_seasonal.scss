@@ -12,6 +12,14 @@
     flex-direction: column;
     height: 80rem;
   }
+
+  @media only screen and (max-width: $bp-small) {
+    height: 50rem;
+  }
+
+  @media only screen and (max-width: $bp-smaller) {
+    height: auto;
+  }
 }
 
 // COMMON CONTENT ---------------------------------------
@@ -35,11 +43,19 @@
   @media only screen and (max-width: $bp-medium) {
     background-size: 125% auto;
   }
+
+  @media only screen and (max-width: $bp-small) {
+    display: none;
+  }
 }
 
 .season__header {
   align-self: start;
   margin-bottom: auto;
+
+  @media only screen and (max-width: $bp-small) {
+    margin-bottom: 2.4rem;
+  }
 }
 
 .season {
@@ -73,6 +89,10 @@
 
     font-size: $font-size-small;
     font-weight: 600;
+
+    @media only screen and (max-width: $bp-smaller) {
+      white-space: normal;
+    }
   }
 }
 
@@ -91,6 +111,15 @@
 
   @media only screen and (max-width: $bp-large) {
     align-self: start;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    margin: 0 auto;
+  }
+
+  @media only screen and (max-width: $bp-smaller) {
+    grid-template-columns: 1fr 1fr !important;
+    max-width: 32rem;
   }
 }
 
@@ -177,6 +206,10 @@
     background-image: url("../media/img/season-autumn.jpg");
     background-position: center center;
 
+    @media only screen and (max-width: $bp-small) {
+      background-size: cover;
+    }
+
     .season__title {
       text-shadow: -2px 0 2px $color-font-autumn-tint,
         2px 0 2px $color-font-autumn-tint, 0 2px 2px $color-font-autumn-tint,
@@ -201,6 +234,10 @@
     color: $color-font-winter;
     background-image: url("../media/img/season-winter.jpg");
     background-position: center center;
+
+    @media only screen and (max-width: $bp-small) {
+      background-size: cover;
+    }
 
     .season__title {
       text-shadow: -2px 0 2px $color-font-winter-tint,
@@ -227,6 +264,10 @@
     background-image: url("../media/img/season-spring.jpg");
     background-position: center center;
 
+    @media only screen and (max-width: $bp-small) {
+      background-size: cover;
+    }
+
     .season__title {
       text-shadow: -2px 0 2px $color-font-spring-tint,
         2px 0 2px $color-font-spring-tint, 0 2px 2px $color-font-spring-tint,
@@ -251,6 +292,10 @@
     color: $color-font-summer;
     background-image: url("../media/img/season-summer.jpg");
     background-position: center center;
+
+    @media only screen and (max-width: $bp-small) {
+      background-size: cover;
+    }
 
     .season__title {
       text-shadow: -2px 0 2px $color-font-summer-tint,
@@ -277,6 +322,10 @@
 .season.now-season {
   filter: grayscale(0);
   border: 3px solid currentColor;
+
+  @media only screen and (max-width: $bp-small) {
+    display: block;
+  }
 
   .season__flowers__link:hover,
   .season__flowers__link:focus {
@@ -306,6 +355,10 @@
 
   @media only screen and (max-width: $bp-medium) {
     flex-basis: 550%;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    flex-basis: 100%;
   }
 }
 

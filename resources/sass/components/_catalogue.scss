@@ -15,6 +15,14 @@
       column-gap: 1.2rem;
     }
 
+    @media only screen and (max-width: $bp-small) {
+      grid-template-columns: 1fr 1fr !important;
+      row-gap: 2.4rem;
+      max-width: 48rem;
+
+      margin: 0 auto;
+    }
+
     .catalogue__price {
       font-weight: 600;
     }
@@ -29,6 +37,11 @@
     @media only screen and (max-width: $bp-medium) {
       grid-template-columns: 1fr 1fr !important;
     }
+
+    @media only screen and (max-width: $bp-small) {
+      max-width: 48rem;
+      margin: 0 auto;
+    }
   }
 
   &--popular-card {
@@ -39,10 +52,29 @@
       padding: 2.4rem 1.2rem;
       gap: 1.2rem;
     }
+
+    @media only screen and (max-width: $bp-small) {
+      grid-template-columns: 1fr 1fr 1fr !important;
+
+      max-width: 48rem;
+      margin: 0 auto;
+    }
+
+    @media only screen and (max-width: $bp-smaller) {
+      grid-template-columns: 1fr 1fr !important;
+      max-width: 32rem;
+    }
   }
 
   &--sale {
     column-gap: 1.8rem;
+
+    @media only screen and (max-width: $bp-small) {
+      grid-template-columns: 1fr 1fr !important;
+
+      max-width: 48rem;
+      margin: 0 auto;
+    }
   }
 }
 

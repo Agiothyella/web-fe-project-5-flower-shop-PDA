@@ -3,7 +3,8 @@
 //--------------------------------------------------
 // -------------------------------------------------- VARIABLE -----
 // ----- RESPONSIVE -----
-const resBreakpoints = [1200, 1000, 800, 600];
+const resBreakpoints = [1200, 1000, 800, 600, 450];
+const emBreakpoints = [75, 62.5, 50, 37.5, 28.125];
 
 // ----- HEADER ------
 const headerEl = document.querySelector(".header");
@@ -226,8 +227,9 @@ seasonEl.forEach((node) =>
     node.classList.add("active-season");
   })
 );
-
-if (window.matchMedia("(max-width: 50em)").matches) {
+if (window.matchMedia(`(max-width: ${emBreakpoints[4]}em)`).matches) {
+  seasonFlowersEl.forEach((node) => (node.style.width = null));
+} else if (window.matchMedia(`(max-width: ${emBreakpoints[2]}em)`).matches) {
   seasonFlowersEl.forEach((node) => (node.style.width = `350px`));
 } else {
   seasonFlowersEl.forEach(
@@ -236,7 +238,7 @@ if (window.matchMedia("(max-width: 50em)").matches) {
 }
 
 // --- FOOTER ACCORDION ---
-if (window.matchMedia("(max-width: 50em)").matches) {
+if (window.matchMedia(`(max-width: ${emBreakpoints[2]}em)`).matches) {
   footerMapHeadEl.forEach((node) => {
     node.classList.add("accordion");
 
@@ -290,6 +292,10 @@ const calculateSize = function () {
 };
 
 // ------------------------------------------ RUN ALL FUNCTIONS -----
+// HACK: Mobile size elements not calculated properly onload
+if (window.matchMedia(`(max-width: ${emBreakpoints[3]}em)`).matches) {
+  calculateSize();
+}
 
 window.addEventListener("resize", function () {
   setTimeout(function () {

@@ -25,6 +25,11 @@
     grid-column: span 7;
   }
 
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: 1fr max-content !important;
+    column-gap: 2.4rem;
+  }
+
   h2 {
     align-self: start;
     text-align: center;
@@ -32,6 +37,10 @@
     padding-bottom: 1.2rem;
 
     border-bottom: 2px solid $color-secondary;
+
+    @media only screen and (max-width: $bp-small) {
+      grid-column: span 2;
+    }
   }
 }
 
@@ -43,6 +52,14 @@
     grid-template-columns: repeat(3, 1fr);
 
     text-align: center;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: 1fr;
+  }
+
+  @media only screen and (max-width: $bp-smaller) {
+    grid-column: span 2;
   }
 }
 
@@ -84,6 +101,22 @@
   column-gap: 1.8rem;
 
   margin-top: 0.8rem;
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: 1fr;
+    align-self: center;
+    row-gap: 1.2rem;
+    padding: 0 2.4rem;
+  }
+
+  @media only screen and (max-width: $bp-smaller) {
+    grid-template-columns: repeat(3, 1fr);
+    align-self: end;
+    row-gap: 1.2rem;
+    padding: 0;
+
+    grid-column: span 2;
+  }
 
   a {
     transition: all 0.05s;
