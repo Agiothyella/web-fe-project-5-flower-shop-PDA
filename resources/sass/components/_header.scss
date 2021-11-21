@@ -16,6 +16,10 @@
   align-items: flex-start;
   justify-content: space-between;
 
+  @media only screen and (max-width: $bp-small) {
+    align-items: center;
+  }
+
   // @media only screen and (max-width: $bp-small) {
   //   align-items: center;
   // }
@@ -384,7 +388,7 @@
   padding: 0.4rem;
 
   border-radius: 2px;
-  border: 2px solid $color-font-grey-light;
+  border: 1px solid $color-font-grey-light;
 
   @media only screen and (max-width: $bp-small) {
     display: flex;
