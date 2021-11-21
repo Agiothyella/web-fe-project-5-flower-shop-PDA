@@ -49,8 +49,6 @@ const reviewProductEl = document.querySelectorAll(".review__product__review");
 // ----- FOOTER -----
 const footerMapHeadEl = document.querySelectorAll(".footer__sitemap__header");
 
-console.log(footerMapHeadEl);
-
 // ---------------------------------------------------
 
 // -
@@ -255,37 +253,30 @@ if (window.matchMedia(`(max-width: ${emBreakpoints[2]}em)`).matches) {
   });
 }
 
-// else {
-//   footerMapHeadEl.forEach((node) => {
-//     node.classList.remove("accordion");
-//   });
-// }
-
 // ------------------------------------------ GLOBAL FUNCTIONS ---
-
 // ----- DYNAMIC ELEMENTS -----
 const calculateSize = function () {
   // ----- VARIABLES -----
-  const headerHeight = headerEl.getBoundingClientRect().height;
-  const btnHeight = searchBtn.getBoundingClientRect().height;
+  const btnHeightRes = searchBtn.getBoundingClientRect().height;
+  const headerHeightRes = headerEl.getBoundingClientRect().height;
 
   const viewportH = document.documentElement.clientHeight;
 
   // --- FUNCTIONS ---
   // - HEADER -
-  todayEl.style.marginTop = `${headerHeight}px`;
+  todayEl.style.marginTop = `${headerHeightRes}px`;
   headerSubnavEl.forEach((node) => {
-    node.style.top = `${headerHeight}px`;
+    node.style.top = `${headerHeightRes}px`;
   });
 
-  searchBar.style.height = `${btnHeight + 2}px`;
+  searchBar.style.height = `${btnHeightRes + 2}px`;
 
   // - MOBILE SUBNAV -
   headerSubnavEl.forEach((node) => {
     const subNavH = node.getBoundingClientRect().height;
-    if (subNavH + headerHeight >= viewportH) {
-      node.style.height = `${viewportH - headerHeight}px`;
-    } else if (subNavH + headerHeight < viewportH) {
+    if (subNavH + headerHeightRes >= viewportH) {
+      node.style.height = `${viewportH - headerHeightRes}px`;
+    } else if (subNavH + headerHeightRes < viewportH) {
       node.style.height = `auto`;
     }
   });
@@ -293,9 +284,7 @@ const calculateSize = function () {
 
 // ------------------------------------------ RUN ALL FUNCTIONS -----
 // HACK: Mobile size elements not calculated properly onload
-if (window.matchMedia(`(max-width: ${emBreakpoints[3]}em)`).matches) {
-  calculateSize();
-}
+calculateSize();
 
 window.addEventListener("resize", function () {
   setTimeout(function () {
