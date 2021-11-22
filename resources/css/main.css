@@ -42,6 +42,8 @@ button {
   border-radius: 2px;
   border: 1px solid #cbcbcb;
   background-color: transparent;
+  font-family: inherit;
+  color: inherit;
 }
 
 a p {
@@ -871,6 +873,7 @@ a:visited {
     height: auto;
     background-color: #7291b3;
     grid-template-columns: 1fr;
+    padding-top: 1.2rem;
     transform-origin: top;
     transform: translateY(100%) scaleY(0);
     overflow-y: auto;
@@ -1007,13 +1010,16 @@ a:visited {
 
 .header__subnav__back {
   display: none;
+  cursor: pointer;
+  color: #3f3f3f;
+  padding: 0.4rem 0.8rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
 }
 
 @media only screen and (max-width: 37.5em) {
   .header__subnav__back {
-    display: block;
-    height: 4rem;
-    width: 4rem;
+    display: inline-block;
   }
 }
 

@@ -149,8 +149,9 @@
       height: auto;
 
       background-color: $color-secondary-shade;
-
       grid-template-columns: 1fr;
+
+      padding-top: 1.2rem;
 
       transform-origin: top;
       transform: translateY(100%) scaleY(0);
@@ -308,12 +309,15 @@
 
 .header__subnav__back {
   display: none;
+  cursor: pointer;
+  color: $color-font-dark;
+  padding: 0.4rem 0.8rem;
+  margin-bottom: 1.2rem;
+
+  text-align: center;
 
   @media only screen and (max-width: $bp-small) {
-    display: block;
-
-    height: 4rem;
-    width: 4rem;
+    display: inline-block;
   }
 }
 

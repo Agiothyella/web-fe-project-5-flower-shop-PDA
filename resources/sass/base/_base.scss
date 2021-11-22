@@ -41,8 +41,8 @@ button {
   border: 1px solid $color-font-grey-light;
   background-color: transparent;
 
-  &:focus {
-  }
+  font-family: inherit;
+  color: inherit;
 }
 
 a p {

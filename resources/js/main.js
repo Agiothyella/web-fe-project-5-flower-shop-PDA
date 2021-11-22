@@ -28,6 +28,7 @@ const searchBar = document.querySelector(".c-search__input");
 const searchBtn = document.querySelector(".c-search__button");
 
 const headerNavSmallEl = document.querySelector(".header__nav-small");
+const headerSubnavBack = document.querySelectorAll(".header__subnav__back");
 
 // ----- TODAY SECTION -----
 const todayEl = document.querySelector(".section--today");
@@ -289,11 +290,21 @@ headerNavLinkEl.forEach(function (link) {
   }
 });
 
-// --- SUBNAV ---
-subnavLinkEl.forEach((el) => {
-  el.addEventListener("click", function (e) {
+headerSubnavBack.forEach((node) => {
+  node.addEventListener("click", function () {
     removeClassFromNodeList(headerNavLinkEl, "active-subnav");
     removeClassFromNodeList(headerNavLinkEl, "subnav-open");
+    subnavOpen = 0;
+  });
+});
+
+// --- SUBNAV ---
+subnavLinkEl.forEach((node) => {
+  node.addEventListener("click", function (e) {
+    removeClassFromNodeList(headerNavLinkEl, "active-subnav");
+    removeClassFromNodeList(headerNavLinkEl, "subnav-open");
+    headerNavListEl.classList.remove("mobile__nav-open");
+    subnavOpen = 0;
   });
 });
 
@@ -371,17 +382,14 @@ if (viewportInitW > pxBreakpoints[3]) {
 window.addEventListener("resize", function () {
   seasonWidth();
 
+  removeClassFromNodeList(headerNavLinkEl, "active-subnav");
+  removeClassFromNodeList(headerNavLinkEl, "subnav-open");
+  subnavOpen = 0;
+
   if (window.matchMedia(`(max-width: ${emBreakpoints[3]}em)`).matches) {
-    removeClassFromNodeList(headerNavLinkEl, "active-subnav");
-    removeClassFromNodeList(headerNavLinkEl, "subnav-open");
-
-    subnavOpen = 0;
-
     calculateSizeMobile();
   } else {
     headerNavListEl.classList.remove("mobile__nav-open");
-    removeClassFromNodeList(headerNavLinkEl, "subnav-open");
-
     calculateSize();
   }
 });
