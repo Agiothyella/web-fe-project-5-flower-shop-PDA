@@ -136,6 +136,21 @@ const calculateSizeMobile = function () {
   }
 };
 
+// ----- SEASONAL LAYOUT -----
+const seasonWidth = function () {
+  const activeSeasonWidth = activeSeason.getBoundingClientRect().width;
+
+  if (window.matchMedia(`(max-width: ${emBreakpoints[4]}em)`).matches) {
+    seasonFlowersEl.forEach((node) => (node.style.width = null));
+  } else if (window.matchMedia(`(max-width: ${emBreakpoints[2]}em)`).matches) {
+    seasonFlowersEl.forEach((node) => (node.style.width = `350px`));
+  } else {
+    seasonFlowersEl.forEach(
+      (node) => (node.style.width = `${(60 / 100) * activeSeasonWidth}px`)
+    );
+  }
+};
+
 // --------------------------------------------------
 
 //-
@@ -198,8 +213,6 @@ const initPage = function () {
 
 // -------------------------------------- SPECIFIC FUNCTIONALITY --
 // ----- VARIABLES ------
-const activeSeasonWidth = activeSeason.getBoundingClientRect().width;
-
 let subnavOpen = 0;
 
 // ----- FUNCTIONALITY ------
@@ -314,15 +327,6 @@ seasonEl.forEach((node) =>
     node.classList.add("active-season");
   })
 );
-if (window.matchMedia(`(max-width: ${emBreakpoints[4]}em)`).matches) {
-  seasonFlowersEl.forEach((node) => (node.style.width = null));
-} else if (window.matchMedia(`(max-width: ${emBreakpoints[2]}em)`).matches) {
-  seasonFlowersEl.forEach((node) => (node.style.width = `350px`));
-} else {
-  seasonFlowersEl.forEach(
-    (node) => (node.style.width = `${(60 / 100) * activeSeasonWidth}px`)
-  );
-}
 
 // --- FOOTER ACCORDION ---
 if (window.matchMedia(`(max-width: ${emBreakpoints[2]}em)`).matches) {
@@ -360,11 +364,14 @@ if (viewportInitW > pxBreakpoints[3]) {
 }
 
 window.addEventListener("resize", function () {
+  seasonWidth();
+
   if (window.matchMedia(`(max-width: ${emBreakpoints[3]}em)`).matches) {
-    setTimeout(calculateSizeMobile, 50);
+    calculateSizeMobile();
   } else {
-    setTimeout(calculateSize, 50);
+    calculateSize();
   }
 });
 
+seasonWidth();
 initPage();
