@@ -227,6 +227,16 @@ const initPage = function () {
 // -
 // -
 
+// ------------------------------------- LAZY IMAGES -----
+const lazyCatalogues = new LazyLoad();
+
+// ------------------------------------------------------------
+
+//--
+//--
+//--
+//--
+
 // -------------------------------------- GLOBAL SETTER --
 // ----- VARIABLES ------
 let subnavOpen = 0;
@@ -407,3 +417,5 @@ window.addEventListener("resize", function () {
 
 seasonWidth();
 initPage();
+
+lazyCatalogues.update();
