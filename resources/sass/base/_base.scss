@@ -36,6 +36,15 @@ ul {
   list-style: none;
 }
 
+button {
+  border-radius: 2px;
+  border: 1px solid $color-font-grey-light;
+  background-color: transparent;
+
+  &:focus {
+  }
+}
+
 a p {
   transition: all 0.05s;
 }

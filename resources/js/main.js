@@ -96,14 +96,13 @@ const calculateSize = function () {
   // --- FUNCTIONS ---
   // - HEADER -
   todayEl.style.marginTop = `${headerHeightRes}px`;
-  headerSubnavEl.forEach((node) => {
-    node.style.top = `${headerHeightRes}px`;
-  });
-
   searchBar.style.height = `${btnHeightRes + 2}px`;
+  headerNavListEl.style.height = null;
 
   // - MOBILE SUBNAV -
   headerSubnavEl.forEach((node) => {
+    node.style.top = `${headerHeightRes}px`;
+
     const subNavH = node.getBoundingClientRect().height;
     if (subNavH + headerHeightRes >= viewportH) {
       node.style.height = `${viewportH - headerHeightRes}px`;
@@ -111,8 +110,6 @@ const calculateSize = function () {
       node.style.height = `auto`;
     }
   });
-
-  headerNavListEl.classList.remove("mobile__nav-open");
 };
 
 // ----- MOBILE ELEMENTS -----
@@ -128,12 +125,18 @@ const calculateSizeMobile = function () {
   todayEl.style.marginTop = `${headerHeightRes}px`;
 
   // - MOBILE NAV -
-  const navH = headerNavListEl.getBoundingClientRect().height;
-  if (navH + headerHeightRes >= viewportH) {
-    headerNavListEl.style.height = `${viewportH - headerHeightRes}px`;
-  } else if (navH + headerHeightRes < viewportH) {
-    headerNavListEl.style.height = `auto`;
-  }
+  headerNavListEl.style.height = `${viewportH - headerHeightRes}px`;
+  // if (navH + headerHeightRes >= viewportH) {
+  //   headerNavListEl.style.height = `${viewportH - headerHeightRes}px`;
+  // } else if (navH + headerHeightRes < viewportH) {
+  //   headerNavListEl.style.height = `auto`;
+  // }
+
+  // - MOBILE SUBNAV -
+  headerSubnavEl.forEach((node) => {
+    node.style.top = null;
+    node.style.height = null;
+  });
 };
 
 // ----- SEASONAL LAYOUT -----
@@ -250,7 +253,7 @@ headerNavLinkEl.forEach(function (link) {
       removeClassFromNodeList(headerNavLinkEl, "subnav-open");
       e.target.classList.add("active-subnav");
       e.target.classList.add("subnav-open");
-      calculateSize();
+      // calculateSize();
       subnavOpen = 1;
     });
 
@@ -316,6 +319,8 @@ subnavLinkEl[subnavLinkEl.length - 1].addEventListener("blur", (e) =>
 // --- MOBILE NAV BUTTON ---
 headerNavSmallEl.addEventListener("click", function (e) {
   headerNavListEl.classList.toggle("mobile__nav-open");
+  removeClassFromNodeList(headerNavLinkEl, "active-subnav");
+  removeClassFromNodeList(headerNavLinkEl, "subnav-open");
 
   setTimeout(calculateSizeMobile, 105);
 });
@@ -367,8 +372,16 @@ window.addEventListener("resize", function () {
   seasonWidth();
 
   if (window.matchMedia(`(max-width: ${emBreakpoints[3]}em)`).matches) {
+    removeClassFromNodeList(headerNavLinkEl, "active-subnav");
+    removeClassFromNodeList(headerNavLinkEl, "subnav-open");
+
+    subnavOpen = 0;
+
     calculateSizeMobile();
   } else {
+    headerNavListEl.classList.remove("mobile__nav-open");
+    removeClassFromNodeList(headerNavLinkEl, "subnav-open");
+
     calculateSize();
   }
 });

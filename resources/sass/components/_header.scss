@@ -19,10 +19,6 @@
   @media only screen and (max-width: $bp-small) {
     align-items: center;
   }
-
-  // @media only screen and (max-width: $bp-small) {
-  //   align-items: center;
-  // }
 }
 
 // HEADER TOP PART ---------------------------------------------
@@ -145,20 +141,22 @@
     @media only screen and (max-width: $bp-small) {
       position: absolute;
       border-top: 1px solid $color-primary-tint;
-
-      left: 0;
-      width: 100%;
+      align-content: start;
 
       bottom: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
 
       background-color: $color-secondary-shade;
 
       grid-template-columns: 1fr;
 
-      height: auto;
       transform-origin: top;
       transform: translateY(100%) scaleY(0);
-      overflow: auto;
+
+      overflow-y: auto;
+      overflow-x: hidden;
     }
   }
 
@@ -267,23 +265,20 @@
   background-color: $color-primary;
   box-shadow: $bax-shadow-medium-bottom;
 
+  transition: all 0.2s;
+
   @media only screen and (max-width: $bp-small) {
-    position: absolute;
-    border-top: 1px solid $color-primary-tint;
-
+    position: fixed;
+    top: 0;
     left: 0;
-    width: 100%;
 
-    bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
 
-    background-color: $color-secondary-shade;
+    opacity: 1;
+    visibility: visible;
 
-    grid-template-columns: 1fr;
-
-    height: auto;
-    transform-origin: top;
-    transform: translateY(100%) scaleY(0);
-    overflow: auto;
+    transform: translateX(105vw);
   }
 }
 
@@ -298,12 +293,27 @@
 
   overflow: auto;
 
-  > p {
-    display: none;
+  @media only screen and (max-width: $bp-small) {
+    opacity: 1;
+    visibility: visible;
 
-    @media only screen and (max-width: $bp-small) {
-      display: block;
-    }
+    min-width: auto;
+    width: 100%;
+
+    padding: 1.2rem 2.4rem;
+
+    flex-direction: column;
+  }
+}
+
+.header__subnav__back {
+  display: none;
+
+  @media only screen and (max-width: $bp-small) {
+    display: block;
+
+    height: 4rem;
+    width: 4rem;
   }
 }
 
@@ -312,6 +322,11 @@
 
   padding: 0.4rem 1.2rem;
   margin: 1.8rem 0 0;
+
+  @media only screen and (max-width: $bp-small) {
+    align-items: stretch;
+    width: 100%;
+  }
 }
 
 .header__subnav {
@@ -329,6 +344,13 @@
     @media only screen and (max-width: $bp-medium) {
       margin: 0 4.8rem 3.6rem 0;
     }
+
+    @media only screen and (max-width: $bp-small) {
+      margin: 0 0 4.8rem 0;
+      padding: 0;
+      border-left: none;
+      width: 100%;
+    }
   }
 
   &__title {
@@ -338,6 +360,10 @@
     font-weight: 500;
 
     margin-bottom: 1.8rem;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: $font-size-small;
+    }
   }
 
   &__list {
@@ -354,6 +380,9 @@
 
   &__link {
     font-size: $font-size-tiny;
+    @media only screen and (max-width: $bp-small) {
+      font-size: $font-size-smaller;
+    }
 
     &:link,
     &:visited {
@@ -386,40 +415,13 @@
 .header__subnav__img {
   margin-left: 9.6rem;
 
+  @media only screen and (max-width: $bp-small) {
+    display: none;
+  }
+
   img {
     height: 25rem;
   }
-}
-
-// FUNCTIONALITY --------------------------------------------------
-.active-subnav {
-}
-
-.active-subnav {
-  ~ .header__subnav {
-  }
-}
-
-.subnav-open {
-  &:link,
-  &:visited {
-    color: $color-font-dark !important;
-    background-color: $color-primary-shade !important;
-  }
-
-  ~ .header__subnav {
-    opacity: 1;
-    visibility: visible;
-
-    .header__subnav__container {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-}
-
-.header-reactive--height {
-  height: 75vh;
 }
 
 // ----- MOBILE NAVIGATIONS -----
@@ -485,4 +487,36 @@
 
 .header__nav__list.mobile__nav-open {
   transform: translateY(100%) scaleY(1);
+}
+
+// FUNCTIONALITY --------------------------------------------------
+.active-subnav {
+}
+
+.active-subnav {
+  ~ .header__subnav {
+    transform: translateX(0);
+  }
+}
+
+.subnav-open {
+  &:link,
+  &:visited {
+    color: $color-font-dark !important;
+    background-color: $color-primary-shade !important;
+  }
+
+  ~ .header__subnav {
+    opacity: 1;
+    visibility: visible;
+
+    .header__subnav__container {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.header-reactive--height {
+  height: 75vh;
 }
