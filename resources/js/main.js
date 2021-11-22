@@ -6,7 +6,6 @@
 const pxBreakpoints = [1200, 1000, 800, 600, 450];
 const emBreakpoints = [75, 62.5, 50, 37.5, 28.125];
 
-// ----- GLOBAL -----
 const viewportInitH = document.documentElement.clientHeight;
 const viewportInitW = document.documentElement.clientWidth;
 
@@ -86,10 +85,21 @@ const removeClassFromNodeList = function (nodeList, className) {
   nodeList.forEach((node) => node.classList.remove(className));
 };
 
-// ----- DYNAMIC ELEMENTS -----
+// --------------------------------------------------
+
+//-
+//-
+//-
+//-
+//-
+
+//-------------------------------------------------
+
+// --------------------------------------- SPECIFIC FUNCTIONS ------
+
+// ----- DYNAMIC DESKTOP ELEMENTS -----
 const calculateSize = function () {
   // ----- VARIABLES -----
-  // const btnHeightRes = searchBtn.getBoundingClientRect().height;
   const headerHeightRes = headerEl.getBoundingClientRect().height;
 
   const viewportH = document.documentElement.clientHeight;
@@ -99,7 +109,6 @@ const calculateSize = function () {
   todayEl.style.marginTop = `${headerHeightRes}px`;
   headerNavListEl.style.height = null;
 
-  // searchBar.style.height = `${btnHeightRes + 2}px`;
   for (let i = 0; i < searchBar.length; i++) {
     const btnHeight = searchBtn[i].getBoundingClientRect().height;
     searchBar[i].style.height = `${btnHeight + 2}px`;
@@ -118,10 +127,9 @@ const calculateSize = function () {
   });
 };
 
-// ----- MOBILE ELEMENTS -----
+// ----- DYNAMIC MOBILE ELEMENTS -----
 const calculateSizeMobile = function () {
   // ----- VARIABLES -----
-  // const btnHeightRes = searchBtn.getBoundingClientRect().height;
   const headerHeightRes = headerEl.getBoundingClientRect().height;
 
   const viewportH = document.documentElement.clientHeight;
@@ -137,11 +145,6 @@ const calculateSizeMobile = function () {
 
   // - MOBILE NAV -
   headerNavListEl.style.height = `${viewportH - headerHeightRes}px`;
-  // if (navH + headerHeightRes >= viewportH) {
-  //   headerNavListEl.style.height = `${viewportH - headerHeightRes}px`;
-  // } else if (navH + headerHeightRes < viewportH) {
-  //   headerNavListEl.style.height = `auto`;
-  // }
 
   // - MOBILE SUBNAV -
   headerSubnavEl.forEach((node) => {
@@ -165,15 +168,14 @@ const seasonWidth = function () {
   }
 };
 
-// --------------------------------------------------
+// -----------------------------------------------
 
-//-
-//-
-//-
-//-
-//-
+// -
+// -
+// -
+// -
+// -
 
-//-------------------------------------------------
 // --------------------------------------------------- INIT PAGE ----
 // ----- FUNCTIONS -----
 
@@ -225,7 +227,7 @@ const initPage = function () {
 // -
 // -
 
-// -------------------------------------- SPECIFIC FUNCTIONALITY --
+// -------------------------------------- GLOBAL SETTER --
 // ----- VARIABLES ------
 let subnavOpen = 0;
 
@@ -264,7 +266,6 @@ headerNavLinkEl.forEach(function (link) {
       removeClassFromNodeList(headerNavLinkEl, "subnav-open");
       e.target.classList.add("active-subnav");
       e.target.classList.add("subnav-open");
-      // calculateSize();
       subnavOpen = 1;
     });
 
