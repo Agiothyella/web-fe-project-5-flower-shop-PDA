@@ -140,9 +140,25 @@
 
   &__list {
     width: 100%;
+    transition: all 0.1s;
 
     @media only screen and (max-width: $bp-small) {
-      display: none;
+      position: absolute;
+      border-top: 1px solid $color-primary-tint;
+
+      left: 0;
+      width: 100%;
+
+      bottom: 0;
+
+      background-color: $color-secondary-shade;
+
+      grid-template-columns: 1fr;
+
+      height: auto;
+      transform-origin: top;
+      transform: translateY(100%) scaleY(0);
+      overflow: auto;
     }
   }
 
@@ -157,6 +173,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 2.4rem 0;
+    }
 
     &:link,
     &:visited {
@@ -180,6 +200,12 @@
     margin-left: 0.5rem;
 
     transition: color 0.1s;
+
+    @media only screen and (max-width: $bp-small) {
+      content: "\0003E";
+      margin-left: 1rem;
+      font-size: 1.4rem;
+    }
   }
 }
 
@@ -230,7 +256,7 @@
   opacity: 0;
   visibility: hidden;
 
-  height: 0;
+  height: 100%;
 
   position: absolute;
   left: 0;
@@ -240,6 +266,25 @@
 
   background-color: $color-primary;
   box-shadow: $bax-shadow-medium-bottom;
+
+  @media only screen and (max-width: $bp-small) {
+    position: absolute;
+    border-top: 1px solid $color-primary-tint;
+
+    left: 0;
+    width: 100%;
+
+    bottom: 0;
+
+    background-color: $color-secondary-shade;
+
+    grid-template-columns: 1fr;
+
+    height: auto;
+    transform-origin: top;
+    transform: translateY(100%) scaleY(0);
+    overflow: auto;
+  }
 }
 
 .header__subnav__container {
@@ -255,6 +300,10 @@
 
   > p {
     display: none;
+
+    @media only screen and (max-width: $bp-small) {
+      display: block;
+    }
   }
 }
 
@@ -432,4 +481,8 @@
   &::after {
     transform: translateY(0.9rem);
   }
+}
+
+.header__nav__list.mobile__nav-open {
+  transform: translateY(100%) scaleY(1);
 }

@@ -3,12 +3,17 @@
 //--------------------------------------------------
 // -------------------------------------------------- VARIABLE -----
 // ----- RESPONSIVE -----
-const resBreakpoints = [1200, 1000, 800, 600, 450];
+const pxBreakpoints = [1200, 1000, 800, 600, 450];
 const emBreakpoints = [75, 62.5, 50, 37.5, 28.125];
+
+// ----- GLOBAL -----
+const viewportInitH = document.documentElement.clientHeight;
+const viewportInitW = document.documentElement.clientWidth;
 
 // ----- HEADER ------
 const headerEl = document.querySelector(".header");
 const headerNavEl = document.querySelector(".header__nav");
+const headerNavListEl = document.querySelector(".header__nav__list");
 const headerNavItemEl = document.querySelectorAll(".header__nav__item");
 const headerNavLinkEl = document.querySelectorAll(".header__nav__link");
 
@@ -21,6 +26,8 @@ const subnavLinkEl = document.querySelectorAll(".header__subnav__link");
 
 const searchBar = document.querySelector(".c-search__input");
 const searchBtn = document.querySelector(".c-search__button");
+
+const headerNavSmallEl = document.querySelector(".header__nav-small");
 
 // ----- TODAY SECTION -----
 const todayEl = document.querySelector(".section--today");
@@ -51,14 +58,15 @@ const footerMapHeadEl = document.querySelectorAll(".footer__sitemap__header");
 
 // ---------------------------------------------------
 
-// -
-// -
-// -
-// -
-// -
+//-
+//-
+//-
+//-
+//-
 
-//--------------------------------------------------
-// -------------------------------------------------- FUNCTIONS -----
+// ---------------------------------
+// ------------------------------------------ GLOBAL FUNCTIONS ---
+// ----- STATIC LAYOUT -----
 const renderZPattern = function (nodeList, class1 = "_", class2 = "_") {
   nodeList.forEach(function (node, i) {
     if (i % 2 === 0) {
@@ -77,7 +85,64 @@ const removeClassFromNodeList = function (nodeList, className) {
   nodeList.forEach((node) => node.classList.remove(className));
 };
 
-// ---------------------------------------------------
+// ----- DYNAMIC ELEMENTS -----
+const calculateSize = function () {
+  // ----- VARIABLES -----
+  const btnHeightRes = searchBtn.getBoundingClientRect().height;
+  const headerHeightRes = headerEl.getBoundingClientRect().height;
+
+  const viewportH = document.documentElement.clientHeight;
+
+  // --- FUNCTIONS ---
+  // - HEADER -
+  todayEl.style.marginTop = `${headerHeightRes}px`;
+  headerSubnavEl.forEach((node) => {
+    node.style.top = `${headerHeightRes}px`;
+  });
+
+  searchBar.style.height = `${btnHeightRes + 2}px`;
+
+  // - MOBILE SUBNAV -
+  headerSubnavEl.forEach((node) => {
+    const subNavH = node.getBoundingClientRect().height;
+    if (subNavH + headerHeightRes >= viewportH) {
+      node.style.height = `${viewportH - headerHeightRes}px`;
+    } else if (subNavH + headerHeightRes < viewportH) {
+      node.style.height = `auto`;
+    }
+  });
+
+  headerNavListEl.classList.remove("mobile__nav-open");
+};
+
+// ----- MOBILE ELEMENTS -----
+const calculateSizeMobile = function () {
+  // ----- VARIABLES -----
+  const btnHeightRes = searchBtn.getBoundingClientRect().height;
+  const headerHeightRes = headerEl.getBoundingClientRect().height;
+
+  const viewportH = document.documentElement.clientHeight;
+
+  // --- FUNCTIONS ---
+  // - HEADER -
+  todayEl.style.marginTop = `${headerHeightRes}px`;
+
+  // - MOBILE NAV -
+  const navH = headerNavListEl.getBoundingClientRect().height;
+  if (navH + headerHeightRes >= viewportH) {
+    headerNavListEl.style.height = `${viewportH - headerHeightRes}px`;
+  } else if (navH + headerHeightRes < viewportH) {
+    headerNavListEl.style.height = `auto`;
+  }
+};
+
+// --------------------------------------------------
+
+//-
+//-
+//-
+//-
+//-
 
 //-------------------------------------------------
 // --------------------------------------------------- INIT PAGE ----
@@ -118,13 +183,19 @@ const initZPattern = function () {
 };
 
 const initPage = function () {
-  // Z-Pattern style (currently only Sale Section):
+  // Z-Pattern style on Sale section:
   // initZPattern();
   initNodeListClases();
 };
 
+// ---------------------------------------------------
+
 // -
 // -
+// -
+// -
+// -
+
 // -------------------------------------- SPECIFIC FUNCTIONALITY --
 // ----- VARIABLES ------
 const activeSeasonWidth = activeSeason.getBoundingClientRect().width;
@@ -166,22 +237,33 @@ headerNavLinkEl.forEach(function (link) {
       removeClassFromNodeList(headerNavLinkEl, "subnav-open");
       e.target.classList.add("active-subnav");
       e.target.classList.add("subnav-open");
+      calculateSize();
       subnavOpen = 1;
     });
 
     link.addEventListener("mouseenter", function (e) {
-      e.target.classList.add("subnav-open");
-      subnavOpen = 1;
+      if (window.matchMedia(`(max-width: ${emBreakpoints[3]}em)`).matches) {
+        return null;
+      } else {
+        e.target.classList.add("subnav-open");
+        calculateSize();
+        subnavOpen = 1;
+      }
     });
 
     link.addEventListener("mouseleave", function (e) {
-      e.target.classList.remove("subnav-open");
-      subnavOpen = 0;
+      if (window.matchMedia(`(max-width: ${emBreakpoints[3]}em)`).matches) {
+        return null;
+      } else {
+        e.target.classList.remove("subnav-open");
+        subnavOpen = 0;
+      }
     });
 
     link.addEventListener("focus", function (e) {
       removeClassFromNodeList(headerNavLinkEl, "subnav-open");
       e.target.classList.add("subnav-open");
+      calculateSize();
       subnavOpen = 1;
     });
 
@@ -218,6 +300,13 @@ subnavLinkEl[subnavLinkEl.length - 1].addEventListener("blur", (e) =>
     .previousElementSibling.classList.remove("subnav-open")
 );
 
+// --- MOBILE NAV BUTTON ---
+headerNavSmallEl.addEventListener("click", function (e) {
+  headerNavListEl.classList.toggle("mobile__nav-open");
+
+  setTimeout(calculateSizeMobile, 105);
+});
+
 // --- SEASONAL ---
 seasonEl.forEach((node) =>
   node.addEventListener("click", function (e) {
@@ -253,43 +342,29 @@ if (window.matchMedia(`(max-width: ${emBreakpoints[2]}em)`).matches) {
   });
 }
 
-// ------------------------------------------ GLOBAL FUNCTIONS ---
-// ----- DYNAMIC ELEMENTS -----
-const calculateSize = function () {
-  // ----- VARIABLES -----
-  const btnHeightRes = searchBtn.getBoundingClientRect().height;
-  const headerHeightRes = headerEl.getBoundingClientRect().height;
+// ------------------------------------------
 
-  const viewportH = document.documentElement.clientHeight;
+//-
+//-
+//-
+//-
+//-
 
-  // --- FUNCTIONS ---
-  // - HEADER -
-  todayEl.style.marginTop = `${headerHeightRes}px`;
-  headerSubnavEl.forEach((node) => {
-    node.style.top = `${headerHeightRes}px`;
-  });
-
-  searchBar.style.height = `${btnHeightRes + 2}px`;
-
-  // - MOBILE SUBNAV -
-  headerSubnavEl.forEach((node) => {
-    const subNavH = node.getBoundingClientRect().height;
-    if (subNavH + headerHeightRes >= viewportH) {
-      node.style.height = `${viewportH - headerHeightRes}px`;
-    } else if (subNavH + headerHeightRes < viewportH) {
-      node.style.height = `auto`;
-    }
-  });
-};
-
+// ----------------------------------------
 // ------------------------------------------ RUN ALL FUNCTIONS -----
 // HACK: Mobile size elements not calculated properly onload
-calculateSize();
+if (viewportInitW > pxBreakpoints[3]) {
+  calculateSize();
+} else {
+  calculateSizeMobile();
+}
 
 window.addEventListener("resize", function () {
-  setTimeout(function () {
-    calculateSize();
-  }, 50);
+  if (window.matchMedia(`(max-width: ${emBreakpoints[3]}em)`).matches) {
+    setTimeout(calculateSizeMobile, 50);
+  } else {
+    setTimeout(calculateSize, 50);
+  }
 });
 
 initPage();
