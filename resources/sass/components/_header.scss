@@ -266,8 +266,6 @@
   background-color: $color-primary;
   box-shadow: $bax-shadow-medium-bottom;
 
-  transition: all 0.2s;
-
   @media only screen and (max-width: $bp-small) {
     position: fixed;
     top: 0;
@@ -280,6 +278,7 @@
     visibility: visible;
 
     transform: translateX(105vw);
+    transition: all 0.2s;
   }
 }
 

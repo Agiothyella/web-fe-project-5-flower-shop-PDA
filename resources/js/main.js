@@ -24,8 +24,8 @@ const headerSubnavContainerEl = document.querySelectorAll(
 const headerSubnavMainEl = document.querySelectorAll(".header__subnav__main");
 const subnavLinkEl = document.querySelectorAll(".header__subnav__link");
 
-const searchBar = document.querySelector(".c-search__input");
-const searchBtn = document.querySelector(".c-search__button");
+const searchBar = document.querySelectorAll(".c-search__input");
+const searchBtn = document.querySelectorAll(".c-search__button");
 
 const headerNavSmallEl = document.querySelector(".header__nav-small");
 const headerSubnavBack = document.querySelectorAll(".header__subnav__back");
@@ -89,7 +89,7 @@ const removeClassFromNodeList = function (nodeList, className) {
 // ----- DYNAMIC ELEMENTS -----
 const calculateSize = function () {
   // ----- VARIABLES -----
-  const btnHeightRes = searchBtn.getBoundingClientRect().height;
+  // const btnHeightRes = searchBtn.getBoundingClientRect().height;
   const headerHeightRes = headerEl.getBoundingClientRect().height;
 
   const viewportH = document.documentElement.clientHeight;
@@ -97,8 +97,13 @@ const calculateSize = function () {
   // --- FUNCTIONS ---
   // - HEADER -
   todayEl.style.marginTop = `${headerHeightRes}px`;
-  searchBar.style.height = `${btnHeightRes + 2}px`;
   headerNavListEl.style.height = null;
+
+  // searchBar.style.height = `${btnHeightRes + 2}px`;
+  for (let i = 0; i < searchBar.length; i++) {
+    const btnHeight = searchBtn[i].getBoundingClientRect().height;
+    searchBar[i].style.height = `${btnHeight + 2}px`;
+  }
 
   // - MOBILE SUBNAV -
   headerSubnavEl.forEach((node) => {
@@ -116,7 +121,7 @@ const calculateSize = function () {
 // ----- MOBILE ELEMENTS -----
 const calculateSizeMobile = function () {
   // ----- VARIABLES -----
-  const btnHeightRes = searchBtn.getBoundingClientRect().height;
+  // const btnHeightRes = searchBtn.getBoundingClientRect().height;
   const headerHeightRes = headerEl.getBoundingClientRect().height;
 
   const viewportH = document.documentElement.clientHeight;
@@ -124,6 +129,11 @@ const calculateSizeMobile = function () {
   // --- FUNCTIONS ---
   // - HEADER -
   todayEl.style.marginTop = `${headerHeightRes}px`;
+
+  for (let i = 0; i < searchBar.length; i++) {
+    const btnHeight = searchBtn[i].getBoundingClientRect().height;
+    searchBar[i].style.height = `${btnHeight + 2}px`;
+  }
 
   // - MOBILE NAV -
   headerNavListEl.style.height = `${viewportH - headerHeightRes}px`;
