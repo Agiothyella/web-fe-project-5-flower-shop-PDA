@@ -17,13 +17,10 @@ No copyright infringement is intended. I do not own nor claim any of the Image u
 
 ### Design:
 
-To give user calm feeling when browsing the page, I use pastel color. The color composition is made like that to immitate flower, bright color at the top to darker one at the bottom.
-The main color palette itself is, I don't know how to properly express it but, feels kinda blurry to one another especially the greenish-brown colors. The biggest concern though,
-is this other colors on images that fills the sections (like special sale one) messing up the overall color palette, especially for that specific section. But removing that cause
-the section to feels empty. So I decided to just live with it.
+To give user calm feeling when browsing the page, pastel color is used. The color composition is made like that to immitate flower, bright color at the top to darker one at the bottom. The biggest concern is this many other colors on images that fills the sections (like special sale one) messing up the overall color palette, especially for palette on specific section. But removing that will cause the section to feels empty. So I decided to just live with it.
 
 ### Development:
 
-There's not much script except for classes control, so the code is not too complicated. Nevertheless, DRY principle applied for script, Overall code is clean.
+DRY principle applied for script, Overall code is cleaner than before.
 
 Proper HTML 5 tags is applied so SEO wise it's better, also there's no structural problem found thanks to that.
