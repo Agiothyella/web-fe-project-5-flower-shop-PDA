@@ -5,7 +5,7 @@
 
   &::after {
     @media only screen and (max-width: $bp-medium) {
-      content: "\02212";
+      content: "\02212" !important;
       color: $color-secondary-lightest;
     }
   }
