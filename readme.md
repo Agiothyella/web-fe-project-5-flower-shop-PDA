@@ -8,8 +8,8 @@ This webpage was designed and developed by me, Agiothyella. This webpage is host
 
 All resources used here have free to use license, except:
 
-- Bouquet placeholder: Nadezda Vinogradova
-- Flower stem placeholder: macrovector
+- Bouquet lazy placeholder: Nadezda Vinogradova
+- Flower stem lazy placeholder: macrovector
 
 No copyright infringement is intended. I do not own nor claim any of the Image used in this webpage, as it only served as placeholder.
 
