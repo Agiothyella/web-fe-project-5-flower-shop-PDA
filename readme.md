@@ -2,7 +2,7 @@
 
 Main page for Agiothyella Flower Shop
 
-Demo: https://agiothyella.github.io/web-fe-project-5-flower-shop/
+Demo: https://agiothyella.github.io/web-fe-project-5-flower-shop-PDA/
 
 This webpage was designed and developed by me, Agiothyella. This webpage is hosted on github as a showcase for my portofolio. Please do not copy/duplicate whole/parts of my markup.
 
