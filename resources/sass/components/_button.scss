@@ -51,4 +51,25 @@
       border: 1px solid $color-secondary-lightest;
     }
   }
+
+  &--fill {
+    font-size: $font-size-tiniest;
+    font-weight: 500;
+    padding: 0.6rem 1.2rem;
+
+    &:link,
+    &:visited {
+      background-color: $color-secondary-shade;
+      color: $color-secondary-lightest;
+      border: 1px solid $color-secondary-shade;
+    }
+
+    &:focus,
+    &:hover,
+    &:active {
+      background-color: $color-secondary-lightest;
+      color: $color-secondary-shade;
+      border: 1px solid $color-secondary-shade;
+    }
+  }
 }

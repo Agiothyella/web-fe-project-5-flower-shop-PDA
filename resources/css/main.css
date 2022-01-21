@@ -183,6 +183,24 @@ a:visited {
   border: 1px solid #f8fafb;
 }
 
+.btn--fill {
+  font-size: 1.2em;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+}
+
+.btn--fill:link, .btn--fill:visited {
+  background-color: #7291b3;
+  color: #f8fafb;
+  border: 1px solid #7291b3;
+}
+
+.btn--fill:focus, .btn--fill:hover, .btn--fill:active {
+  background-color: #f8fafb;
+  color: #7291b3;
+  border: 1px solid #7291b3;
+}
+
 .catalogue__list--today {
   column-gap: 2.4rem;
   margin: 0 2.4rem 3.2rem 0;
@@ -1914,6 +1932,7 @@ a:visited {
   padding: 4.8rem 0 1.2rem;
   border-top-left-radius: 1px;
   border-top-right-radius: 1px;
+  border-bottom: 1px solid #7291b3;
   background-color: #fafdec;
 }
 
@@ -1921,10 +1940,6 @@ a:visited {
   .sale__category {
     column-gap: 3.2rem;
   }
-}
-
-.sale__category--1 {
-  border-bottom: 1px solid #b557cd;
 }
 
 .sale__category--1 .sale__title {
@@ -1947,25 +1962,9 @@ a:visited {
   }
 }
 
-.sale__category--1 .sale__more:link, .sale__category--1 .sale__more:visited {
-  color: #b557cd;
-  background-color: #f8fafb;
-  border: 2px solid #b557cd;
-}
-
-.sale__category--1 .sale__more:focus, .sale__category--1 .sale__more:hover, .sale__category--1 .sale__more:active {
-  color: #f8fafb;
-  background-color: #b557cd;
-  border: 2px solid #f8fafb;
-}
-
-.sale__category--2 {
-  border-bottom: 1px solid #ff2a2a;
-}
-
 .sale__category--2 .sale__title {
   background-image: none;
-  color: #ff2a2a;
+  color: #ff3838;
 }
 
 @supports (background-clip: text) or (-webkit-background-clip: text) {
@@ -1973,30 +1972,14 @@ a:visited {
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
-    background-image: linear-gradient(to left, #e20000, #ff2a2a);
+    background-image: linear-gradient(to left, #e20000, #ff3838);
   }
   @media only screen and (max-width: 50em) {
     .sale__category--2 .sale__title {
       background-image: none;
-      color: #ff2a2a;
+      color: #ff3838;
     }
   }
-}
-
-.sale__category--2 .sale__more:link, .sale__category--2 .sale__more:visited {
-  color: #ff2a2a;
-  background-color: #f8fafb;
-  border: 2px solid #ff2a2a;
-}
-
-.sale__category--2 .sale__more:focus, .sale__category--2 .sale__more:hover, .sale__category--2 .sale__more:active {
-  color: #f8fafb;
-  background-color: #ff2a2a;
-  border: 2px solid #f8fafb;
-}
-
-.sale__category--3 {
-  border-bottom: 1px solid #999cc5;
 }
 
 .sale__category--3 .sale__title {
@@ -2017,18 +2000,6 @@ a:visited {
       color: #7a7eb4;
     }
   }
-}
-
-.sale__category--3 .sale__more:link, .sale__category--3 .sale__more:visited {
-  color: #7a7eb4;
-  background-color: #f8fafb;
-  border: 2px solid #7a7eb4;
-}
-
-.sale__category--3 .sale__more:focus, .sale__category--3 .sale__more:hover, .sale__category--3 .sale__more:active {
-  color: #f8fafb;
-  background-color: #7a7eb4;
-  border: 2px solid #f8fafb;
 }
 
 .sale__container {
